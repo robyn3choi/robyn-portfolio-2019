@@ -1,0 +1,67 @@
+@import 'sanitize.scss';
+
+.page {
+  height: 2000px;
+  position:relative;
+}
+
+.rellax {
+  height: 1000px;
+  position: fixed;
+  width: 100%;
+}
+
+// .blah {
+//   height: 1000px;
+//   width: 100%;
+//   position: fixed;
+// }
+
+.outdoors {
+  height: 1000px;
+}
+
+.parallax0 {
+  background-image: url('../../public/assets/images/parallax0.png');
+}
+
+.parallax1 {
+  background-image: url('../../public/assets/images/parallax1.png');
+}
+
+.parallax2 {
+  background-image: url('../../public/assets/images/parallax2.png');
+}
+
+.parallax3 {
+  background-image: url('../../public/assets/images/parallax3.png');
+}
+
+.parallax4 {
+  background-image: url('../../public/assets/images/parallax4.png');
+}
+
+.parallax5 {
+  background-image: url('../../public/assets/images/parallax5.png');
+}
+
+.parallax6 {
+  background-image: url('../../public/assets/images/parallax6.png');
+}
+
+.parallax7 {
+  background-image: url('../../public/assets/images/parallax7.png');
+}
+
+.parallax8 {
+  background-image: url('../../public/assets/images/parallax8.png');
+  position: relative;
+}
+
+.indoors {
+  width: 100%;
+  height: 1000px;
+  background: black;
+  z-index: 1;
+  position: relative;
+}
