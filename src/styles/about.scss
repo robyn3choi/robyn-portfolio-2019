@@ -1,0 +1,57 @@
+@import './variables.scss';
+
+.section__sidebar_about {
+  background: red;
+}
+
+.section__content_about {
+  padding: 120px 140px;
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+// .about__tagline {
+//   font-weight: 400;
+//   text-align: center;
+//   margin: 20px 0;
+// }
+
+.about__text {
+  margin-bottom: 40px;
+}
+
+.about__skill-heading {
+  border-bottom: 1px solid rgb(173, 173, 173);
+}
+
+.about__languages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  // margin-top: 100px;
+  font-size: 1.1rem;
+  //font-weight: 400;
+  color: $grey;
+}
+
+.about__languages-container {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px 40px;
+  margin: 40px 0;
+  transition: 0.3s;
+}
+
+.about__languages-container:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.about__language {
+  text-align: center;
+  margin: 10px 30px;
+
+  img {
+    height: 80px;
+    margin-bottom: 8px;
+  }
+}
