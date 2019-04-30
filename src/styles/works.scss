@@ -1,0 +1,86 @@
+@import 'variables.scss';
+
+$color-work: #3F3F3F;
+
+.section__sidebar_works {
+   //background: #ff4a3f;
+  //background: #ffaa3f;
+  background: $color-work;
+  color: $black;
+}
+
+.section_works {
+    background: $color-work;
+}
+
+.section__content.section__content_works {
+    //background: #ff4a3f;
+    //background: $color-work;
+    left: 0;
+    width: auto;
+    //padding: 50px;
+   //padding: 50px 0;
+    //overflow: hidden;
+}
+
+.card {
+    background: white;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+  }
+  
+  .card:hover {
+    box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.6);
+  }
+
+.work.card {
+    height: 96vh;
+    //height: 500px;
+    margin: 2vh 0;
+    padding: 0;
+    position: relative;
+    z-index: 99;
+    left: 50%;
+}
+
+.work__image {
+    height: 100%;
+    width: 50%;
+    background-position: center center;
+    position: absolute;
+}
+
+.work__details-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    //visibility: hidden;
+    opacity: 0;
+}
+
+.work__overlay {
+    background: black;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+}
+
+.work:hover {
+    transform: translateX(-20px);
+}
+
+.work__image:hover .work__details-button {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.work__details {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 50%;
+    top: 0;
+}

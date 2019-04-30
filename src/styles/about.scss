@@ -1,13 +1,36 @@
-@import './variables.scss';
+@import 'variables.scss';
+
+$color-about: #38A0C0;
 
 .section_about {
-  background: #3f94ff;
+  //background: #3f94ff;
+  background: $color-about ;
+  //color: white;
+}
+
+p.large {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  font-size: 4.9rem;
+  margin-top:0;
+  margin-bottom: 16px;
+  color: $color-about;
+  line-height: unset;
+}
+
+p.medium {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  font-size: 2rem;
+  color: $grey;
+  margin-top:0;
+  margin-bottom: 14px;
+  line-height: unset;
 }
 
 .section__content_about {
- // background: #1c75e4;
-  padding: 50px;
-  padding-left: 0;
+  background: white;
+  padding: 100px;
   font-weight: 400;
   font-size: 1.2rem;
 }
@@ -20,16 +43,12 @@
   margin-top: 20px;
 }
 
-.card {
-  background: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-  transition: 0.3s;
-  padding: 80px;
-  margin-bottom: 20px;
+.about__section {
+  margin-bottom: 64px;
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+.about__section:last-child {
+  margin-bottom: 0;
 }
 
 .about__skill-heading {
@@ -41,6 +60,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   font-size: 1.1rem;
   margin-top: 26px;
   margin-bottom: -24px;
