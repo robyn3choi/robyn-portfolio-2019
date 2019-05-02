@@ -1,0 +1,18 @@
+@import 'variables.scss';
+
+.section__sidebar_contact {
+    background: black;
+  }
+  
+.section__content_contact {
+    height: 100vh;
+    padding: $section-content-padding;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+p.thanks {
+    text-align: center;
+    margin-top: 50px;
+}
