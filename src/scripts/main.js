@@ -1,26 +1,35 @@
 import Rellax from 'rellax';
+// import './workData';
+import injectWorks from './workTemplate';
 import * as utils from './utils';
 
-var rellax = new Rellax('.rellax');
+var headerParallax = new Rellax('.header__parallax');
+var footerParallax = new Rellax('.footer__parallax', {
+  wrapper: '.footer',
+  relativeToWrapper: true
+});
 
-
-// utils.workImageHover();
-
-
-
-const seeWorkDetails = () => 
+const toggleWorkDetails = (index) => 
 {
-  activeWork = document.getElementsByClassName('work__image_hover')[0].parentElement;
-  activeWork.classList.add('work_viewing-details');
+  const work = document.getElementsByClassName('work')[index];
+  if (work.classList.contains('work_viewing-details')) 
+  {
+    work.classList.remove('work_viewing-details');
+  }
+  else 
+  {
+    work.classList.add('work_viewing-details');
+  }
 }
 
 window.onload = () => 
 {
+  injectWorks();
   utils.fixedSidebars();
   utils.graphicHeadingAnim();
   const workDetailsBtns = document.getElementsByClassName('work__details-button');
-  for (let btn of workDetailsBtns) 
+  for (let i=0; i<workDetailsBtns.length;i++) 
   {
-    btn.onclick = seeWorkDetails;
+    workDetailsBtns[i].onclick = () => toggleWorkDetails(i);
   }
 }

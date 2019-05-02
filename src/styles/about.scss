@@ -1,6 +1,7 @@
 @import 'variables.scss';
 
-$color-about: #38A0C0;
+$color-about: rgb(56, 160, 192); 
+$color-about-graphic-heading: rgb(74, 213, 255); 
 
 .section_about {
   //background: #3f94ff;
@@ -32,7 +33,6 @@ p.medium {
   background: white;
   padding: 100px;
   font-weight: 400;
-  font-size: 1.2rem;
 }
 
 .about__tagline {
@@ -41,14 +41,6 @@ p.medium {
   color: $grey;
   text-align: center;
   margin-top: 20px;
-}
-
-.about__section {
-  margin-bottom: 64px;
-}
-
-.about__section:last-child {
-  margin-bottom: 0;
 }
 
 .about__skill-heading {
@@ -81,4 +73,8 @@ p.medium {
 .about__skill:empty {
   min-height: 0;
   height: 0;
+}
+
+.section__content_about .graphic-heading_front {
+  background: $color-about-graphic-heading;
 }

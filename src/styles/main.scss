@@ -10,14 +10,14 @@ body {
 }
 
 .page {
-  //height: 2000px;
   position: relative;
 }
 
-p {
+p, li {
   line-height: 1.5;
   margin-bottom: 0;
-  font-weight: 300;
+  font-weight: 400;
+  font-size: 1.2rem;
 
   a {
     color: inherit;
@@ -43,13 +43,13 @@ h3 {
   line-height: 1.2;
 }
 
-.rellax {
+.header__parallax, .footer__parallax {
   height: 1000px;
-  position: fixed;
+  position: absolute;
   width: 100%;
 }
 
-.home {
+.header,footer {
   height: 1000px;
 }
 
@@ -121,6 +121,18 @@ h3 {
   background: black;
 }
 
+.section__content_contact {
+  height: 100vh;
+}
+
+.subsection {
+  margin-bottom: 64px;
+}
+
+.subsection:last-child {
+  margin-bottom: 0;
+}
+
 .graphic-heading-container {
   // width: auto;
   // height: 80px;
@@ -135,17 +147,17 @@ h3 {
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 0.9s ease-out;
+  transition: transform 1.2s ease-out;
+  will-change: transform;
   outline: 1px solid transparent; //hack to prevent aliasing in firefox
 }
 
 .graphic-heading_back {
-  background: #B0B0B0;
+  background: $grey-light;
   transform: skew(6deg) rotate(-1deg) translate(4px,0);
 }
 
 .graphic-heading_front {
-  background: #4ad4ff;
   top: 0;
   left: 0;
   mix-blend-mode: multiply;

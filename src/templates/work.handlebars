@@ -1,0 +1,55 @@
+{{#each work}}
+
+<div class='work card'>
+    <div class='work__image' style='background-image: url("assets/images/{{image}}")'>
+    <div class='work__details-button-container'>
+        <button class='work__details-button'>
+        <div class="arrow"></div>
+        </button>
+    </div>
+    <div class='work__details'>
+        <section class='subsection'>
+        <div class='graphic-heading-container'>
+            <div class='graphic-heading graphic-heading_back'></div>
+            <div class=' graphic-heading graphic-heading_front'></div>
+            <h3 class='graphic-heading__text'>Summary</h3>
+        </div>
+        {{#each summaryParagraphs}}
+        <p>
+            {{this}}
+        </p>
+        {{/each}}
+        </section>
+        <section class='subsection'>
+        <div class='graphic-heading-container'>
+            <div class='graphic-heading graphic-heading_back'></div>
+            <div class=' graphic-heading graphic-heading_front'></div>
+            <h3 class='graphic-heading__text'>Features</h3>
+        </div>
+        <ul class='work__features'>
+            {{#each features}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+        </section>
+        <!-- <section class='subsection'>
+            <div class='graphic-heading-container'>
+            <div class='graphic-heading graphic-heading_back'></div>
+            <div class=' graphic-heading graphic-heading_front'></div>
+            <h3 class='graphic-heading__text'>Technologies</h3>
+            </div>
+            <div class='work__technologies'>
+                <div class='work__technology'>React</div>
+                <div class='work__technology'>Node</div>
+                <div class='work__technology'>Express</div>
+                <div class='work__technology'>React</div>
+                <div class='work__technology'>Node</div>
+                <div class='work__technology'>Express</div>
+                <div class='work__technology'>React</div>
+            </div>
+        </section> -->
+    </div>
+    </div>
+</div>
+
+{{/each}}

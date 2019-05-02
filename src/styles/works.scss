@@ -1,46 +1,44 @@
 @import 'variables.scss';
 
-$color-work: #3F3F3F;
+$color-work: rgb(63, 63, 63);
+$color-work-heading: rgb(84,84,84);
 
 .section__sidebar_works {
    //background: #ff4a3f;
   //background: #ffaa3f;
   background: $color-work;
   color: $black;
+  width: 100%;
 }
 
 .section_works {
     background: $color-work;
+    overflow-x: hidden;
 }
 
 .section__content.section__content_works {
-    //background: #ff4a3f;
-    //background: $color-work;
     left: 0;
     width: auto;
-    //padding: 50px;
-   //padding: 50px 0;
-    //overflow: hidden;
 }
 
 .card {
     background: white;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
-    transition: 0.3s;
+    transition: box-shadow 0.6s;
   }
   
   .card:hover {
     box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.6);
   }
 
-.work.card {
+.work {
     height: 96vh;
-    //height: 500px;
-    margin: 2vh 0;
+    margin: 2vh;
     padding: 0;
     position: relative;
     z-index: 99;
     left: 50%;
+    transition: transform 0.8s cubic-bezier(.7,0,.3,1), box-shadow 0.3s;
 }
 
 .work__image {
@@ -50,37 +48,86 @@ $color-work: #3F3F3F;
     position: absolute;
 }
 
-.work__details-button {
-    position: absolute;
-    right: 10px;
+.work__details-button-container {
+    position: relative;
+    left: 50px;
     top: 50%;
     transform: translateY(-50%);
-    //visibility: hidden;
-    opacity: 0;
 }
 
-.work__overlay {
-    background: black;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s;
+.work__details-button {
+    background: $color-work;
+    border: 2px solid white;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    box-shadow: none;
+    transition: transform 0.3s ease-out;
+    cursor: pointer;
 }
 
-.work:hover {
-    transform: translateX(-20px);
+.work__details-button:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-out;
 }
 
-.work__image:hover .work__details-button {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 1s;
+.work__details-button:active {
+    transform: scale(1);
+    transition: transform 0.05s ease-out;
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 7px;
+    margin-top: 2px;
+    margin-left: 8px;
+    transform: rotate(135deg);
+}
+
+.work_viewing-details .arrow {
+    margin-left: -8px;
+    transform: rotate(-45deg);
 }
 
 .work__details {
+    padding: 100px;
     position: absolute;
     height: 100%;
-    width: 50%;
-    left: 50%;
+    width: 100%;
+    left: 100%;
     top: 0;
+    overflow-y: scroll;
+}
+
+.work_viewing-details {
+    transform: translateX(calc(-50% - 2vh));
+}
+
+.work__features {
+    list-style-type: circle;
+}
+
+.work__details .graphic-heading_front {
+    background: $color-work-heading;
+}
+
+.work__details .subsection:last-child {
+    margin-bottom: 64px;
+}
+
+.work__technologies {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.work__technology {
+    background: $color-work;
+    color: white;
+    padding:8px 6px;
+    font-size: 1.2em;
+    margin-right: 6px;
+    margin-bottom: 6px;
 }
