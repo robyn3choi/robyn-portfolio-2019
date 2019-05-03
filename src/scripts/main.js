@@ -1,6 +1,7 @@
 import Rellax from 'rellax';
 // import './workData';
 import injectWorks from './workTemplate';
+import * as works from './works';
 import * as utils from './utils';
 
 var headerParallax = new Rellax('.header__parallax');
@@ -9,18 +10,6 @@ var footerParallax = new Rellax('.footer__parallax', {
   relativeToWrapper: true
 });
 
-const toggleWorkDetails = (index) => 
-{
-  const work = document.getElementsByClassName('work')[index];
-  if (work.classList.contains('work_viewing-details')) 
-  {
-    work.classList.remove('work_viewing-details');
-  }
-  else 
-  {
-    work.classList.add('work_viewing-details');
-  }
-}
 
 window.onload = () => 
 {
@@ -30,6 +19,6 @@ window.onload = () =>
   const workDetailsBtns = document.getElementsByClassName('work__details-button');
   for (let i=0; i<workDetailsBtns.length;i++) 
   {
-    workDetailsBtns[i].onclick = () => toggleWorkDetails(i);
+    workDetailsBtns[i].onclick = () => works.toggleWorkDetails(i);
   }
 }

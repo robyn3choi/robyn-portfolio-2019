@@ -38,7 +38,7 @@ $color-work-heading: rgb(84,84,84);
     position: relative;
     z-index: 99;
     left: 50%;
-    transition: transform 0.8s cubic-bezier(.7,0,.3,1), box-shadow 0.3s;
+    transition: box-shadow 0.3s, transform 0.8s cubic-bezier(.32,.05,.25,1);//cubic-bezier(.7,0,.3,1);
 }
 
 .work__image {
@@ -132,3 +132,42 @@ $color-work-heading: rgb(84,84,84);
     margin-right: 6px;
     margin-bottom: 6px;
 }
+
+#cup {
+    position: absolute;
+    left: 20%;
+    bottom: 100px;
+}
+
+#cup-anim__wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 500px;
+    height: 500px;
+    left: 70px;
+    bottom: 30px;
+    top: 0;
+    bottom: 0;
+    left: 100px;
+    top: 25%;
+  }
+
+#cup-anim {
+    width: 300%;
+    height: 100%;
+    background-image: url('../../public/assets/images/cup-anim.png');
+    background-size: 100%, 100%;
+    background-repeat:no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  @keyframes cup-spill {
+    from { 
+      transform: translateX(0); 
+    }
+    to { 
+      transform: translateX(-66.7%); 
+    }
+  }
