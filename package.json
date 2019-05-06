@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev:assets": "webpack --watch",
-    "dev:start": "live-server --open=./public/ --host=localhost --watch=./public/",
-    "dev": "npm-run-all -p dev:*",
+    "dev": "webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
+    "autoprefixer": "^9.5.1",
     "babel-loader": "^8.0.4",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.0",
@@ -26,15 +25,15 @@
     "live-server": "^1.2.1",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.12.0",
-    "npm-run-all": "^4.1.5",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^5.3.0",
     "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
     "webpack": "^4.28.2",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
-    "handlebars": "^4.1.2",
     "rellax": "^1.9.1"
   }
 }

@@ -38,7 +38,7 @@ $color-work-heading: rgb(84,84,84);
     position: relative;
     z-index: 99;
     left: 50%;
-    transition: box-shadow 0.3s, transform 0.8s cubic-bezier(.32,.05,.25,1);//cubic-bezier(.7,0,.3,1);
+    transition: box-shadow 0.3s, transform 1s cubic-bezier(.32,.05,.25,1);//cubic-bezier(.7,0,.3,1);
 }
 
 .work__image {
