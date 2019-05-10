@@ -87,32 +87,31 @@ const injectWorks = () =>
 
     html += `
       <div class='work card'>
-        <div class='work__image' style='background-image: url("assets/images/${work.image}")'>
-          <div class='work__details-button-container'>
-              <button class='work__details-button'>
-              <div class="arrow"></div>
-              </button>
+        <button class='work__image' style='background-image: url("assets/images/${work.image}")'>
+          <div class='work__details-button'>
+            <div class="arrow arrow_left"></div>
+            <div class='work__details-button-text'>Info</div>
           </div>
-          <div class='work__details'>
-              <section class='subsection'>
-                <div class='graphic-heading-container'>
-                    <div class='graphic-heading graphic-heading_back'></div>
-                    <div class=' graphic-heading graphic-heading_front'></div>
-                    <h3 class='graphic-heading__text'>Summary</h3>
-                </div>
-              ${summaryParagraphsHtml}
-              </section>
-              <section class='subsection'>
-                <div class='graphic-heading-container'>
-                    <div class='graphic-heading graphic-heading_back'></div>
-                    <div class=' graphic-heading graphic-heading_front'></div>
-                    <h3 class='graphic-heading__text'>Features</h3>
-                </div>
-                <ul class='work__features'>
-                  ${featuresHtml}
-                </ul>
-              </section>
-          </div>
+        </button>
+        <div class='work__details'>
+            <section class='subsection'>
+              <div class='graphic-heading-container'>
+                  <div class='graphic-heading graphic-heading_back'></div>
+                  <div class=' graphic-heading graphic-heading_front'></div>
+                  <h3 class='graphic-heading__text'>Summary</h3>
+              </div>
+            ${summaryParagraphsHtml}
+            </section>
+            <section class='subsection'>
+              <div class='graphic-heading-container'>
+                  <div class='graphic-heading graphic-heading_back'></div>
+                  <div class=' graphic-heading graphic-heading_front'></div>
+                  <h3 class='graphic-heading__text'>Features</h3>
+              </div>
+              <ul class='work__features'>
+                ${featuresHtml}
+              </ul>
+            </section>
         </div>
       </div>
     `

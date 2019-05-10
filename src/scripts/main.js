@@ -16,9 +16,9 @@ window.onload = () =>
   injectWorks();
   utils.fixedSidebars();
   utils.graphicHeadingAnim();
-  const workDetailsBtns = document.getElementsByClassName('work__details-button');
-  for (let i=0; i<workDetailsBtns.length;i++) 
+  const workImages = document.getElementsByClassName('work__image');
+  for (let i=0; i<workImages.length;i++) 
   {
-    workDetailsBtns[i].onclick = () => works.toggleWorkDetails(i);
+    workImages[i].onclick = () => works.toggleWorkDetails(i);
   }
 }

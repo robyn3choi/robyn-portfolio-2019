@@ -1,12 +1,44 @@
 @import 'variables.scss';
 
-$color-about: rgb(56, 160, 192); 
-$color-about-graphic-heading: rgb(74, 213, 255); 
+$color-about-background: #004967;// #003654;//rgb(56, 160, 192); 
+$color-about-accent: rgb(47, 152, 194);
+$color-about-graphic-heading:rgb(62,202,255); //rgb(74, 213, 255); 
 
 .section_about {
   //background: #3f94ff;
-  background: $color-about;
+  background: $color-about-background;
   //color: white;
+}
+
+.about-art-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.about-art {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: auto 100%;
+  background-position: center center;
+}
+
+.about-art_background {
+  background-color: $color-about-background; // because mix-blend-mode doesn't work on top elements with position:fixed
+}
+
+.about-art_light {
+  background-image: url('../../public/assets/images/light.svg');
+  mix-blend-mode: soft-light;
+}
+
+.about-art_thought-bubbles {
+  background-image: url('../../public/assets/images/thought-bubbles.svg');
+}
+
+.about-art_bottom {
+  background-image: url('../../public/assets/images/about-bottom.svg');
 }
 
 p.large {
@@ -15,7 +47,7 @@ p.large {
   font-size: 4.9rem;
   margin-top:0;
   margin-bottom: 16px;
-  color: $color-about;
+  color: $color-about-accent;
   line-height: unset;
 }
 

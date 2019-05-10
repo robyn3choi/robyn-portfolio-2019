@@ -1,18 +1,29 @@
 @import 'variables.scss';
 
+$color-contact: #3cc26c;
+
 .section__sidebar_contact {
-    background: black;
-  }
-  
+  background: $color-contact;
+}
+
+.contact-art-container {
+  position: absolute;
+  width: 100%;
+  left:-25%;
+  top: 200px;
+  min-width: 500px;
+  max-width: 950px;
+}
+
 .section__content_contact {
-    height: 100vh;
-    padding: $section-content-padding;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  height: 100vh;
+  padding: $section-content-padding;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 p.thanks {
-    text-align: center;
-    margin-top: 50px;
+  text-align: center;
+  margin-top: 50px;
 }
