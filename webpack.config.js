@@ -5,10 +5,9 @@ const isDevMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   mode: isDevMode ? 'development' : 'production',
-  entry: ['./src/scripts/main.js', './src/styles/main.scss'],
+  entry: ['./src/scripts/main.js'],
   devtool: 'cheap-module-source-map',
   devServer: {
-    publicPath: '/assets/scripts/',
     contentBase: './public',
     watchContentBase: true
   },
@@ -44,8 +43,8 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              publicPath: '../assets/images',
-              emitFile: false
+              emitFile: false,
+              publicPath: 'images'
             }
           }
         ]
@@ -54,7 +53,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'assets/styles/main.css'
+      filename: 'main.css'
     })
   ]
 };

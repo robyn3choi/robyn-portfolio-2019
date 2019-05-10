@@ -156,8 +156,8 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
   margin-bottom: 6px;
 }
 
-$cup-svg: '../../public/assets/images/cup.svg';
-$cup-png: '../../public/assets/images/cup.png';
+$cup-svg: '../../public/images/cup.svg';
+$cup-png: '../../public/images/cup.png';
 $animation-width: 609px;
 $animation-height: 342px;
 $animation-frames: 4;
@@ -174,7 +174,7 @@ $animation-frames: 4;
 #cup-anim {
   width: 400%;
   height: 100%;
-  background-image: url('../../public/assets/images/cup.svg');
+  background-image: url('../../public/images/cup.svg');
   background-size: 100%, 100%;
   background-repeat: no-repeat;
   position: absolute;

@@ -1,6 +1,7 @@
 import Rellax from 'rellax';
 // import './workData';
 import injectWorks from './workTemplate';
+import '../styles/main.scss';
 import * as works from './works';
 import * as utils from './utils';
 

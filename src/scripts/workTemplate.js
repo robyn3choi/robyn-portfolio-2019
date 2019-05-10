@@ -87,7 +87,7 @@ const injectWorks = () =>
 
     html += `
       <div class='work card'>
-        <button class='work__image' style='background-image: url("assets/images/${work.image}")'>
+        <button class='work__image' style='background-image: url("images/${work.image}")'>
           <div class='work__details-button'>
             <div class="arrow arrow_left"></div>
             <div class='work__details-button-text'>Info</div>
