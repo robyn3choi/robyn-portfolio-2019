@@ -137,3 +137,22 @@ h3 {
   transform: translateX(-50%);
   box-shadow: -4px 4px 12px rgba(0,0,0,0.4); 
 }
+
+@media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
+  .section__sidebar {
+    position: relative;
+    margin:auto;
+    width: auto;
+  }
+
+  .section__content {
+    width: 100%;
+    left:0;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  html {
+    font-size: 0.9rem;
+  }
+}

@@ -14,6 +14,10 @@ var footerParallax = new Rellax('.footer__parallax', {
 
 window.onload = () => 
 {
+  window.addEventListener('touchstart', function onFirstTouch() {
+    document.body.classList.add('touchscreen');
+    window.removeEventListener('touchstart', onFirstTouch, false);
+  }, false);
   injectWorks();
   utils.fixedSidebars();
   utils.graphicHeadingAnim();

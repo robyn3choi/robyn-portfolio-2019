@@ -1,8 +1,26 @@
+export const isStackedSections = () => {
+  return (window.innerWidth <= 1100 || window.innerHeight <= 635);
+}
+
 export const fixedSidebars = () => 
 {
   const sidebars = document.getElementsByClassName('section__sidebar');
   const sections = document.getElementsByClassName('section');
   let sectionYs = [];
+  let isStacked;
+
+  const setIsStacked = () => {
+    const wasStacked = isStacked;
+    isStacked = isStackedSections();
+    if (!wasStacked && isStacked) //if it wasn't stacked before but needs to be stacked now
+    { 
+      for (let i=0; i<sidebars.length-1; i++) 
+      {
+        sidebars[i].classList.remove('section__sidebar_fixed');
+        sidebars[i].style.top = 0;
+      }
+    }
+  }
 
   const resetSectionYs = () => {
     const startingY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
@@ -15,6 +33,11 @@ export const fixedSidebars = () =>
 
   const fixSidebarIfNeeded = () => 
   {
+    if (isStackedSections) 
+    {
+      return;
+    }
+
     const currentY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     // if we are before the 1st section
     if (currentY < sectionYs[0] && sidebars[0].classList.contains('section__sidebar_fixed')) 
@@ -49,10 +72,12 @@ export const fixedSidebars = () =>
 
   window.addEventListener('scroll', fixSidebarIfNeeded);
   window.addEventListener('resize', () => {
+    setIsStacked();
     resetSectionYs();
     fixSidebarIfNeeded();
   });
 
+  setIsStacked();
   resetSectionYs();
   fixSidebarIfNeeded();
 }

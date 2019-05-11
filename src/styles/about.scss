@@ -110,3 +110,17 @@ p.medium {
 .section__content_about .graphic-heading_front {
   background: $color-about-graphic-heading;
 }
+
+@media (max-width: $mobile-max-width) {
+  .section__content_about {
+    padding: 60px 40px;
+  }
+
+  p.large {
+    font-size: 3.6rem;
+  }
+
+  p.medium {
+    font-size: 1.7rem;
+  }
+}

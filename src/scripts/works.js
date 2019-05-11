@@ -1,3 +1,5 @@
+import {isStackedSections} from './utils';
+
 let state = {
   hasCupSpilled: false
 }
@@ -19,7 +21,10 @@ export const toggleWorkDetails = (index) =>
 
     if (!state.hasCupSpilled) {
       const cupRightEdgeX = document.getElementById('cup-anim__wrapper').getBoundingClientRect().right;
-      pollForCupSpill(work, cupRightEdgeX);
+      if (!isStackedSections())
+      {
+        pollForCupSpill(work, cupRightEdgeX);
+      }
     }
   }
 }

@@ -27,3 +27,9 @@ p.thanks {
   text-align: center;
   margin-top: 50px;
 }
+
+@media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
+  .section__content_contact {
+    height: auto;
+  }
+}
