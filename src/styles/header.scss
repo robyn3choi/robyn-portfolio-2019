@@ -1,47 +1,82 @@
+.header__parallax,
+.footer__parallax {
+  height: 1000px;
+  position: absolute;
+  width: 100%;
+}
 
-.header__parallax, .footer__parallax {
-    height: 1000px;
-    position: absolute;
+.header,
+footer {
+  height: 1000px;
+}
+
+.header-mobile-image {
+  display: none;
+}
+
+.parallax0 {
+  background-image: url('../../public/images/parallax0.png');
+}
+
+.parallax1 {
+  background-image: url('../../public/images/parallax1.png');
+}
+
+.parallax2 {
+  background-image: url('../../public/images/parallax2.png');
+}
+
+.parallax3 {
+  background-image: url('../../public/images/parallax3.png');
+}
+
+.parallax4 {
+  background-image: url('../../public/images/parallax4.png');
+}
+
+.parallax5 {
+  background-image: url('../../public/images/parallax5.png');
+}
+
+.parallax6 {
+  background-image: url('../../public/images/parallax6.png');
+}
+
+.parallax7 {
+  background-image: url('../../public/images/parallax7.png');
+}
+
+.parallax8 {
+  background-image: url('../../public/images/parallax8.png');
+  position: relative;
+}
+
+@media (max-width: $mobile-max-width) {
+  .header__parallax,
+  .footer__parallax {
+    display: none;
+  }
+
+  .header {
+    // background-image: url('../../public/images/header-mobile.png');
+    // background-position: top center;
+    // background-repeat: no-repeat;
+    // background-size: 100% auto;
+    // height: 1500px;
+    height: auto;
+    background-color: $color-about-background;
+  }
+
+  .header-mobile-image, .footer-mobile-image {
+    display: block;
     width: 100%;
   }
-  
-  .header,footer {
-    height: 1000px;
+
+  .footer {
+    // background-image: url('../../public/images/header-mobile.png');
+    // background-position: top center;
+    // background-repeat: no-repeat;
+    // background-size: 100% auto;
+    // height: 1500px;
   }
-  
-  .parallax0 {
-    background-image: url('../../public/images/parallax0.png');
-  }
-  
-  .parallax1 {
-    background-image: url('../../public/images/parallax1.png');
-  }
-  
-  .parallax2 {
-    background-image: url('../../public/images/parallax2.png');
-  }
-  
-  .parallax3 {
-    background-image: url('../../public/images/parallax3.png');
-  }
-  
-  .parallax4 {
-    background-image: url('../../public/images/parallax4.png');
-  }
-  
-  .parallax5 {
-    background-image: url('../../public/images/parallax5.png');
-  }
-  
-  .parallax6 {
-    background-image: url('../../public/images/parallax6.png');
-  }
-  
-  .parallax7 {
-    background-image: url('../../public/images/parallax7.png');
-  }
-  
-  .parallax8 {
-    background-image: url('../../public/images/parallax8.png');
-    position: relative;
-  }
+}

@@ -7,7 +7,7 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
 .section__sidebar_works {
   //background: #ff4a3f;
   //background: #ffaa3f;
-  background: $color-work;
+  //background: $color-work;
   color: $black;
   width: 100%;
 }
@@ -106,7 +106,6 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
 
 .work__details-button-text {
   display: inline-block;
-  font-family: 'Roboto Slab';
   font-size: 1.3rem;
   font-weight: 300;
 }
@@ -116,7 +115,6 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
 }
 
 .work__details {
-  padding: 100px;
   position: absolute;
   height: 100%;
   width: 50%;
@@ -132,6 +130,7 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
 
 .work__details .graphic-heading_front {
   background: $color-work-heading;
+  background: #3ecaff;;
 }
 
 .work__details .subsection:last-child {
@@ -151,6 +150,45 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
   font-size: 1.2em;
   margin-right: 6px;
   margin-bottom: 6px;
+}
+
+.work__hr {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.work__link-button {
+  cursor: pointer;
+  font-size: 1.3rem;
+  border: 2px solid $blue;
+  border-radius: 30px;
+  color: $blue;
+  background: none;
+  padding: 8px 12px;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+  width: 200px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.work__link-button:hover {
+  background-color: $blue;
+  color: white;
+}
+
+.work__exit-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: $orange;
+  padding: 16px;
+  box-shadow: -2px 2px 4px rgba(0,0,0,0.4); 
 }
 
 $cup-svg: '../../public/images/cup.svg';
@@ -190,13 +228,13 @@ $animation-frames: 4;
   }
 }
 
-.sidebar__art-container {
+.works-art-container {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.sidebar__art {
+.works-art {
   position: absolute;
 }
 
@@ -240,9 +278,22 @@ $animation-frames: 4;
 //   height: auto;
 // }
 
+
+
 @media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
   .work {
     left: 0;
     width: 200%;
+  }
+
+  .works-art-container {
+    display: none;
+  }
+
+  .section_works {
+    background-color: $color-work;
+    background-image: url('../../public/images/works-stacked.svg');
+    background-size:contain;
+    background-repeat: no-repeat;
   }
 }

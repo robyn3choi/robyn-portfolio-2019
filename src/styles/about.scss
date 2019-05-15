@@ -1,7 +1,6 @@
 @import 'variables.scss';
 
-$color-about-background: #004967;// #003654;//rgb(56, 160, 192); 
-$color-about-accent: rgb(47, 152, 194);
+//$color-about-background: #004967;// #003654;//rgb(56, 160, 192); 
 $color-about-graphic-heading:rgb(62,202,255); //rgb(74, 213, 255); 
 
 .section_about {
@@ -42,17 +41,17 @@ $color-about-graphic-heading:rgb(62,202,255); //rgb(74, 213, 255);
 }
 
 p.large {
-  font-family: 'Roboto Slab', serif;
+  font-family: $title-font;
   font-weight: 300;
   font-size: 4.9rem;
   margin-top:0;
   margin-bottom: 16px;
-  color: $color-about-accent;
+  color: $blue;
   line-height: unset;
 }
 
 p.medium {
-  font-family: 'Roboto Slab', serif;
+  font-family: $title-font;
   font-weight: 300;
   font-size: 2rem;
   color: $grey;
@@ -63,7 +62,6 @@ p.medium {
 
 .section__content_about {
   background: white;
-  padding: 100px;
   font-weight: 400;
 }
 
@@ -112,10 +110,6 @@ p.medium {
 }
 
 @media (max-width: $mobile-max-width) {
-  .section__content_about {
-    padding: 60px 40px;
-  }
-
   p.large {
     font-size: 3.6rem;
   }

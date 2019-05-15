@@ -17,7 +17,6 @@ $color-contact: #3cc26c;
 
 .section__content_contact {
   height: 100vh;
-  padding: $section-content-padding;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -31,5 +30,6 @@ p.thanks {
 @media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
   .section__content_contact {
     height: auto;
+    min-height: 100vh;
   }
 }

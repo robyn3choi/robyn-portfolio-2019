@@ -22,6 +22,11 @@ li {
   }
 }
 
+button {
+  cursor: pointer;
+  font-family: $title-font;
+}
+
 // h2 {
 //   font-family: 'Roboto Slab', serif;
 //   font-weight: 300;
@@ -31,7 +36,7 @@ li {
 // }
 
 h3 {
-  font-family: 'Roboto Slab', serif;
+  font-family: $title-font, serif;
   font-weight: 300;
   font-size: 1.7rem;
   color: $grey;
@@ -68,10 +73,14 @@ h3 {
 }
 
 .subsection {
+  padding: 100px;
+}
+
+.heading-with-text {
   margin-bottom: 64px;
 }
 
-.subsection:last-child {
+.heading-with-text:last-of-type {
   margin-bottom: 0;
 }
 
@@ -154,5 +163,9 @@ h3 {
 @media (max-width: $mobile-max-width) {
   html {
     font-size: 0.9rem;
+  }
+
+  .subsection {
+    padding: 60px 40px;
   }
 }
