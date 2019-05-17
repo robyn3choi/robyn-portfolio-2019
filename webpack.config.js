@@ -9,18 +9,18 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   devServer: {
     contentBase: './public',
-    watchContentBase: true
+    watchContentBase: true,
   },
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
       {
         test: /\.scss$/,
@@ -29,12 +29,12 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 2
-            }
+              importLoaders: 2,
+            },
           },
           'postcss-loader',
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
@@ -44,16 +44,29 @@ module.exports = {
             options: {
               name: '[name].[ext]',
               emitFile: false,
-              publicPath: 'images'
-            }
-          }
-        ]
+              publicPath: 'images',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.json$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              emitFile: false,
+              publicPath: 'animationData',
+            },
+          },
+        ],
       }
-    ]
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'main.css'
-    })
-  ]
+      filename: 'main.css',
+    }),
+  ],
 };

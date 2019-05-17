@@ -61,53 +61,55 @@ const data = {
 
 const injectWorks = () => {
   let html = '';
-  for (const work of data.works) {
+  for (let i = 0; i < data.works.length; i++) {
+    const work = data.works[i];
+
     let summaryParagraphsHtml = '';
-    for (const paragraph of work.summaryParagraphs) {
-      summaryParagraphsHtml += '<p>' + paragraph + '</p>';
+    for (let i = 0; i < work.summaryParagraphs.length; i++) {
+      summaryParagraphsHtml += '<p>' + work.summaryParagraphs[i].paragraph + '</p>';
     }
 
     let featuresHtml = '';
-    for (const feature of work.features) {
-      featuresHtml += '<li>' + feature + '</li>';
+    for (let i = 0; i < work.features.length; i++) {
+      featuresHtml += '<li>' + work.features[i] + '</li>';
     }
 
     html += `
-      <div class='work card'>
-        <button class='work__image' style='background-image: url("images/${work.image}")'>
-          <div class='work__details-button'>
-            <div class="arrow arrow_left"></div>
-            <div class='work__details-button-text'>Info</div>
-          </div>
-        </button>
-        <div class='work__details subsection'>
-            <section class='heading-with-text'>
-              <div class='graphic-heading-container'>
-                  <div class='graphic-heading graphic-heading_back'></div>
-                  <div class=' graphic-heading graphic-heading_front'></div>
-                  <h3 class='graphic-heading__text'>Summary</h3>
-              </div>
-            ${summaryParagraphsHtml}
-            </section>
-            <section class='heading-with-text'>
-              <div class='graphic-heading-container'>
-                  <div class='graphic-heading graphic-heading_back'></div>
-                  <div class=' graphic-heading graphic-heading_front'></div>
-                  <h3 class='graphic-heading__text'>Features</h3>
-              </div>
-              <ul class='work__features'>
-                ${featuresHtml}
-              </ul>
-            </section>
-            <hr class='work__hr' />
-            <a class='work__link-button'>Visit Website</a>
-            <a class='work__link-button'>View On GitHub</a>
-            <button class='work__exit-button'>
-              <img src='images/x-white.svg' />
-            </button>
-        </div>
+  <div class='work card'>
+    <button class='work__image' style='background-image: url("images/${work.image}")'>
+      <div class='work__details-button'>
+        <div class="arrow arrow_left"></div>
+        <div class='work__details-button-text'>Info</div>
       </div>
-    `;
+    </button>
+    <div class='work__details subsection'>
+        <section class='heading-with-text'>
+          <div class='graphic-heading-container'>
+              <div class='graphic-heading graphic-heading_back'></div>
+              <div class=' graphic-heading graphic-heading_front'></div>
+              <h3 class='graphic-heading__text'>Summary</h3>
+          </div>
+        ${summaryParagraphsHtml}
+        </section>
+        <section class='heading-with-text'>
+          <div class='graphic-heading-container'>
+              <div class='graphic-heading graphic-heading_back'></div>
+              <div class=' graphic-heading graphic-heading_front'></div>
+              <h3 class='graphic-heading__text'>Features</h3>
+          </div>
+          <ul class='work__features'>
+            ${featuresHtml}
+          </ul>
+        </section>
+        <hr class='work__hr' />
+        <a class='work__link-button'>Visit Website</a>
+        <a class='work__link-button'>View On GitHub</a>
+        <button class='work__exit-button'>
+          <img src='images/x-white.svg' />
+        </button>
+    </div>
+  </div>
+`;
   }
 
   document.getElementsByClassName('section__content_works')[0].innerHTML += html;

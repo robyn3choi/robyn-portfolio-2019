@@ -31,13 +31,11 @@ export const fixedSidebars = () => {
 
   const fixSidebarIfNeeded = () => {
     if (isStackedSections()) {
-      console.log('should be stacked');
       return;
     }
-    console.log('will stack');
     const currentY =
       window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    // if we are before the 1st section
+      // if we are before the 1st section
     if (currentY < sectionYs[0] && sidebars[0].classList.contains('section__sidebar_fixed')) {
       sidebars[0].classList.remove('section__sidebar_fixed');
     }
@@ -81,9 +79,11 @@ export const graphicHeadingAnim = () => {
   let isScrolling = false;
   let timeout;
   // first, adjust width of graphic heading to match text
-  for (const heading of graphicHeadings) {
-    const text = heading.parentElement.getElementsByClassName('graphic-heading__text')[0];
-    heading.parentElement.style.width = (text.clientWidth + 6).toString() + 'px';
+  for (let i = 0; i < graphicHeadings.length; i++) {
+    const text = graphicHeadings[i].parentElement.getElementsByClassName(
+        'graphic-heading__text'
+    )[0];
+    graphicHeadings[i].parentElement.style.width = (text.clientWidth + 6).toString() + 'px';
   }
 
   const endAnim = () => {

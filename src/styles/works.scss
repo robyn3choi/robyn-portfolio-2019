@@ -240,9 +240,8 @@ $animation-frames: 4;
 
 #headphones {
   width: 680px;
- // bottom: 63%;
-  left: -206px;
-  top:700px;
+  left: 406px;
+  top:750px;
   z-index:3;
 }
 
@@ -250,25 +249,20 @@ $animation-frames: 4;
   width: 600px;
   left:-80px;
   top:20px;
- // bottom: 18%;
- // right: 56%;
   z-index: 1;
 }
 
 #pencil {
   width: 240px;
- // right: 50%;
  left:500px;
   top: 12px;
 
 }
 
 #laptop {
-  width: 750px;
-  transform: rotate(-144deg);
- // right: 88%;
-  top: 925px;
-  left:500px;
+  width: 1100px;
+  top: 580px;
+  left:-700px;
   z-index: 3;
 }
 
