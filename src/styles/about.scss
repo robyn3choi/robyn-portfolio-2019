@@ -40,6 +40,16 @@ $color-about-graphic-heading:rgb(62,202,255); //rgb(74, 213, 255);
   background-image: url('../../public/images/about-bottom.svg');
 }
 
+.about__anim {
+  width: auto;
+  height: 100%;
+  position: absolute;
+}
+
+#about__light-anim {
+  mix-blend-mode: soft-light;
+}
+
 p.large {
   font-family: $title-font;
   font-weight: 300;

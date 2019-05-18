@@ -3,7 +3,7 @@ import injectWorks from './workTemplate';
 import '../styles/main.scss';
 import * as works from './works';
 import * as utils from './utils';
-import lottie from 'lottie-web';
+import {playAnimations} from './animations';
 import {detect} from 'detect-browser';
 
 window.onload = () => {
@@ -39,12 +39,5 @@ window.onload = () => {
     workImages[i].onclick = () => works.toggleWorkDetails(i);
     workExitBtns[i].onclick = () => works.toggleWorkDetails(i);
   }
-
-  lottie.loadAnimation({
-    container: document.getElementById('header__robynchoi-anim'),
-    renderer: 'svg',
-    loop: false,
-    autoplay: true,
-    path: '/animationData/robynchoi.json',
-  });
+  playAnimations();
 };
