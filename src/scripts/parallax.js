@@ -7,7 +7,7 @@ let footerParallax;
 export const initParallax = () => {
   headerParallax = new Rellax('.header__parallax');
   footerParallax = new Rellax('.footer__parallax', {
-    wrapper: '.footer',
+    wrapper: '#footer',
     relativeToWrapper: true,
   });
 

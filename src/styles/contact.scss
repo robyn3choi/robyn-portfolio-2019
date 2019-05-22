@@ -9,7 +9,7 @@ $color-contact: #3cc26c;
 .contact-art-container {
   position: absolute;
   width: 100%;
-  left:-25%;
+  left: -25%;
   top: 200px;
   min-width: 500px;
   max-width: 950px;
@@ -20,6 +20,12 @@ $color-contact: #3cc26c;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.contact__hr {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 24px;
 }
 
 p.thanks {

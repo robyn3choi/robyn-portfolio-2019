@@ -23,8 +23,8 @@ const data = {
       image: 'stu.png',
       summaryParagraphs: [
         `A unique yet simple portfolio website for music producer Stuart Brookes.`,
-        `The front end is built with React and deployed with Netlify. 
-      The site uses headless CMS Prismic.io to allow the client to easily edit information on the website without needing to look at code.
+        `The site is built with React and deployed with Netlify. 
+      It also uses headless CMS Prismic.io to allow the client to easily edit information on the website without needing to look at code.
       `,
       ],
       features: [
@@ -63,10 +63,9 @@ const injectWorks = () => {
   let html = '';
   for (let i = 0; i < data.works.length; i++) {
     const work = data.works[i];
-
     let summaryParagraphsHtml = '';
     for (let i = 0; i < work.summaryParagraphs.length; i++) {
-      summaryParagraphsHtml += '<p>' + work.summaryParagraphs[i].paragraph + '</p>';
+      summaryParagraphsHtml += '<p>' + work.summaryParagraphs[i] + '</p>';
     }
 
     let featuresHtml = '';
@@ -75,14 +74,12 @@ const injectWorks = () => {
     }
 
     html += `
-  <div class='work card'>
+  <div class='work'>
     <button class='work__image' style='background-image: url("images/${work.image}")'>
-      <div class='work__details-button'>
-        <div class="arrow arrow_left"></div>
-        <div class='work__details-button-text'>Info</div>
-      </div>
+      <div class='work__info-button'></div>
+      <div class='work__back-button'></div>
     </button>
-    <div class='work__details subsection'>
+    <div class='work__info subsection'>
         <section class='heading-with-text'>
           <div class='graphic-heading-container'>
               <div class='graphic-heading graphic-heading_back'></div>

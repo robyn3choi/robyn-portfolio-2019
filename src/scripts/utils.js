@@ -35,7 +35,7 @@ export const fixedSidebars = () => {
     }
     const currentY =
       window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-      // if we are before the 1st section
+    // if we are before the 1st section
     if (currentY < sectionYs[0] && sidebars[0].classList.contains('section__sidebar_fixed')) {
       sidebars[0].classList.remove('section__sidebar_fixed');
     }
@@ -109,12 +109,20 @@ export const graphicHeadingAnim = () => {
   window.addEventListener('scroll', startAnim);
 };
 
-function isElementInViewport(el) {
+export const isElementInViewport = function(el) {
   const rect = el.getBoundingClientRect();
+
+  if (rect.top <= 0) {
+    return rect.bottom >= (window.innerHeight / 2 || document.documentElement.clientHeight / 2);
+  }
+  else {
+    return rect.top <= (window.innerHeight / 2 || document.documentElement.clientHeight / 2);
+  }
+
   return (
     rect.top >= 0 &&
     rect.left >= 0 &&
     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
-}
+};

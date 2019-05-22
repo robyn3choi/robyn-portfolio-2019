@@ -1,7 +1,7 @@
 @import 'variables.scss';
 
-//$color-about-background: #004967;// #003654;//rgb(56, 160, 192); 
-$color-about-graphic-heading:rgb(62,202,255); //rgb(74, 213, 255); 
+//$color-about-background: #004967;// #003654;//rgb(56, 160, 192);
+$color-about-graphic-heading: rgb(62, 202, 255); //rgb(74, 213, 255);
 
 .section_about {
   //background: #3f94ff;
@@ -40,21 +40,18 @@ $color-about-graphic-heading:rgb(62,202,255); //rgb(74, 213, 255);
   background-image: url('../../public/images/about-bottom.svg');
 }
 
-.about__anim {
-  width: auto;
+#about__anim {
+  width: fit-content;
   height: 100%;
-  position: absolute;
-}
-
-#about__light-anim {
-  mix-blend-mode: soft-light;
+  margin: auto;
+  // position: absolute;
 }
 
 p.large {
   font-family: $title-font;
   font-weight: 300;
   font-size: 4.9rem;
-  margin-top:0;
+  margin-top: 0;
   margin-bottom: 16px;
   color: $blue;
   line-height: unset;
@@ -65,7 +62,7 @@ p.medium {
   font-weight: 300;
   font-size: 2rem;
   color: $grey;
-  margin-top:0;
+  margin-top: 0;
   margin-bottom: 14px;
   line-height: unset;
 }
