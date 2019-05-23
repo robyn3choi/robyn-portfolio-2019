@@ -16,6 +16,8 @@ const data = {
         `CSS animations`,
         `responsive design`,
       ],
+      website: 'https://howsthesky.com',
+      github: 'https://github.com/robyn3choi/simple-weather',
     },
 
     {
@@ -33,6 +35,8 @@ const data = {
         `easily editable by the client using Prismic.io`,
         `responsive design`,
       ],
+      website: 'https://stuartbrookes.com',
+      github: 'https://github.com/robyn3choi/stu-website',
     },
 
     {
@@ -43,6 +47,8 @@ const data = {
         `The was built using jQuery and is hosted on HostGator (planning to migrate to GitHub Pages).`,
       ],
       features: [`Shopify integration`, `image parallax effect`, `responsive design`],
+      website: 'https://wearefurymusic.com',
+      github: 'https://github.com/robyn3choi/fury-website',
     },
 
     {
@@ -55,6 +61,8 @@ const data = {
         `The was built using jQuery and is hosted on GitHub Pages.`,
       ],
       features: [`original art and animations`, `responsive design`],
+      website: 'https://robynchoi.me',
+      github: 'https://github.com/robyn3choi/eportfolio',
     },
   ],
 };
@@ -99,8 +107,12 @@ const injectWorks = () => {
           </ul>
         </section>
         <hr class='work__hr' />
-        <a class='work__link-button'>Visit Website</a>
-        <a class='work__link-button'>View On GitHub</a>
+        <a class='work__link-button' href=${
+  work.website
+} target='_blank' rel='noopener noreferrer'>Visit Website</a>
+        <a class='work__link-button' href=${
+  work.github
+} target='_blank' rel='noopener noreferrer'>View On GitHub</a>
         <button class='work__exit-button'>
           <img src='images/x-white.svg' />
         </button>

@@ -1,7 +1,7 @@
 @import 'variables.scss';
 
 //$color-about-background: #004967;// #003654;//rgb(56, 160, 192);
-$color-about-graphic-heading: rgb(62, 202, 255); //rgb(74, 213, 255);
+//$color-about-graphic-heading: rgb(62, 202, 255); //rgb(74, 213, 255);
 
 .section_about {
   //background: #3f94ff;
@@ -112,9 +112,9 @@ p.medium {
   height: 0;
 }
 
-.section__content_about .graphic-heading_front {
-  background: $color-about-graphic-heading;
-}
+// .section__content_about .graphic-heading_front {
+//   background: $color-about-graphic-heading;
+// }
 
 @media (max-width: $mobile-max-width) {
   p.large {

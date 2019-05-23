@@ -26,11 +26,15 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
   background: white;
   box-shadow: -8px 8px 16px 0 rgba(0, 0, 0, 0.3);
   height: 96vh;
-  margin: 2vh;
+  //margin: 2vh 2vw;
+  margin: 1%;
+  //width: 96vw;
+  width: 98%;
   padding: 0;
   position: relative;
   z-index: 99;
-  left: 50%;
+  transform: translateX(50vw);
+  //left: 50%;
   will-change: transform;
   backface-visibility: hidden;
   transition: box-shadow 0.2s, transform 1s cubic-bezier(0.32, 0.05, 0.25, 1); //cubic-bezier(.7,0,.3,1);
@@ -42,7 +46,8 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
 }
 
 .work_viewing-info {
-  transform: translate3d(calc(-50% - 2vh), 0, 0) !important;
+  //transform: translate3d(calc(-50% - 2vh), 0, 0) !important;
+  transform: translateX(0);
 }
 
 .work__image {
@@ -90,10 +95,10 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
   list-style-type: circle;
 }
 
-.work__info .graphic-heading_front {
-  background: $color-work-heading;
-  background: #3ecaff;
-}
+// .work__info .graphic-heading_front {
+//   background: $color-work-heading;
+//   background: #3ecaff;
+// }
 
 .work__info .subsection:last-child {
   margin-bottom: 64px;
@@ -132,6 +137,7 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
   margin-top: 10px;
   text-align: center;
   width: 200px;
+  text-decoration: none;
   transition: background-color 0.2s, color 0.2s;
 }
 
@@ -259,8 +265,15 @@ $animation-frames: 4;
 
 @media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
   .work {
-    left: 0;
-    width: calc(200% - 36px);
+    //left: 0;
+    //width: calc(200% - 36px);
+    transform: translateX(0);
+    margin: 3%;
+    width: 194%;
+  }
+
+  .work_viewing-info {
+    transform: translateX(-51.5%);
   }
 
   #works-art-container {
