@@ -41,10 +41,8 @@
 }
 
 #about__anim {
-  width: fit-content;
   height: 100%;
   margin: auto;
-  // position: absolute;
 }
 
 p.large {
@@ -115,6 +113,12 @@ p.medium {
 // .section__content_about .graphic-heading_front {
 //   background: $color-about-graphic-heading;
 // }
+
+@media (min-width: 1921px) {
+  #about__anim {
+    width: fit-content;
+  }
+}
 
 @media (max-width: $mobile-max-width) {
   p.large {

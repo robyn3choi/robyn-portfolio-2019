@@ -54,42 +54,44 @@ export const initAnimations = () => {
 
   const workImages = document.getElementsByClassName('work__image');
 
-  for (let i = 0; i < workImages.length; i++) {
-    const infoBtn = workImages[i].getElementsByClassName('work__info-button')[0];
-    const infoBtnAnim = lottie.loadAnimation({
-      container: infoBtn,
-      renderer: 'svg',
-      loop: false,
-      autoplay: false,
-      path: '/animationData/work-info-btn.json',
-    });
-
-    workInfoBtnAnims.push(infoBtnAnim);
-
-    const backBtn = workImages[i].getElementsByClassName('work__back-button')[0];
-    const backBtnAnim = lottie.loadAnimation({
-      container: backBtn,
-      renderer: 'svg',
-      loop: false,
-      autoplay: false,
-      path: '/animationData/work-back-btn.json',
-    });
-    workBackBtnAnims.push(backBtnAnim);
-
-    workImages[i].addEventListener('mouseenter', () => {
-      infoBtnAnim.playSegments([0, 30], true);
-    });
-
-    workImages[i].addEventListener('mouseleave', () => {
-      infoBtnAnim.playSegments([31, 38], true);
-    });
-
-    if (document.body.classList.contains('touchscreen')) {
-      window.removeEventListener('scroll', () => {
-        if (isElementInViewport(workImages[i])) {
-          infoBtnAnim.playSegments([0, 30], true);
-        }
+  if (!document.body.classList.contains('edge-ie')) {
+    for (let i = 0; i < workImages.length; i++) {
+      const infoBtn = workImages[i].getElementsByClassName('work__arrow-button_info')[0];
+      const infoBtnAnim = lottie.loadAnimation({
+        container: infoBtn,
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: '/animationData/work-info-btn.json',
       });
+
+      workInfoBtnAnims.push(infoBtnAnim);
+
+      const backBtn = workImages[i].getElementsByClassName('work__arrow-button_back')[0];
+      const backBtnAnim = lottie.loadAnimation({
+        container: backBtn,
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: '/animationData/work-back-btn.json',
+      });
+      workBackBtnAnims.push(backBtnAnim);
+
+      workImages[i].addEventListener('mouseenter', () => {
+        infoBtnAnim.playSegments([0, 30], true);
+      });
+
+      workImages[i].addEventListener('mouseleave', () => {
+        infoBtnAnim.playSegments([31, 38], true);
+      });
+
+      if (document.body.classList.contains('touchscreen')) {
+        window.removeEventListener('scroll', () => {
+          if (isElementInViewport(workImages[i])) {
+            infoBtnAnim.playSegments([0, 30], true);
+          }
+        });
+      }
     }
   }
 

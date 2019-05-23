@@ -61,8 +61,7 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
   cursor: pointer;
 }
 
-.work__info-button,
-.work__back-button {
+.work__arrow-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -72,13 +71,26 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
   width: 110px;
 }
 
-.touchscreen .work__info-button {
-  opacity: 1;
-}
+.touchscreen,
+.edge-ie {
+  .work__arrow-button {
+    background-size: 110px auto;
+    width: 110px;
+    height: 80px;
+  }
 
-.work__image:hover .work__info-button,
-.work_viewing-info .work__info-button {
-  opacity: 1;
+  .work__arrow-button_info {
+    background-image: url('../../public/images/work-info-btn.png');
+  }
+
+  .work__arrow-button_back {
+    background-image: url('../../public/images/work-back-btn.png');
+    opacity: 0;
+  }
+
+  .work_viewing-info .work__arrow-button_back {
+    opacity: 1;
+  }
 }
 
 .work__info {
@@ -270,6 +282,10 @@ $animation-frames: 4;
     transform: translateX(0);
     margin: 3%;
     width: 194%;
+  }
+
+  .work__arrow-button_back {
+    display: none;
   }
 
   .work_viewing-info {

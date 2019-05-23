@@ -84,8 +84,8 @@ const injectWorks = () => {
     html += `
   <div class='work'>
     <button class='work__image' style='background-image: url("images/${work.image}")'>
-      <div class='work__info-button'></div>
-      <div class='work__back-button'></div>
+      <div class='work__arrow-button work__arrow-button_info'></div>
+      <div class='work__arrow-button work__arrow-button_back'></div>
     </button>
     <div class='work__info subsection'>
         <section class='heading-with-text'>

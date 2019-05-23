@@ -94,6 +94,9 @@ export const graphicHeadingAnim = () => {
   };
 
   const startAnim = () => {
+    if (document.body.classList.contains('touchscreen')) {
+      return;
+    }
     clearTimeout(timeout);
     timeout = setTimeout(endAnim, 20);
     if (!isScrolling) {
