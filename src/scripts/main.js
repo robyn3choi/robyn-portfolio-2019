@@ -15,6 +15,7 @@ import {
 } from './works';
 import {playHeaderAnim} from './header';
 import {playFooterAnimIfNeeded, initFooterAnim} from './footer';
+import {initEnterAnims, playEnterAnimsIfNeeded} from './enterAnimations';
 
 let isScrolling = false;
 
@@ -57,6 +58,7 @@ window.onload = () => {
   initWorkAnim();
   initContactAnim();
   initFooterAnim();
+  initEnterAnims();
 
   window.addEventListener('scroll', () => {
     isScrolling = true;
@@ -75,6 +77,7 @@ window.onload = () => {
       if (playContactAnimIfNeeded()) {
         return;
       }
+      playEnterAnimsIfNeeded();
       playWorkInfoBtnAnimIfNeeded();
       playFooterAnimIfNeeded();
     }

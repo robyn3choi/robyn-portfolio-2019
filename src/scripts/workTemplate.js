@@ -73,12 +73,12 @@ const injectWorks = () => {
     const work = data.works[i];
     let summaryParagraphsHtml = '';
     for (let i = 0; i < work.summaryParagraphs.length; i++) {
-      summaryParagraphsHtml += '<p>' + work.summaryParagraphs[i] + '</p>';
+      summaryParagraphsHtml += '<p class="enter-anim_hidden">' + work.summaryParagraphs[i] + '</p>';
     }
 
     let featuresHtml = '';
     for (let i = 0; i < work.features.length; i++) {
-      featuresHtml += '<li>' + work.features[i] + '</li>';
+      featuresHtml += '<li class="enter-anim_hidden">' + work.features[i] + '</li>';
     }
 
     html += `
@@ -89,7 +89,7 @@ const injectWorks = () => {
     </button>
     <div class='work__info subsection'>
         <section class='heading-with-text'>
-          <div class='graphic-heading-container'>
+          <div class='graphic-heading-container enter-anim_hidden'>
               <div class='graphic-heading graphic-heading_back'></div>
               <div class=' graphic-heading graphic-heading_front'></div>
               <h3 class='graphic-heading__text'>Summary</h3>
@@ -97,7 +97,7 @@ const injectWorks = () => {
         ${summaryParagraphsHtml}
         </section>
         <section class='heading-with-text'>
-          <div class='graphic-heading-container'>
+          <div class='graphic-heading-container enter-anim_hidden'>
               <div class='graphic-heading graphic-heading_back'></div>
               <div class=' graphic-heading graphic-heading_front'></div>
               <h3 class='graphic-heading__text'>Features</h3>
@@ -106,11 +106,11 @@ const injectWorks = () => {
             ${featuresHtml}
           </ul>
         </section>
-        <hr class='work__hr' />
-        <a class='work__link-button' href=${
+        <hr class='work__hr lass="enter-anim_hidden"' />
+        <a class='work__link-button lass="enter-anim_hidden"' href=${
   work.website
 } target='_blank' rel='noopener noreferrer'>Visit Website</a>
-        <a class='work__link-button' href=${
+        <a class='work__link-button lass="enter-anim_hidden"' href=${
   work.github
 } target='_blank' rel='noopener noreferrer'>View On GitHub</a>
         <button class='work__exit-button'>

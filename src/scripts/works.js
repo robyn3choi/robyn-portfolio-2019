@@ -105,6 +105,7 @@ export const playWorksIntroIfNeeded = () => {
       artElements[i].classList.add('works-art_show');
     }
     hasPlayedWorkIntro = true;
-    // window.removeEventListener('scroll', playWorksIntroIfNeeded);
+    return true;
   }
+  return false;
 };

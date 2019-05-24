@@ -12,5 +12,7 @@ export const playContactAnimIfNeeded = () => {
   if (!hasPlayedContactAnim && isElementInViewport(contactSection)) {
     playTypingAnimation(document.getElementById('contact__email'), 'robyn3choi@gmail.com', 50);
     hasPlayedContactAnim = true;
+    return true;
   }
+  return false;
 };
