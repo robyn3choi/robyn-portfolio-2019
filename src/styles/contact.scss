@@ -2,36 +2,77 @@
 
 $color-contact: #3cc26c;
 
-.section__sidebar_contact {
-  background: $color-contact;
-}
+// .section__sidebar_contact {
+//   background: $color-about-background; //$color-contact;
+// }
 
-.contact-art-container {
-  position: absolute;
-  width: 100%;
-  left: -25%;
-  top: 200px;
-  min-width: 500px;
-  max-width: 950px;
-}
-
-.section__content_contact {
+#contact {
+  text-align: center;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
+
+.contact__heading {
+  font-family: $title-font;
+  font-weight: 300;
+  font-size: 5rem;
+  text-align: center;
+  color: $blue;
+  margin: 0;
+}
+
+// .contact__art {
+//   display: none;
+//   //position: absolute;
+//   width: 80%;
+//   max-width: 700px;
+//   min-width: 400px;
+//   //left: -25%;
+//   top: 200px;
+//   // min-width: 500px;
+//   // max-width: 950px;
+// }
+
+// #black-screen.fade {
+//   opacity: 0;
+//   transition: opacity 0.3s;
+//   transition-delay: 1.5s;
+// }
+
+// .section__content_contact {
+//   height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   text-align: center;
+// }
 
 .contact__hr {
-  width: 100%;
-  margin-top: 30px;
+  width: 40px;
+  //margin-top: 30px;
+  margin-top: 24px;
   margin-bottom: 24px;
+  height: 10px;
+  background: $blue;
+  border: none;
+  transform: skew(22deg);
 }
 
-p.thanks {
-  text-align: center;
-  margin-top: 50px;
+#contact__email {
+  font-size: 3rem;
+  color: $orange;
+  margin-top: 10px;
+  font-family: $title-font;
+  font-weight: 300;
 }
+
+// p.thanks {
+//   text-align: center;
+//   margin-top: 50px;
+// }
 
 @media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
   .section__content_contact {

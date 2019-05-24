@@ -1,7 +1,7 @@
 $color-footer-bottom: #030305;
 
 .header {
-  height: 900px;
+  height: 870px;
 }
 
 #footer {
@@ -13,28 +13,38 @@ $color-footer-bottom: #030305;
   background: $color-footer-bottom;
 }
 
-#header__robynchoi-anim {
+.header__robynchoi-anim {
   position: absolute;
-  top: 100px;
+  top: 0;
   left: 0;
   right: 0;
   margin: auto;
+  margin-top: 90px;
   width: 90%;
   max-width: 1000px;
   opacity: 0.3;
   height: auto;
 }
 
-#footer__anim {
+.header__robynchoi-anim_mobile {
+  display: none;
+}
+
+.footer__anim {
   position: absolute;
   top: 0px;
   left: 0;
   right: 0;
   margin: auto;
   width: 80%;
-  max-width: 900px;
+  max-width: 847px;
+  min-width: 672px;
   opacity: 0.2;
   height: auto;
+}
+
+.footer__anim_mobile {
+  display: none;
 }
 
 .footer__parallax {
@@ -140,33 +150,53 @@ $color-footer-bottom: #030305;
   }
 }
 
+@media (max-width: 880px) {
+  #footer__anim {
+    margin-top: 25px;
+  }
+}
+
 @media (max-width: $mobile-max-width) {
   .header__parallax,
-  .footer__parallax {
+  .footer__parallax,
+  .header__overlay {
     display: none;
   }
 
   .header {
-    // background-image: url('../../public/images/header-mobile.png');
-    // background-position: top center;
-    // background-repeat: no-repeat;
-    // background-size: 100% auto;
-    // height: 1500px;
     height: auto;
     background-color: $color-about-background;
+    margin-top: -30px;
   }
 
   .header-mobile-image,
   .footer-mobile-image {
     display: block;
     width: 100%;
+    position: relative;
+    margin-top: 30px;
+    z-index: 2;
   }
 
-  .footer {
-    // background-image: url('../../public/images/header-mobile.png');
-    // background-position: top center;
-    // background-repeat: no-repeat;
-    // background-size: 100% auto;
-    // height: 1500px;
+  .header__robynchoi-anim_desktop {
+    display: none;
+  }
+
+  .header__robynchoi-anim_mobile {
+    display: block;
+    width: 80%;
+    margin-top: 30px;
+    z-index: 2;
+  }
+
+  .footer__anim_desktop {
+    display: none;
+  }
+
+  .footer__anim_mobile {
+    display: block;
+    width: 70%;
+    min-width: unset;
+    margin-top: 24px;
   }
 }

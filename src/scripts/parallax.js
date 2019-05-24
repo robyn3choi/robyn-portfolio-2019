@@ -5,8 +5,8 @@ let headerParallax;
 let footerParallax;
 
 export const initParallax = () => {
-  headerParallax = new Rellax('.header__parallax');
-  footerParallax = new Rellax('.footer__parallax', {
+  headerParallax = new Rellax('.rellax_header');
+  footerParallax = new Rellax('.rellax_footer', {
     wrapper: '#footer',
     relativeToWrapper: true,
   });
