@@ -76,7 +76,6 @@ window.onload = () => {
         return;
       }
       playWorkInfoBtnAnimIfNeeded();
-      playWorksIntroIfNeeded();
       playFooterAnimIfNeeded();
     }
   }, 250);

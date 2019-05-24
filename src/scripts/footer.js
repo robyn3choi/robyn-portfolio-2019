@@ -7,7 +7,8 @@ let mobileFooterAnim;
 let hasPlayedFooterAnim = false;
 
 export const initFooterAnim = () => {
-  const footerAnimEls = document.getElementsByClassName('footer__anim');
+  footerEl = document.getElementById('footer');
+  const footerAnimEls = footerEl.getElementsByClassName('footer__anim');
   footerAnim = lottie.loadAnimation({
     container: footerAnimEls[0],
     renderer: 'svg',
@@ -24,7 +25,6 @@ export const initFooterAnim = () => {
     path: '/animationData/footer-mobile.json',
   });
 
-  footerEl = document.getElementById('footer');
   playFooterAnimIfNeeded();
 };
 

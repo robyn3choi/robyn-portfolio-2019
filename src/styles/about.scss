@@ -41,7 +41,7 @@
 }
 
 #about__anim {
-  height: 100%;
+  height: 100vh;
   margin: auto;
 }
 
@@ -108,6 +108,19 @@ p.medium {
 .about__skill:empty {
   min-height: 0;
   height: 0;
+}
+
+.about__typed-container {
+  position: relative;
+}
+
+.about__typed {
+  position: absolute;
+  top: 0;
+
+  &_placeholder {
+    opacity: 0;
+  }
 }
 
 // .section__content_about .graphic-heading_front {

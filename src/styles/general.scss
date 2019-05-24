@@ -62,7 +62,7 @@ h3 {
 }
 
 .section__sidebar {
-  height: 100vh;
+  height: 100%;
   width: 50%;
   position: absolute;
   left: 0;
@@ -104,33 +104,40 @@ h3 {
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 1s ease-out;
-  will-change: transform;
+  transition: transform 0.8s;
+  //will-change: transform;
   outline: 1px solid transparent; //hack to prevent aliasing in firefox
 }
 
 .graphic-heading_back {
   background: $grey-light;
-  transform: skew(6deg) rotate(-1deg) translate(4px, 0);
+  transform: skew(6deg) rotate(-1deg) translate(4px, 0) scale(0, 1);
+}
+
+.graphic-heading-container.enter-anim_finished .graphic-heading_back {
+  transform: skew(6deg) rotate(-1deg) translate(4px, 0) scale(1, 1);
 }
 
 .graphic-heading_front {
   top: 0;
   left: 0;
   background-color: $blue;
-  // mix-blend-mode: multiply;
-  transform: skew(6deg) rotate(1deg) translate(-4px, 0);
+  transform: skew(6deg) rotate(1deg) translate(-4px, 0) scale(0, 1);
 }
 
-.graphic-heading_scrolling.graphic-heading_back {
-  transform: skew(6deg) rotate(-1deg) translate(8px, 4px);
-  transition: transform 0.3s;
+.graphic-heading-container.enter-anim_finished .graphic-heading_front {
+  transform: skew(6deg) rotate(1deg) translate(-4px, 0) scale(1, 1);
 }
 
-.graphic-heading_scrolling.graphic-heading_front {
-  transform: skew(6deg) rotate(1deg) translate(-8px, -4px);
-  transition: transform 0.3s;
-}
+// .graphic-heading_scrolling.graphic-heading_back {
+//   transform: skew(6deg) rotate(-1deg) translate(8px, 4px);
+//   transition: transform 0.3s;
+// }
+
+// .graphic-heading_scrolling.graphic-heading_front {
+//   transform: skew(6deg) rotate(1deg) translate(-8px, -4px);
+//   transition: transform 0.3s;
+// }
 
 .graphic-heading__text {
   position: relative;
@@ -157,6 +164,17 @@ h3 {
   left: 50%;
   transform: translateX(-50%);
   box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.6s;
+
+  &.enter-anim_finished {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
