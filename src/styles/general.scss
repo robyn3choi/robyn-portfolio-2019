@@ -1,18 +1,9 @@
-@import "variables.scss";
+@import 'variables.scss';
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: $black;
 }
-
-// html{
-//   overflow: hidden;
-//   height: 100%;
-// }
-// body{
-//   overflow: auto;
-//   height: 100%;
-// }
 
 .page {
   position: relative;
@@ -24,6 +15,9 @@ li {
   margin-bottom: 0;
   font-weight: 400;
   font-size: 1.2rem;
+  transform: none;
+  opacity: 1;
+  transition: all 0.6s;
 
   a {
     color: inherit;
@@ -32,29 +26,28 @@ li {
 }
 
 // before enter anim
+li.enter-anim_hidden {
+  opacity: 0;
+  transform: translateX(-12px);
+}
+
+// gives each about__skill an increasingly higher transition-delay
+@for $i from 1 through 10 {
+  li:nth-child(#{$i}n) {
+    transition-delay: #{$i * 125}ms;
+  }
+}
+
+// before enter anim
 p.enter-anim_hidden {
   opacity: 0;
   transform: translateY(12px);
-}
-// after enter anim
-p {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.6s;
 }
 
 button {
   cursor: pointer;
   font-family: $title-font;
 }
-
-// h2 {
-//   font-family: 'Roboto Slab', serif;
-//   font-weight: 300;
-//   font-size: 5rem;
-//   margin-top:0;
-//   margin-bottom: 16px;
-// }
 
 h3 {
   font-family: $title-font, serif;
@@ -110,14 +103,12 @@ h3 {
 }
 
 .graphic-heading {
-  //margin: 50px;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 0.8s;
-  //will-change: transform;
+  transition: transform 0.4s cubic-bezier(0.73, 0.02, 0.46, 1.39); //cubic-bezier(0.68, 0.01, 0.84, 0.57);
   outline: 1px solid transparent; //hack to prevent aliasing in firefox
 }
 
@@ -188,12 +179,12 @@ h3 {
   box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-@media (max-width: $stacked-sections-max-width),
-  (max-height: $stacked-sections-max-height) {
+@media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
   .section__sidebar {
     position: relative;
     margin: auto;
     width: auto;
+    height: 100vh;
   }
 
   .section__content {

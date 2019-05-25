@@ -1,16 +1,20 @@
 import {isElementInViewport, playTypingAnimation} from './utils';
 
-let contactSection;
+let contactEmailAnim;
 let hasPlayedContactAnim = false;
 
 export const initContactAnim = () => {
-  contactSection = document.getElementById('contact');
+  contactEmailAnim = document.getElementById('contact__email');
   playContactAnimIfNeeded();
 };
 
 export const playContactAnimIfNeeded = () => {
-  if (!hasPlayedContactAnim && isElementInViewport(contactSection)) {
-    playTypingAnimation(document.getElementById('contact__email'), 'robyn3choi@gmail.com', 50);
+  if (!hasPlayedContactAnim && isElementInViewport(contactEmailAnim)) {
+    setTimeout(
+        () =>
+          playTypingAnimation(document.getElementById('contact__email'), 'robyn3choi@gmail.com', 50),
+        1200
+    );
     hasPlayedContactAnim = true;
     return true;
   }

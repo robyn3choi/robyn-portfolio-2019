@@ -106,13 +106,11 @@ const injectWorks = () => {
             ${featuresHtml}
           </ul>
         </section>
-        <hr class='work__hr lass="enter-anim_hidden"' />
-        <a class='work__link-button lass="enter-anim_hidden"' href=${
-  work.website
-} target='_blank' rel='noopener noreferrer'>Visit Website</a>
-        <a class='work__link-button lass="enter-anim_hidden"' href=${
-  work.github
-} target='_blank' rel='noopener noreferrer'>View On GitHub</a>
+        <hr class='work__hr enter-anim_hidden' />
+        <a class='work__link-button enter-anim_hidden' href=${work.website} 
+          target='_blank' rel='noopener noreferrer'>Visit Website</a>
+        <a class='work__link-button enter-anim_hidden' href=${work.github}
+          target='_blank' rel='noopener noreferrer'>View On GitHub</a>
         <button class='work__exit-button'>
           <img src='images/x-white.svg' />
         </button>

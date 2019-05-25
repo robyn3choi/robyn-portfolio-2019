@@ -22,43 +22,37 @@ $color-contact: #3cc26c;
   text-align: center;
   color: $blue;
   margin: 0;
+  opacity: 1;
+  transform: none;
+  transition: all 0.6s;
+
+  &.enter-anim_hidden {
+    opacity: 0;
+    transform: translateY(12px);
+  }
 }
-
-// .contact__art {
-//   display: none;
-//   //position: absolute;
-//   width: 80%;
-//   max-width: 700px;
-//   min-width: 400px;
-//   //left: -25%;
-//   top: 200px;
-//   // min-width: 500px;
-//   // max-width: 950px;
-// }
-
-// #black-screen.fade {
-//   opacity: 0;
-//   transition: opacity 0.3s;
-//   transition-delay: 1.5s;
-// }
-
-// .section__content_contact {
-//   height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   text-align: center;
-// }
 
 .contact__hr {
   width: 40px;
-  //margin-top: 30px;
   margin-top: 24px;
   margin-bottom: 24px;
   height: 10px;
   background: $blue;
   border: none;
-  transform: skew(22deg);
+  transform: skew(22deg) scale(1, 1);
+  transition: transform 0.6s cubic-bezier(0.73, 0.02, 0.52, 1.67) 0.2s;
+
+  &.enter-anim_hidden {
+    transform: skew(0) scale(0, 1);
+  }
+}
+
+#contact p.medium {
+  transition-delay: 0.3s;
+}
+
+#contact p {
+  transition-delay: 0.3s;
 }
 
 #contact__email {
@@ -68,11 +62,6 @@ $color-contact: #3cc26c;
   font-family: $title-font;
   font-weight: 300;
 }
-
-// p.thanks {
-//   text-align: center;
-//   margin-top: 50px;
-// }
 
 @media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
   .section__content_contact {

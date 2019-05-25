@@ -1,4 +1,4 @@
-@import "variables.scss";
+@import 'variables.scss';
 
 //$color-about-background: #004967;// #003654;//rgb(56, 160, 192);
 //$color-about-graphic-heading: rgb(62, 202, 255); //rgb(74, 213, 255);
@@ -28,16 +28,16 @@
 }
 
 .about-art_light {
-  background-image: url("../../public/images/light.svg");
+  background-image: url('../../public/images/light.svg');
   mix-blend-mode: soft-light;
 }
 
 .about-art_thought-bubbles {
-  background-image: url("../../public/images/thought-bubbles.svg");
+  background-image: url('../../public/images/thought-bubbles.svg');
 }
 
 .about-art_bottom {
-  background-image: url("../../public/images/about-bottom.svg");
+  background-image: url('../../public/images/about-bottom.svg');
 }
 
 #about__anim {
@@ -115,6 +115,13 @@ p.medium {
   &:empty {
     min-height: 0;
     height: 0;
+  }
+}
+
+// gives each about__skill an increasingly higher transition-delay
+@for $i from 1 through 20 {
+  .about__skill:nth-child(#{$i}n) {
+    transition-delay: #{$i * 125}ms;
   }
 }
 

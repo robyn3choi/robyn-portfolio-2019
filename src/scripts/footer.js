@@ -29,7 +29,10 @@ export const initFooterAnim = () => {
 };
 
 export const playFooterAnimIfNeeded = () => {
-  if (!hasPlayedFooterAnim && isElementInViewport(footerEl)) {
+  if (
+    !hasPlayedFooterAnim &&
+    window.innerHeight + window.pageYOffset >= document.body.offsetHeight
+  ) {
     footerAnim.play();
     mobileFooterAnim.play();
     hasPlayedFooterAnim = true;

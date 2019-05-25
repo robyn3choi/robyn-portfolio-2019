@@ -4,6 +4,7 @@ let enterAnims;
 
 export const initEnterAnims = () => {
   enterAnims = document.getElementsByClassName('enter-anim_hidden');
+  playEnterAnimsIfNeeded();
 };
 
 export const playEnterAnimsIfNeeded = () => {
