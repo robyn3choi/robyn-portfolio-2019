@@ -13,7 +13,8 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
 }
 
 .section_works {
-  background: $color-work;
+  background-color: $color-work;
+  background-size: contain;
   overflow: hidden;
 }
 
@@ -232,7 +233,10 @@ $animation-frames: 4;
 #works-art-container {
   position: absolute;
   width: 100%;
+  width: 100vw;
   height: 100%;
+  background-image: url('../../public/images/wood-grain.svg');
+  background-size: contain;
 }
 
 .works-art {

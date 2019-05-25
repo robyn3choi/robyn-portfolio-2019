@@ -1,0 +1,19 @@
+@import 'variables.scss';
+
+.nav-container {
+  width: 0;
+  background-color: $orange;
+  color: white;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+
+  &.nav-container_opened {
+    width: 320px;
+  }
+}
+
+.nav {
+}
