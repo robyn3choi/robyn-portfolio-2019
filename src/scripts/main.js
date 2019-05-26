@@ -64,6 +64,17 @@ window.onload = () => {
   initEnterAnims();
   initFixedSidebars();
 
+  const navBtn = document.getElementById('nav__btn');
+  console.log(navBtn);
+  navBtn.onclick = () => {
+    if (navBtn.classList.contains('is-active')) {
+      navBtn.classList.remove('is-active');
+    }
+    else {
+      navBtn.classList.add('is-active');
+    }
+  };
+
   window.addEventListener('scroll', () => {
     isScrolling = true;
   });

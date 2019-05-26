@@ -1,19 +1,49 @@
-@import 'variables.scss';
+@import "variables.scss";
 
 .nav-container {
-  width: 0;
   background-color: $orange;
-  color: white;
+  width: $nav-width;
   height: 100vh;
-  position: absolute;
-  right: 0;
+  position: fixed;
+  left: 0;
   top: 0;
   overflow: hidden;
+  transform: translateX(-$nav-width);
+  transition: $nav-transition;
 
   &.nav-container_opened {
-    width: 320px;
+    transform: none;
   }
 }
 
 .nav {
+  width: $nav-width;
+  text-align: center;
+  font-family: $title-font;
+  color: white;
+
+  ul {
+    padding: 0;
+  }
+}
+
+// .nav__btn-container {
+//   // position: fixed;
+//   // top: 0;
+//   // left: 0;
+//   // color: white;
+//   width: 70px;
+//   height: 70px;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   background: $orange;
+//   z-index: 99;
+// }
+
+#nav__btn {
+  background: $orange;
+  position: fixed;
+  z-index: 99;
+  height: 60px;
 }

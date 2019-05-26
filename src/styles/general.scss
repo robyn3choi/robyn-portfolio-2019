@@ -1,12 +1,17 @@
-@import 'variables.scss';
+@import "variables.scss";
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: $black;
 }
 
 .page {
   position: relative;
+  transition: $nav-transition;
+
+  .nav-container_opened ~ & {
+    transform: translateX($nav-width);
+  }
 }
 
 p,
@@ -179,7 +184,8 @@ h3 {
   box-shadow: -4px 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-@media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
+@media (max-width: $stacked-sections-max-width),
+  (max-height: $stacked-sections-max-height) {
   .section__sidebar {
     position: relative;
     margin: auto;
