@@ -32,13 +32,13 @@ export const playAboutAnimIfNeeded = () => {
       playTypingAnimation(
           document.getElementById('about__typed_1'),
           `Hey there, I'm Robyn Choi.`,
-          50
+          40
       )
           .then(() =>
             playTypingAnimation(
                 document.getElementById('about__typed_2'),
                 `I'm a full-stack web developer based in Vancouver, Canada.`,
-                30
+                20
             )
           )
           .then(() => {

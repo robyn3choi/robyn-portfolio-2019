@@ -63,8 +63,6 @@ const workExitBtns = document.getElementsByClassName('work__exit-button');
 for (let i = 0; i < workImages.length; i++) {
   workImages[i].onclick = () => {
     toggleWorkInfo(i);
-    // play enter anims after work has expanded
-    setTimeout(() => playEnterAnimsIfNeeded(), 1000);
   };
   workExitBtns[i].onclick = () => toggleWorkInfo(i);
 }

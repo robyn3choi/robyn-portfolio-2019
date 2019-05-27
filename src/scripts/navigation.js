@@ -1,8 +1,7 @@
 import SmoothScroll from 'smooth-scroll';
 
 const smoothScroll = new SmoothScroll('[data-scroll]', {
-  speed: 1000,
-  speedAsDuration: true,
+  speed: 800,
   emitEvents: true,
 });
 
@@ -28,6 +27,7 @@ window.addEventListener('scrollStart', () => {
 const scrollSections = document.getElementsByClassName('scroll-section');
 const nextBtn = document.getElementById('next-section-btn');
 nextBtn.onclick = () => {
+  nextBtn.classList.remove('next-section-btn_ripple');
   let currentScrollSection;
   let nextScrollSection;
   for (let i = scrollSections.length - 1; i >= 0; i--) {
@@ -57,4 +57,8 @@ export const hideNextSectionBtnIfNeeded = () => {
   else {
     nextBtn.classList.remove('next-section-btn_hidden');
   }
+};
+
+export const smoothScrollTo = (el) => {
+  smoothScroll.animateScroll(el);
 };

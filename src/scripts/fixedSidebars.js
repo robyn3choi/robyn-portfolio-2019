@@ -47,81 +47,41 @@ export const fixSidebarIfNeeded = () => {
   if (isStackedSections()) {
     return;
   }
-  const aboutSectionTop = aboutSection.getBoundingClientRect().top;
-  const worksSectionTop = worksSection.getBoundingClientRect().top;
-  const contactSectionTop = contactSection.getBoundingClientRect().top;
-  // if we are before the about section, make sure the about sidebar is not fixed
-  if (aboutSectionTop > 0 && aboutSidebar.classList.contains('section__sidebar_fixed')) {
-    aboutSidebar.classList.remove('section__sidebar_fixed');
-  }
-  // if we have entered the about section
-  else if (
-    aboutSectionTop <= 0 &&
-    worksSectionTop > window.innerHeight &&
-    !aboutSidebar.classList.contains('section__sidebar_fixed')
-  ) {
-    // fix the about sidebar
-    aboutSidebar.classList.add('section__sidebar_fixed');
-    aboutSidebar.style.top = 0;
-  }
-  // if we are between the about and works sections
-  else if (worksSectionTop - window.innerHeight < 0 && worksSectionTop > 0) {
-    aboutSidebar.classList.remove('section__sidebar_fixed');
-    worksSidebar.classList.remove('section__sidebar_fixed');
-    aboutSidebar.style.top = aboutSection.offsetHeight - window.innerHeight + 'px';
-  }
-  // if we have entered the works section
-  else if (
-    worksSectionTop <= 0 &&
-    contactSectionTop > window.innerHeight &&
-    !worksSidebar.classList.contains('section__sidebar_fixed')
-  ) {
-    // fix the works sidebar
-    worksSidebar.classList.add('section__sidebar_fixed');
-    worksSidebar.style.top = 0;
-  }
-  // if we are in between work and contact sections
-  else if (contactSectionTop - window.innerHeight < 0 && contactSectionTop > 0) {
-    // work sidebar should not be fixed, and work sidebar should have a top: something
-    worksSidebar.classList.remove('section__sidebar_fixed');
-    worksSidebar.style.top = worksSection.offsetHeight - window.innerHeight + 'px';
-  }
-
+  // const aboutSectionTop = aboutSection.getBoundingClientRect().top;
+  // const worksSectionTop = worksSection.getBoundingClientRect().top;
+  // const contactSectionTop = contactSection.getBoundingClientRect().top;
   // // if we are before the about section, make sure the about sidebar is not fixed
-  // if (currentY < aboutSectionY && aboutSidebar.classList.contains('section__sidebar_fixed')) {
+  // if (aboutSectionTop > 0 && aboutSidebar.classList.contains('section__sidebar_fixed')) {
   //   aboutSidebar.classList.remove('section__sidebar_fixed');
   // }
+  // // if we have entered the about section
   // else if (
-  //   currentY >= aboutSectionY &&
-  //   currentY < worksSectionY - window.innerHeight &&
+  //   aboutSectionTop <= 0 &&
+  //   worksSectionTop > window.innerHeight &&
   //   !aboutSidebar.classList.contains('section__sidebar_fixed')
   // ) {
   //   // fix the about sidebar
   //   aboutSidebar.classList.add('section__sidebar_fixed');
   //   aboutSidebar.style.top = 0;
   // }
+  // // if we are between the about and works sections
+  // else if (worksSectionTop - window.innerHeight < 0 && worksSectionTop > 0) {
+  //   aboutSidebar.classList.remove('section__sidebar_fixed');
+  //   worksSidebar.classList.remove('section__sidebar_fixed');
+  //   aboutSidebar.style.top = aboutSection.offsetHeight - window.innerHeight + 'px';
+  // }
   // // if we have entered the works section
   // else if (
-  //   currentY >= worksSectionY &&
-  //   currentY < contactSectionY - window.innerHeight &&
+  //   worksSectionTop <= 0 &&
+  //   contactSectionTop > window.innerHeight &&
   //   !worksSidebar.classList.contains('section__sidebar_fixed')
   // ) {
   //   // fix the works sidebar
   //   worksSidebar.classList.add('section__sidebar_fixed');
   //   worksSidebar.style.top = 0;
   // }
-  // // if we are between the about and works sections
-  // else if (currentY > worksSectionY - window.innerHeight && currentY < worksSectionY) {
-  //   console.log('between');
-  //   console.log(currentY);
-  //   console.log(worksSectionY);
-  //   // neither sidebar should be fixed, and about sidebar should have a top: something
-  //   aboutSidebar.classList.remove('section__sidebar_fixed');
-  //   worksSidebar.classList.remove('section__sidebar_fixed');
-  //   aboutSidebar.style.top = aboutSection.offsetHeight - window.innerHeight + 'px';
-  // }
   // // if we are in between work and contact sections
-  // else if (currentY > contactSectionY - window.innerHeight && currentY < contactSectionY) {
+  // else if (contactSectionTop - window.innerHeight < 0 && contactSectionTop > 0) {
   //   // work sidebar should not be fixed, and work sidebar should have a top: something
   //   worksSidebar.classList.remove('section__sidebar_fixed');
   //   worksSidebar.style.top = worksSection.offsetHeight - window.innerHeight + 'px';

@@ -1,6 +1,8 @@
 import {isStackedSections, isTouchscreen} from './utils';
 import {isElementInViewport} from './utils';
 import lottie from 'lottie-web';
+import {smoothScrollTo} from './navigation';
+import {playEnterAnimsIfNeeded} from './enterAnimations';
 
 let hasCupSpilled = false;
 const workInfoBtnAnims = [];
@@ -16,17 +18,26 @@ export const toggleWorkInfo = (index) => {
     toggleWorkBackBtn(index, false);
   }
   else {
-    work.classList.add('work_viewing-info');
-    toggleWorkBackBtn(index, true);
+    const viewWorkInfo = () => {
+      work.classList.add('work_viewing-info');
 
-    if (!hasCupSpilled) {
-      const cupRightEdgeX = document.getElementById('cup-anim__wrapper').getBoundingClientRect()
-          .right;
+      if (!hasCupSpilled) {
+        const cupRightEdgeX = document.getElementById('cup-anim__wrapper').getBoundingClientRect()
+            .right;
 
-      if (!isStackedSections()) {
-        pollForCupSpill(work, cupRightEdgeX);
+        if (!isStackedSections()) {
+          pollForCupSpill(work, cupRightEdgeX);
+        }
       }
-    }
+
+      toggleWorkBackBtn(index, true);
+      window.removeEventListener('scrollStop', viewWorkInfo);
+      // play enter anims after work has expanded
+      setTimeout(() => playEnterAnimsIfNeeded(), 1000);
+    };
+
+    window.addEventListener('scrollStop', viewWorkInfo);
+    smoothScrollTo(work);
   }
 };
 

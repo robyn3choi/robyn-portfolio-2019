@@ -13,6 +13,21 @@ $color-contact: #3cc26c;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  background-color: white;
+
+  // &::after {
+  //   content: '';
+  //   background-image: url(../../public/images/mail.svg);
+  //   background-repeat: repeat;
+  //   background-size: 100px;
+  //   opacity: 0.04;
+  //   top: 0;
+  //   left: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   position: absolute;
+  //   z-index: -1;
+  // }
 }
 
 .contact__heading {
@@ -61,6 +76,48 @@ $color-contact: #3cc26c;
   margin-top: 10px;
   font-family: $title-font;
   font-weight: 300;
+}
+
+$blue: rgb(47, 152, 194);
+$light-blue-1: rgb(97, 203, 245);
+$light-blue-2: rgb(140, 219, 250);
+$dark-blue-1: rgb(54, 107, 128);
+$dark-blue-2: rgb(23, 102, 133);
+
+.triangle-container {
+  position: absolute;
+}
+
+.triangle {
+  // width: 0;
+  // height: 0;
+  // border-style: solid;
+  // border-width: 0 243px 228px 0; //0 117px 164px 0;
+  // border-color: transparent $blue transparent transparent;
+  // position: absolute;
+  width: 120px;
+  height: 120px;
+}
+
+@for $i from 1 through 14 {
+  .triangle-container:nth-of-type(#{$i}) {
+    @if $i < 8 {
+      left: random() * -100px;
+      top: ($i - 1) * 180px;
+    } @else {
+      right: random() * -100px;
+      top: ($i - 8) * 180px;
+    }
+    .triangle {
+      @if $i % 2 == 0 {
+        background-color: darken($blue, random() * 20%);
+        transform: rotate(45deg) scale(0.7);
+      } @else {
+        background-color: lighten($blue, random() * 20%);
+        transform: rotate(45deg) scale(1.2);
+      }
+    }
+  }
 }
 
 @media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
