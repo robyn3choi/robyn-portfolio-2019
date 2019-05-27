@@ -82,38 +82,40 @@ const injectWorks = () => {
     }
 
     html += `
-  <div class='work'>
-    <button class='work__image' style='background-image: url("images/${work.image}")'>
-      <div class='work__arrow-button work__arrow-button_info'></div>
-      <div class='work__arrow-button work__arrow-button_back'></div>
-    </button>
-    <div class='work__info subsection'>
-        <section class='heading-with-text'>
-          <div class='graphic-heading-container enter-anim_hidden'>
-              <div class='graphic-heading graphic-heading_back'></div>
-              <div class=' graphic-heading graphic-heading_front'></div>
-              <h3 class='graphic-heading__text'>Summary</h3>
-          </div>
-        ${summaryParagraphsHtml}
-        </section>
-        <section class='heading-with-text'>
-          <div class='graphic-heading-container enter-anim_hidden'>
-              <div class='graphic-heading graphic-heading_back'></div>
-              <div class=' graphic-heading graphic-heading_front'></div>
-              <h3 class='graphic-heading__text'>Features</h3>
-          </div>
-          <ul class='work__features'>
-            ${featuresHtml}
-          </ul>
-        </section>
-        <hr class='work__hr enter-anim_hidden' />
-        <a class='work__link-button enter-anim_hidden' href=${work.website} 
-          target='_blank' rel='noopener noreferrer'>Visit Website</a>
-        <a class='work__link-button enter-anim_hidden' href=${work.github}
-          target='_blank' rel='noopener noreferrer'>View On GitHub</a>
-        <button class='work__exit-button'>
-          <img src='images/x-white.svg' />
-        </button>
+    <div class='work-container scroll-section'>
+      <div class='work'>
+      <button class='work__image' style='background-image: url("images/${work.image}")'>
+        <div class='work__arrow-button work__arrow-button_info'></div>
+        <div class='work__arrow-button work__arrow-button_back'></div>
+      </button>
+      <div class='work__info subsection'>
+          <section class='heading-with-text'>
+            <div class='graphic-heading-container enter-anim_hidden'>
+                <div class='graphic-heading graphic-heading_back'></div>
+                <div class=' graphic-heading graphic-heading_front'></div>
+                <h3 class='graphic-heading__text'>Summary</h3>
+            </div>
+          ${summaryParagraphsHtml}
+          </section>
+          <section class='heading-with-text'>
+            <div class='graphic-heading-container enter-anim_hidden'>
+                <div class='graphic-heading graphic-heading_back'></div>
+                <div class=' graphic-heading graphic-heading_front'></div>
+                <h3 class='graphic-heading__text'>Features</h3>
+            </div>
+            <ul class='work__features'>
+              ${featuresHtml}
+            </ul>
+          </section>
+          <hr class='work__hr enter-anim_hidden' />
+          <a class='work__link-button enter-anim_hidden' href=${work.website} 
+            target='_blank' rel='noopener noreferrer'>Visit Website</a>
+          <a class='work__link-button enter-anim_hidden' href=${work.github}
+            target='_blank' rel='noopener noreferrer'>View On GitHub</a>
+          <button class='work__exit-button'>
+            <img src='images/x-white.svg' />
+          </button>
+      </div>
     </div>
   </div>
 `;

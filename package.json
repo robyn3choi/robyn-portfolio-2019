@@ -38,6 +38,7 @@
     "body-scroll-lock": "^2.6.1",
     "detect-browser": "^4.5.0",
     "lottie-web": "^5.5.2",
-    "rellax": "^1.9.1"
+    "rellax": "^1.9.1",
+    "smooth-scroll": "^16.0.3"
   }
 }

@@ -1,6 +1,6 @@
 $color-footer-bottom: #030305;
 
-.header {
+#header {
   height: 870px;
 }
 
@@ -136,8 +136,8 @@ $color-footer-bottom: #030305;
 }
 
 @media (min-width: 1921px) {
-  .header,
-  .footer {
+  #header,
+  #footer {
     height: calc(100vw / 1.627 - 300px);
   }
 
@@ -163,7 +163,7 @@ $color-footer-bottom: #030305;
     display: none;
   }
 
-  .header {
+  #header {
     height: auto;
     background-color: $color-about-background;
     margin-top: -30px;

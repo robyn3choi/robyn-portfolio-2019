@@ -3,10 +3,8 @@
 //$color-about-background: #004967;// #003654;//rgb(56, 160, 192);
 //$color-about-graphic-heading: rgb(62, 202, 255); //rgb(74, 213, 255);
 
-.section_about {
-  //background: #3f94ff;
+#about {
   background: $color-about-background;
-  //color: white;
 }
 
 .about-art-container {
@@ -149,7 +147,7 @@ p.medium {
 }
 
 @media (max-width: $mobile-max-width) {
-  .section_about {
+  #about {
     margin-top: -30px;
   }
 

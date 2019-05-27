@@ -1,24 +1,16 @@
 import lottie from 'lottie-web';
 import {isElementInViewport, playTypingAnimation} from './utils';
+import {playEnterAnimsIfNeeded} from './enterAnimations';
 
-let aboutEl;
+let aboutTyped;
 let aboutAnim;
-let hasPlayedAnim = false;
-// let p1; // first <p> anim
-// let gh1; // first graphic heading anim
-// let skills;
-// let gh2;
-// let p2;
+let hasStartedTypingAnim = false;
+let hasFinishedTypingAnim = false;
 
 export const initAboutAnim = () => {
-  // const skills = document.getElementsByClassName('about__skill');
-  // for (let i = 0; i < skills.length; i++) {
-  //   skills[i].style.transitionDelay = 100 * i + 'ms';
-  // }
-
-  aboutEl = document.getElementById('about__anim');
+  aboutTyped = document.getElementById('about__typed_1');
   aboutAnim = lottie.loadAnimation({
-    container: aboutEl,
+    container: document.getElementById('about__anim'),
     renderer: 'svg',
     loop: true,
     autoplay: false,
@@ -33,36 +25,32 @@ export const initAboutAnim = () => {
 };
 
 export const playAboutAnimIfNeeded = () => {
-  if (!hasPlayedAnim && isElementInViewport(aboutEl)) {
-    // aboutAnim.playSegments([[0, 74], [75, 150]], true);
-    // setTimeout(playAboutContentAnims, 2200);
+  if (!hasStartedTypingAnim && isElementInViewport(aboutTyped)) {
+    hasStartedTypingAnim = true;
     aboutAnim.playSegments([[0, 27], [28, 101]], true);
-    playTypingAnimation(
-        document.getElementById('about__typed_1'),
-        `Hey there, I'm Robyn Choi.`,
-        50
-    ).then(() =>
+    setTimeout(() => {
       playTypingAnimation(
-          document.getElementById('about__typed_2'),
-          `I'm a full-stack web developer based in Vancouver, Canada.`,
-          30
+          document.getElementById('about__typed_1'),
+          `Hey there, I'm Robyn Choi.`,
+          50
       )
-    );
-    hasPlayedAnim = true;
+          .then(() =>
+            playTypingAnimation(
+                document.getElementById('about__typed_2'),
+                `I'm a full-stack web developer based in Vancouver, Canada.`,
+                30
+            )
+          )
+          .then(() => {
+            hasFinishedTypingAnim = true;
+            playEnterAnimsIfNeeded();
+          });
+    }, 1000);
     return true;
   }
   return false;
 };
 
-// const playAboutContentAnims = () => {
-//   playTypingAnimation(
-//       document.getElementById('about__typed_1'),
-//       `Hey there, I'm Robyn Choi.`,
-//       100
-//   ).then(() =>
-//     playTypingAnimation(
-//         document.getElementById('about__typed_2', 100),
-//         `I'm a full-stack web developer based in Vancouver, Canada.`
-//     )
-//   );
-// };
+export const hasPlayedAboutTypingAnim = () => {
+  return hasFinishedTypingAnim;
+};

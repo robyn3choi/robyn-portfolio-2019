@@ -9,7 +9,7 @@ let worksArtContainer;
 let hasPlayedWorkIntro = false;
 
 export const toggleWorkInfo = (index) => {
-  const work = document.getElementsByClassName('work')[index];
+  const work = document.getElementsByClassName('work-container')[index];
 
   if (work.classList.contains('work_viewing-info')) {
     work.classList.remove('work_viewing-info');

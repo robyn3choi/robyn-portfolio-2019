@@ -4,10 +4,7 @@ export const isStackedSections = () => {
 
 export const isElementInViewport = function(el) {
   const rect = el.getBoundingClientRect();
-  return (
-    rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right < (window.innerWidth || document.documentElement.clientWidth)
-  );
+  return rect.top <= window.innerHeight && rect.right <= window.innerWidth;
 
   // if (rect.clientHeight > window.innerHeight) {
   //   return rect.top < window.pageYOffset + window.innerHeight;

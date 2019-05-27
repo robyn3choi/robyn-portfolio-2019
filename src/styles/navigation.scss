@@ -1,0 +1,143 @@
+@import 'variables.scss';
+
+$nav-width: 280px;
+$nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
+
+.nav-container {
+  background-color: $orange;
+  width: $nav-width;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  transform: translateX(-$nav-width);
+  transition: $nav-transition;
+  z-index: 3;
+  box-shadow: 6px 0 12px rgba(0, 0, 0, 0.3);
+
+  .nav-open & {
+    transform: none;
+  }
+}
+
+#nav {
+  width: $nav-width;
+
+  ul {
+    padding: 0;
+    margin-top: 60px;
+  }
+
+  li {
+    padding-left: 60px;
+  }
+}
+
+.nav__link {
+  font-family: $title-font;
+  font-weight: 300;
+  font-size: 2.7rem;
+  color: white;
+  text-align: left;
+  text-decoration: none;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.3s ease-in-out 0s;
+  }
+
+  &:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+}
+
+#nav__btn {
+  background: $orange;
+  position: fixed;
+  z-index: 4;
+  height: 60px;
+}
+
+#next-section-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 100%;
+  border: none;
+  background-color: $orange;
+  background-image: url(../../public/images/arrow-down.svg);
+  background-size: 60%;
+  background-position: center;
+  position: fixed;
+  z-index: 99;
+  bottom: 20px;
+  left: 50%;
+  box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.4);
+  transform: translateX(-50%); // perspective(1px) translateZ(0);
+  opacity: 1;
+  transition: all 0.2s;
+
+  &:hover {
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  &:active {
+    transform: translateX(-50%) scale(0.95);
+    box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.08s ease-out;
+  }
+
+  &.next-section-btn_hidden {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    border: $orange solid 6px;
+    border-radius: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation-duration: 4s;
+    animation-name: ripple-out;
+    animation-iteration-count: infinite;
+  }
+  &:hover:before,
+  &:focus:before,
+  &:active:before {
+    animation-name: ripple-out;
+  }
+}
+
+@keyframes ripple-out {
+  25% {
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    opacity: 0;
+  }
+
+  100% {
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    left: -10px;
+    opacity: 0;
+  }
+}
