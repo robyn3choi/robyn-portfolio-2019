@@ -25,7 +25,7 @@ export const initFooterAnim = () => {
     path: '/animationData/footer-mobile.json',
   });
 
-  playFooterAnimIfNeeded();
+  // playFooterAnimIfNeeded();
 };
 
 export const playFooterAnimIfNeeded = () => {

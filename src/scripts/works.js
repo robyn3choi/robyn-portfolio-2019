@@ -62,12 +62,12 @@ function pollForCupSpill(work, cupRightEdgeX) {
 
 export const initWorkAnim = () => {
   worksArtContainer = document.getElementById('works-art-container');
-  playWorksIntroIfNeeded();
+  // playWorksIntroIfNeeded();
 
   const workImages = document.getElementsByClassName('work__image');
 
   if (
-    !document.body.classList.contains('edge-ie') &&
+    !(document.body.classList.contains('edge') || document.body.classList.contains('edge')) &&
     !document.body.classList.contains('touchscreen')
   ) {
     for (let i = 0; i < workImages.length; i++) {

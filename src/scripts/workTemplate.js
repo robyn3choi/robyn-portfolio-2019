@@ -82,7 +82,7 @@ const injectWorks = () => {
     }
 
     html += `
-    <div class='work-container scroll-section'>
+    <div class='work-container scroll-section scroll-section_stacked'>
       <div class='work'>
       <button class='work__image' style='background-image: url("images/${work.image}")'>
         <div class='work__arrow-button work__arrow-button_info'></div>

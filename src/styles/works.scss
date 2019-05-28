@@ -73,7 +73,8 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
 }
 
 .touchscreen,
-.edge-ie {
+.edge,
+.ie {
   .work__arrow-button {
     background-size: 110px auto;
     width: 110px;
@@ -175,8 +176,8 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
   border-radius: 50%;
   border: none;
   position: fixed;
-  top: -14px;
-  right: -14px;
+  top: 6px;
+  right: 6px;
   background: $orange;
   padding: 16px;
   box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.4);
@@ -300,20 +301,20 @@ $animation-frames: 4;
 }
 
 @media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
-  .work {
+  .work-container {
     //left: 0;
     //width: calc(200% - 36px);
     transform: translateX(0);
-    margin: 3%;
-    width: 194%;
+    padding: 3%;
+    width: 200%;
+
+    &.work_viewing-info {
+      transform: translateX(-50%);
+    }
   }
 
   .work__arrow-button_back {
     display: none;
-  }
-
-  .work_viewing-info {
-    transform: translateX(-51.5%);
   }
 
   #works-art-container {

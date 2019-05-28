@@ -21,24 +21,24 @@ export const initAboutAnim = () => {
     },
   });
 
-  playAboutAnimIfNeeded();
+  // playAboutAnimIfNeeded();
 };
 
 export const playAboutAnimIfNeeded = () => {
   if (!hasStartedTypingAnim && isElementInViewport(aboutTyped)) {
     hasStartedTypingAnim = true;
-    aboutAnim.playSegments([[0, 27], [28, 101]], true);
+    aboutAnim.playSegments([[10, 27], [28, 101]], true);
     setTimeout(() => {
       playTypingAnimation(
           document.getElementById('about__typed_1'),
           `Hey there, I'm Robyn Choi.`,
-          40
+          35
       )
           .then(() =>
             playTypingAnimation(
                 document.getElementById('about__typed_2'),
                 `I'm a full-stack web developer based in Vancouver, Canada.`,
-                20
+                15
             )
           )
           .then(() => {

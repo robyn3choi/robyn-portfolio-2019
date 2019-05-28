@@ -5,7 +5,7 @@ let enterAnims;
 
 export const initEnterAnims = () => {
   enterAnims = document.getElementsByClassName('enter-anim_hidden');
-  playEnterAnimsIfNeeded();
+  // playEnterAnimsIfNeeded();
 };
 
 const thresholdEl = document.getElementById('about__typed_2');

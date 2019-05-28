@@ -5,7 +5,7 @@ let hasPlayedContactAnim = false;
 
 export const initContactAnim = () => {
   contactEmailAnim = document.getElementById('contact__email');
-  playContactAnimIfNeeded();
+  // playContactAnimIfNeeded();
 };
 
 export const playContactAnimIfNeeded = () => {

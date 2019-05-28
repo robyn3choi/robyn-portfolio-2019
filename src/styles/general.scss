@@ -7,15 +7,57 @@ body {
   overflow-x: hidden;
 }
 
-#preloader {
-  width: 100%;
+.preloader {
   height: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 100;
-  background: black;
+  background: $blue;
+  width: 50%;
+  transition: transform 0.7s 0.3s;
+  outline: solid 1px $blue;
 
-  &.loaded {
-    display: none;
+  &_left {
+    left: -50%;
+    transform: translateX(100%);
+  }
+
+  &_right {
+    right: -50%;
+    transform: translateX(-100%);
+  }
+
+  &_loaded {
+    transform: none;
+    outline: none;
+  }
+}
+
+.preloader__ring {
+  z-index: 100;
+  border: 6px solid white;
+  border-top: 6px solid $orange;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1.2s linear infinite;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50%;
+  transition: opacity 0.3s;
+
+  .preloader_loaded ~ & {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
   }
 }
 

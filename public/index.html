@@ -15,7 +15,9 @@
 </head>
 
 <body>
-  <div id='preloader'></div>
+  <div class='preloader preloader_left'></div>
+  <div class='preloader preloader_right'></div>
+  <div class='preloader__ring'></div>
   <button id="nav__btn" class="hamburger hamburger--arrow" type="button">
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
@@ -36,7 +38,7 @@
     <button id="next-section-btn" class='next-section-btn_ripple'>
       <!-- <div class="arrow"></div> -->
     </button>
-    <section id="header" class='scroll-section'>
+    <section id="header" class='scroll-section scroll-section_stacked'>
       <img class="header-mobile-image" src="images/header-mobile.png" />
       <div class="header__overlay"></div>
       <div class="rellax_header header__parallax parallax0" data-rellax-speed="-12"></div>
@@ -52,10 +54,10 @@
     </section>
 
     <section id='about' class="section scroll-section">
-      <div class="section__sidebar section__sidebar_about ">
+      <div class="section__sidebar section__sidebar_about scroll-section_stacked">
         <div id="about__anim"></div>
       </div>
-      <div class="section__content section__content_about subsection">
+      <div class="section__content section__content_about subsection scroll-section_stacked">
         <section class="heading-with-text">
           <div class="about__typed-container">
             <p class="large about__typed_placeholder">
@@ -174,7 +176,7 @@
     </section>
 
     <section id='works' class="section">
-      <div class="section__sidebar section__sidebar_works">
+      <div class="section__sidebar section__sidebar_works scroll-section_stacked">
         <!-- <h1 class="section__heading">Works</h1> -->
         <div id="works-art-container">
           <div id="cup-anim__wrapper" class="works-art">
@@ -191,7 +193,7 @@
       </div>
     </section>
 
-    <section id="contact" class="section scroll-section">
+    <section id="contact" class="section scroll-section scroll-section_stacked">
       <!-- <div class='rellax_triangle triangle-container' data-rellax-speed="2">
         <div class='triangle'></div>
       </div>
@@ -264,7 +266,7 @@
       </div>
     </section>
 
-    <section id="footer" class='scroll-section'>
+    <section id="footer" class='scroll-section scroll-section_stacked'>
       <img class="footer-mobile-image" src="images/footer-mobile.png" />
       <div class="rellax_footer footer__parallax parallax0" data-rellax-speed="-3"></div>
       <div class="rellax_footer footer__parallax parallax1" data-rellax-speed="-1"></div>

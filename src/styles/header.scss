@@ -170,12 +170,15 @@ $color-footer-bottom: #030305;
     margin-top: -30px;
   }
 
+  .header-mobile-image {
+    margin-top: 30px;
+  }
+
   .header-mobile-image,
   .footer-mobile-image {
     display: block;
     width: 100%;
     position: relative;
-    margin-top: 30px;
     z-index: 2;
   }
 
@@ -199,5 +202,6 @@ $color-footer-bottom: #030305;
     width: 70%;
     min-width: unset;
     margin-top: 24px;
+    z-index: 2;
   }
 }

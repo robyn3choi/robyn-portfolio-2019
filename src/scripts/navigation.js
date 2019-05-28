@@ -1,4 +1,5 @@
 import SmoothScroll from 'smooth-scroll';
+import {isStackedSections} from './utils';
 
 const smoothScroll = new SmoothScroll('[data-scroll]', {
   speed: 800,
@@ -25,40 +26,55 @@ window.addEventListener('scrollStart', () => {
 
 // scroll sections
 const scrollSections = document.getElementsByClassName('scroll-section');
+const scrollSectionsStacked = document.getElementsByClassName('scroll-section_stacked');
 const nextBtn = document.getElementById('next-section-btn');
 nextBtn.onclick = () => {
   nextBtn.classList.remove('next-section-btn_ripple');
   let currentScrollSection;
   let nextScrollSection;
-  for (let i = scrollSections.length - 1; i >= 0; i--) {
-    if (scrollSections[i].getBoundingClientRect().top > 1) {
-      nextScrollSection = scrollSections[i];
-      currentScrollSection = scrollSections[i - 1];
+  const sections = isStackedSections() ? scrollSectionsStacked : scrollSections;
+
+  for (let i = sections.length - 1; i >= 0; i--) {
+    if (sections[i].getBoundingClientRect().top > 1) {
+      nextScrollSection = sections[i];
+      currentScrollSection = sections[i - 1];
     }
     else {
       break;
     }
   }
-
+  console.log(currentScrollSection);
+  console.log(nextScrollSection);
   const currentSectionBottom = currentScrollSection.getBoundingClientRect().bottom;
   if (currentSectionBottom > window.innerHeight + 1) {
     const targetY = currentSectionBottom - window.innerHeight + window.pageYOffset;
     smoothScroll.animateScroll(targetY);
+    console.log('bottom');
   }
   else {
     smoothScroll.animateScroll(nextScrollSection);
-  }
-};
-
-export const hideNextSectionBtnIfNeeded = () => {
-  if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-    nextBtn.classList.add('next-section-btn_hidden');
-  }
-  else {
-    nextBtn.classList.remove('next-section-btn_hidden');
+    console.log('section');
   }
 };
 
 export const smoothScrollTo = (el) => {
   smoothScroll.animateScroll(el);
+};
+
+const header = document.getElementById('header');
+export const modifyNavAndNextSectionBtnIfNeeded = () => {
+  if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+    nextBtn.classList.add('next-section-btn_hidden');
+  }
+  else {
+    nextBtn.classList.remove('next-section-btn_hidden');
+    if (header.getBoundingClientRect().bottom <= 0) {
+      nextBtn.classList.add('orange');
+      navBtn.classList.add('orange');
+    }
+    else {
+      nextBtn.classList.remove('orange');
+      navBtn.classList.remove('orange');
+    }
+  }
 };

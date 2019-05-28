@@ -3,7 +3,7 @@ import injectWorks from './workTemplate';
 import '../styles/main.scss';
 import {detect} from 'detect-browser';
 import {initContactAnim, playContactAnimIfNeeded} from './contact';
-import {fixSidebarIfNeeded, initFixedSidebars} from './fixedSidebars';
+import {fixSidebarIfNeeded, initFixedSidebars} from './sidebars';
 import {playGraphicHeadingsAnim, initGraphicHeadings} from './graphicHeadings';
 import {isTouchscreen} from './utils';
 import {playAboutAnimIfNeeded, initAboutAnim} from './about';
@@ -17,7 +17,7 @@ import {playHeaderAnim} from './header';
 import {playFooterAnimIfNeeded, initFooterAnim} from './footer';
 import {initEnterAnims, playEnterAnimsIfNeeded} from './enterAnimations';
 import './navigation';
-import {hideNextSectionBtnIfNeeded} from './navigation';
+import {hideNextSectionBtnIfNeeded, modifyNavAndNextSectionBtnIfNeeded} from './navigation';
 
 let isScrolling = false;
 
@@ -34,7 +34,6 @@ window.addEventListener('keydown', handleFirstTab);
 // fix for jerky scrolling on position:fixed elements on IE and edge
 const browser = detect();
 if (browser && browser.name && (browser.name === 'edge' || browser.name === 'ie')) {
-  document.body.classList.add('edge-ie');
   window.addEventListener('mousewheel', function() {
     if (window.pageYOffset > 1080) {
       event.preventDefault();
@@ -43,6 +42,12 @@ if (browser && browser.name && (browser.name === 'edge' || browser.name === 'ie'
       window.scrollTo(0, csp - wd);
     }
   });
+  if (browser.name === 'edge') {
+    document.body.classList.add('edge');
+  }
+  else {
+    document.body.classList.add('ie');
+  }
 }
 // determine if user is on touchscreen device
 window.addEventListener(
@@ -71,37 +76,38 @@ initWorkAnim();
 initContactAnim();
 initFooterAnim();
 initEnterAnims();
-initFixedSidebars();
+// initFixedSidebars();
+
+// window.addEventListener('scroll', () => {
+//   fixSidebarIfNeeded();
+// });
 
 window.addEventListener('scroll', () => {
   isScrolling = true;
 });
 
-setInterval(() => {
-  if (isScrolling) {
-    isScrolling = false;
-    if (playAboutAnimIfNeeded()) {
-      return;
-    }
-    if (playWorksIntroIfNeeded()) {
-      return;
-    }
-    if (playContactAnimIfNeeded()) {
-      return;
-    }
-    playEnterAnimsIfNeeded();
-    playWorkInfoBtnAnimIfNeeded();
-    playFooterAnimIfNeeded();
-    hideNextSectionBtnIfNeeded();
-  }
-}, 250);
-
-window.addEventListener('scroll', () => {
-  fixSidebarIfNeeded();
-});
-
-playHeaderAnim();
+const playScrollDependentAnims = () => {
+  playAboutAnimIfNeeded();
+  playWorksIntroIfNeeded();
+  playContactAnimIfNeeded();
+  playEnterAnimsIfNeeded();
+  playWorkInfoBtnAnimIfNeeded();
+  playFooterAnimIfNeeded();
+  modifyNavAndNextSectionBtnIfNeeded();
+};
 
 window.onload = () => {
-  document.getElementById('preloader').classList.add('loaded');
+  const preloaders = document.getElementsByClassName('preloader');
+  preloaders[0].classList.add('preloader_loaded');
+  preloaders[1].classList.add('preloader_loaded');
+  setTimeout(() => {
+    playHeaderAnim();
+    playScrollDependentAnims();
+    setInterval(() => {
+      if (isScrolling) {
+        isScrolling = false;
+        playScrollDependentAnims();
+      }
+    }, 250);
+  }, 1000);
 };
