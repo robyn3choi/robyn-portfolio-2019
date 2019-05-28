@@ -4,7 +4,7 @@ import '../styles/main.scss';
 import {detect} from 'detect-browser';
 import {initContactAnim, playContactAnimIfNeeded} from './contact';
 import {fixSidebarIfNeeded, initFixedSidebars} from './sidebars';
-import {playGraphicHeadingsAnim, initGraphicHeadings} from './graphicHeadings';
+
 import {isTouchscreen} from './utils';
 import {playAboutAnimIfNeeded, initAboutAnim} from './about';
 import {
@@ -17,6 +17,7 @@ import {playHeaderAnim} from './header';
 import {playFooterAnimIfNeeded, initFooterAnim} from './footer';
 import {initEnterAnims, playEnterAnimsIfNeeded} from './enterAnimations';
 import './navigation';
+import './graphicHeadings';
 import {hideNextSectionBtnIfNeeded, modifyNavAndNextSectionBtnIfNeeded} from './navigation';
 
 let isScrolling = false;
@@ -62,7 +63,6 @@ window.addEventListener(
 
 injectWorks();
 initParallax();
-initGraphicHeadings();
 const workImages = document.getElementsByClassName('work__image');
 const workExitBtns = document.getElementsByClassName('work__exit-button');
 for (let i = 0; i < workImages.length; i++) {
