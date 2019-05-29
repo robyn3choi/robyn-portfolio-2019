@@ -2,9 +2,10 @@ export const isStackedSections = () => {
   return window.innerWidth <= 1100 || window.innerHeight <= 635;
 };
 
+// is element 1/6 of the way up the screen
 export const isElementInViewport = function(el) {
   const rect = el.getBoundingClientRect();
-  return rect.top <= window.innerHeight && rect.right <= window.innerWidth;
+  return rect.top <= window.innerHeight * (5 / 6) && rect.right <= window.innerWidth;
 };
 
 export const isTouchscreen = false;

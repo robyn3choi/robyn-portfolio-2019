@@ -26,7 +26,7 @@ body {
     transform: translateX(-100%);
   }
 
-  &_loaded {
+  &_finished {
     transform: none;
     outline: none;
   }
@@ -45,10 +45,9 @@ body {
   right: 0;
   margin: auto;
   top: 50%;
-  transition: opacity 0.3s;
 
-  .preloader_loaded ~ & {
-    opacity: 0;
+  .preloader_finished ~ & {
+    display: none;
   }
 }
 
@@ -173,7 +172,8 @@ h3 {
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 0.4s cubic-bezier(0.73, 0.02, 0.46, 1.39); //cubic-bezier(0.68, 0.01, 0.84, 0.57);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.73, 0.02, 0.46, 1.39); //cubic-bezier(0.68, 0.01, 0.84, 0.57);
   outline: 1px solid transparent; //hack to prevent aliasing in firefox
 }
 
@@ -231,11 +231,20 @@ h3 {
 }
 
 @media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
+  // because overflow on body doesn't work on mobile
+  body {
+    overflow-x: unset;
+  }
+
+  .site-container {
+    overflow-x: hidden;
+  }
+
   .section__sidebar {
     position: relative;
     margin: auto;
     width: auto;
-    height: 100vh;
+    height: calc(100vh - #{$nav-height});
   }
 
   .section__content {

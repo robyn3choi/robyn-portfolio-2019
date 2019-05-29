@@ -2,32 +2,20 @@
 
 $color-contact: #3cc26c;
 
-// .section__sidebar_contact {
-//   background: $color-about-background; //$color-contact;
-// }
-
 #contact {
   text-align: center;
-  height: 100vh;
+  height: calc(100vh - #{$nav-height});
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   background-color: white;
 
-  // &::after {
-  //   content: '';
-  //   background-image: url(../../public/images/mail.svg);
-  //   background-repeat: repeat;
-  //   background-size: 100px;
-  //   opacity: 0.04;
-  //   top: 0;
-  //   left: 0;
-  //   bottom: 0;
-  //   right: 0;
-  //   position: absolute;
-  //   z-index: -1;
-  // }
+  // airmail border - adapted from https://codepen.io/seyedi/pen/jWKEqb
+  // padding: 30px;
+  // border: 13px solid transparent;
+  // background: linear-gradient(white, white) padding-box,
+  //   repeating-linear-gradient(-45deg, $orange 0, $orange 12.5%, white 0, white 25%, $blue 0, $blue 37.5%, white 0, white 50%) 0 / 140px 140px;
 }
 
 .contact__heading {
@@ -71,11 +59,75 @@ $color-contact: #3cc26c;
 }
 
 #contact__email {
-  font-size: 3rem;
-  color: $orange;
+  font-size: 2.5rem;
+  color: $blue;
   margin-top: 10px;
   font-family: $title-font;
   font-weight: 300;
+}
+
+.contact-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-link {
+  margin: 14px 36px;
+  $link: &;
+
+  a {
+    text-decoration: unset;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  svg {
+    opacity: 0.8;
+    transition: all 1s;
+
+    circle,
+    path,
+    polygon {
+      // stroke: $blue;
+      // fill: white;
+      transition: all 0.3s;
+      //stroke-width: 1px;
+      stroke: $blue;
+    }
+  }
+
+  &:hover svg circle,
+  &:hover svg path,
+  &:hover svg polygon {
+    stroke: white;
+    fill: $blue;
+  }
+}
+
+.contact-link__title {
+  font-family: $title-font;
+  color: $blue;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 16px;
+}
+
+.contact-link__text {
+  color: $black;
+  margin-top: 16px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid $blue;
+}
+
+svg#email-image:hover {
+  // circle {
+  //   stroke: white;
+  //   fill: $blue;
+  // }
+  // path
 }
 
 $blue: rgb(47, 152, 194);
@@ -123,6 +175,6 @@ $dark-blue-2: rgb(23, 102, 133);
 @media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
   .section__content_contact {
     height: auto;
-    min-height: 100vh;
+    min-height: calc(100vh - #{$nav-height});
   }
 }

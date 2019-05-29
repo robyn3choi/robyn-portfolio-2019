@@ -1,26 +1,40 @@
 import SmoothScroll from 'smooth-scroll';
-import {isStackedSections} from './utils';
+import {isStackedSections, isElementInViewport} from './utils';
+
+const navHeight = 60;
+
+export const getNavHeight = () => {
+  return navHeight;
+};
 
 const smoothScroll = new SmoothScroll('[data-scroll]', {
-  speed: 800,
+  speed: 700,
+  speedAsDuration: true,
+  easing: 'easeInOutCubic',
   emitEvents: true,
+  offset: (anchor, toggle) => {
+    if (anchor.id === 'header' || anchor.id === 'footer') {
+      return 0;
+    }
+    return navHeight;
+  },
 });
 
-// navbar
-const navBtn = document.getElementById('nav__btn');
-navBtn.onclick = () => {
-  if (navBtn.classList.contains('is-active')) {
-    navBtn.classList.remove('is-active');
+// mobile nav
+const mobileNavBtn = document.getElementById('mobile-nav__btn');
+mobileNavBtn.onclick = () => {
+  if (mobileNavBtn.classList.contains('is-active')) {
+    mobileNavBtn.classList.remove('is-active');
     document.body.classList.remove('nav-open');
   }
   else {
-    navBtn.classList.add('is-active');
+    mobileNavBtn.classList.add('is-active');
     document.body.classList.add('nav-open');
   }
 };
 
 window.addEventListener('scrollStart', () => {
-  navBtn.classList.remove('is-active');
+  mobileNavBtn.classList.remove('is-active');
   document.body.classList.remove('nav-open');
 });
 
@@ -35,7 +49,7 @@ nextBtn.onclick = () => {
   const sections = isStackedSections() ? scrollSectionsStacked : scrollSections;
 
   for (let i = sections.length - 1; i >= 0; i--) {
-    if (sections[i].getBoundingClientRect().top > 1) {
+    if (sections[i].getBoundingClientRect().top > navHeight + 1) {
       nextScrollSection = sections[i];
       currentScrollSection = sections[i - 1];
     }
@@ -43,17 +57,14 @@ nextBtn.onclick = () => {
       break;
     }
   }
-  console.log(currentScrollSection);
-  console.log(nextScrollSection);
+
   const currentSectionBottom = currentScrollSection.getBoundingClientRect().bottom;
-  if (currentSectionBottom > window.innerHeight + 1) {
+  if (currentSectionBottom > window.innerHeight + navHeight + 1) {
     const targetY = currentSectionBottom - window.innerHeight + window.pageYOffset;
     smoothScroll.animateScroll(targetY);
-    console.log('bottom');
   }
   else {
     smoothScroll.animateScroll(nextScrollSection);
-    console.log('section');
   }
 };
 
@@ -61,20 +72,47 @@ export const smoothScrollTo = (el) => {
   smoothScroll.animateScroll(el);
 };
 
-const header = document.getElementById('header');
+const aboutSection = document.getElementById('about');
+const sections = document.getElementsByClassName('section');
+const navLinks = document.getElementsByClassName('nav__link');
+
 export const modifyNavAndNextSectionBtnIfNeeded = () => {
+  // change or hide nav section btn
   if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
     nextBtn.classList.add('next-section-btn_hidden');
   }
   else {
     nextBtn.classList.remove('next-section-btn_hidden');
-    if (header.getBoundingClientRect().bottom <= 0) {
+    if (isElementInViewport(aboutSection)) {
       nextBtn.classList.add('orange');
-      navBtn.classList.add('orange');
+      mobileNavBtn.classList.add('orange');
     }
     else {
       nextBtn.classList.remove('orange');
-      navBtn.classList.remove('orange');
+      mobileNavBtn.classList.remove('orange');
     }
   }
+
+  // underline the current section's nav link
+  const nav = document.getElementById('nav');
+  for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].classList.remove('nav__link_current');
+  }
+  for (let i = sections.length - 1; i >= 0; i--) {
+    if (isElementInViewport(sections[i])) {
+      navLinks[i].classList.add('nav__link_current');
+      // also mobile nav link
+      navLinks[i + 5].classList.add('nav__link_current');
+      // if the current section is the header or footer
+      if (i === 0 || i === sections.length - 1) {
+        nav.classList.add('nav_hidden');
+      }
+      else {
+        nav.classList.remove('nav_hidden');
+      }
+      break;
+    }
+  }
+
+  // hide nav bar during header and footer
 };

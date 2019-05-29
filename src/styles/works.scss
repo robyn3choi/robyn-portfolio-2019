@@ -20,7 +20,7 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
 }
 
 .work-container {
-  height: 100vh;
+  height: calc(100vh - #{$nav-height});
   width: 100%;
   padding: 1%;
   position: relative;
@@ -228,9 +228,9 @@ $animation-frames: 4;
 
 #works-art-container {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - #{$nav-height});
   position: sticky;
-  top: 0;
+  top: $nav-height;
 
   &::after {
     content: '';

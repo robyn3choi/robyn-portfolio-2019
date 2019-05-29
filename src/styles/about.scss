@@ -39,10 +39,10 @@
 }
 
 #about__anim {
-  height: 100vh;
+  height: calc(100vh - #{$nav-height});
   margin: auto;
   position: sticky;
-  top: 0;
+  top: $nav-height;
 }
 
 p.large {

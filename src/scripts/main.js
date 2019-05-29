@@ -19,6 +19,7 @@ import {initEnterAnims, playEnterAnimsIfNeeded} from './enterAnimations';
 import './navigation';
 import './graphicHeadings';
 import {hideNextSectionBtnIfNeeded, modifyNavAndNextSectionBtnIfNeeded} from './navigation';
+import {resizeGraphicHeadings} from './graphicHeadings';
 
 let isScrolling = false;
 
@@ -71,6 +72,7 @@ for (let i = 0; i < workImages.length; i++) {
   };
   workExitBtns[i].onclick = () => toggleWorkInfo(i);
 }
+resizeGraphicHeadings();
 initAboutAnim();
 initWorkAnim();
 initContactAnim();
@@ -98,8 +100,8 @@ const playScrollDependentAnims = () => {
 
 window.onload = () => {
   const preloaders = document.getElementsByClassName('preloader');
-  preloaders[0].classList.add('preloader_loaded');
-  preloaders[1].classList.add('preloader_loaded');
+  preloaders[0].classList.add('preloader_finished');
+  preloaders[1].classList.add('preloader_finished');
   setTimeout(() => {
     playHeaderAnim();
     playScrollDependentAnims();

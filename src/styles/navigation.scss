@@ -3,7 +3,71 @@
 $nav-width: 280px;
 $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
 
-.nav-container {
+#nav {
+  height: $nav-height;
+  background: $orange;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  //box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.nav_hidden {
+  transform: translateY(-$nav-height);
+}
+
+.nav__links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 60px;
+
+  li {
+    margin: 0 3%;
+  }
+}
+
+.nav__link {
+  font-family: $title-font;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: white;
+  text-align: left;
+  text-decoration: none;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: all 0.2s ease-in-out 0s;
+  }
+
+  &:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  &_current:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+}
+
+.mobile-nav-container {
+  display: none;
   background-color: $blue;
   width: $nav-width;
   height: 100vh;
@@ -21,49 +85,25 @@ $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
   }
 }
 
-#nav {
+#mobile-nav {
   width: $nav-width;
+}
 
-  ul {
-    padding: 0;
-    margin-top: 60px;
-  }
+.mobile-nav__links {
+  padding: 0;
+  margin-top: 60px;
 
   li {
     padding-left: 60px;
   }
-}
 
-.nav__link {
-  font-family: $title-font;
-  font-weight: 300;
-  font-size: 2.7rem;
-  color: white;
-  text-align: left;
-  text-decoration: none;
-  position: relative;
-
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    visibility: hidden;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: all 0.3s ease-in-out 0s;
-  }
-
-  &:hover:before {
-    visibility: visible;
-    transform: scaleX(1);
+  .nav__link {
+    font-size: 2.7rem;
   }
 }
 
-#nav__btn {
+#mobile-nav__btn {
+  display: none;
   background: $blue;
   position: fixed;
   z-index: 4;
@@ -142,5 +182,16 @@ $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
   100% {
     transform: scale(1.4);
     opacity: 0;
+  }
+}
+
+@media (max-width: $mobile-max-width) {
+  .nav__links {
+    display: none;
+  }
+
+  .mobile-nav-container,
+  #mobile-nav__btn {
+    display: block;
   }
 }
