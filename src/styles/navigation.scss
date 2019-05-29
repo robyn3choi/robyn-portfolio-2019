@@ -68,7 +68,7 @@ $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
 
 .mobile-nav-container {
   display: none;
-  background-color: $blue;
+  background-color: $orange;
   width: $nav-width;
   height: 100vh;
   position: fixed;
@@ -104,7 +104,7 @@ $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
 
 #mobile-nav__btn {
   display: none;
-  background: $blue;
+  background: $orange;
   position: fixed;
   z-index: 4;
   height: 60px;
@@ -186,6 +186,10 @@ $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
 }
 
 @media (max-width: $mobile-max-width) {
+  #nav {
+    box-shadow: none;
+  }
+
   .nav__links {
     display: none;
   }

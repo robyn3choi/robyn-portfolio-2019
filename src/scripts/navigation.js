@@ -85,11 +85,11 @@ export const modifyNavAndNextSectionBtnIfNeeded = () => {
     nextBtn.classList.remove('next-section-btn_hidden');
     if (isElementInViewport(aboutSection)) {
       nextBtn.classList.add('orange');
-      mobileNavBtn.classList.add('orange');
+      // mobileNavBtn.classList.add('orange');
     }
     else {
       nextBtn.classList.remove('orange');
-      mobileNavBtn.classList.remove('orange');
+      // mobileNavBtn.classList.remove('orange');
     }
   }
 
