@@ -3,8 +3,12 @@ export const isStackedSections = () => {
 };
 
 // is element 1/6 of the way up the screen
-export const isElementInViewport = function(el) {
-  const rect = el.getBoundingClientRect();
+export const isElementInViewport = function(element, isWork = false) {
+  const rect = element.getBoundingClientRect();
+
+  if (isWork) {
+    return rect.right <= window.innerWidth;
+  }
   return rect.top <= window.innerHeight * (5 / 6) && rect.right <= window.innerWidth;
 };
 

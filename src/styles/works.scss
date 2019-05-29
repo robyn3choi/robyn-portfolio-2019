@@ -171,13 +171,13 @@ $color-work-heading: rgb(84, 84, 84); //TODO: change to fit color-work
 }
 
 .work__exit-button {
-  width: 60px;
-  height: 60px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   border: none;
   position: fixed;
-  top: 6px;
-  right: 6px;
+  top: 4px;
+  right: 3px;
   background: $orange;
   padding: 16px;
   box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.4);
@@ -305,7 +305,7 @@ $animation-frames: 4;
     //left: 0;
     //width: calc(200% - 36px);
     transform: translateX(0);
-    padding: 3%;
+    padding: 20px;
     width: 200%;
 
     &.work_viewing-info {

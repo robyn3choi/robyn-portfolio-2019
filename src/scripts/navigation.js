@@ -42,6 +42,7 @@ window.addEventListener('scrollStart', () => {
 const scrollSections = document.getElementsByClassName('scroll-section');
 const scrollSectionsStacked = document.getElementsByClassName('scroll-section_stacked');
 const nextBtn = document.getElementById('next-section-btn');
+
 nextBtn.onclick = () => {
   nextBtn.classList.remove('next-section-btn_ripple');
   let currentScrollSection;
@@ -59,7 +60,14 @@ nextBtn.onclick = () => {
   }
 
   const currentSectionBottom = currentScrollSection.getBoundingClientRect().bottom;
-  if (currentSectionBottom > window.innerHeight + navHeight + 1) {
+  // if the current section is longer than this and the next full screen
+  if (currentSectionBottom > 2 * window.innerHeight + navHeight + 1) {
+    // scroll down 100vh
+    smoothScroll.animateScroll(window.innerHeight + window.pageYOffset - navHeight);
+  }
+  // if the current section is longer than 100vh but doesn't take up the whole next screen
+  else if (currentSectionBottom > window.innerHeight + navHeight + 1) {
+    // scroll to bottom of section
     const targetY = currentSectionBottom - window.innerHeight + window.pageYOffset;
     smoothScroll.animateScroll(targetY);
   }
@@ -85,11 +93,9 @@ export const modifyNavAndNextSectionBtnIfNeeded = () => {
     nextBtn.classList.remove('next-section-btn_hidden');
     if (isElementInViewport(aboutSection)) {
       nextBtn.classList.add('orange');
-      // mobileNavBtn.classList.add('orange');
     }
     else {
       nextBtn.classList.remove('orange');
-      // mobileNavBtn.classList.remove('orange');
     }
   }
 
@@ -113,6 +119,4 @@ export const modifyNavAndNextSectionBtnIfNeeded = () => {
       break;
     }
   }
-
-  // hide nav bar during header and footer
 };

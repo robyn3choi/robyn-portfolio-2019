@@ -1,14 +1,17 @@
 import lottie from 'lottie-web';
-import {isElementInViewport, playTypingAnimation} from './utils';
+import {isElementInViewport, playTypingAnimation, isStackedSections} from './utils';
 import {playEnterAnimsIfNeeded} from './enterAnimations';
 
 let aboutTyped;
+let aboutSidebar;
 let aboutAnim;
 let hasStartedTypingAnim = false;
 let hasFinishedTypingAnim = false;
+let hasStartedSidebarAnim = false;
 
 export const initAboutAnim = () => {
   aboutTyped = document.getElementById('about__typed_1');
+  aboutSidebar = document.getElementsByClassName('section__sidebar_about')[0];
   aboutAnim = lottie.loadAnimation({
     container: document.getElementById('about__anim'),
     renderer: 'svg',
@@ -20,14 +23,19 @@ export const initAboutAnim = () => {
       preserveAspectRatio: 'xMidYMid slice',
     },
   });
-
-  // playAboutAnimIfNeeded();
 };
 
 export const playAboutAnimIfNeeded = () => {
+  if (!hasStartedSidebarAnim && isStackedSections() && isElementInViewport(aboutSidebar)) {
+    aboutAnim.playSegments([[10, 27], [28, 101]], true);
+    hasStartedSidebarAnim = true;
+  }
   if (!hasStartedTypingAnim && isElementInViewport(aboutTyped)) {
     hasStartedTypingAnim = true;
-    aboutAnim.playSegments([[10, 27], [28, 101]], true);
+    if (!hasStartedSidebarAnim) {
+      aboutAnim.playSegments([[10, 27], [28, 101]], true);
+      hasStartedSidebarAnim = true;
+    }
     setTimeout(() => {
       playTypingAnimation(
           document.getElementById('about__typed_1'),
