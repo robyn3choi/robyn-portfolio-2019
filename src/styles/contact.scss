@@ -5,17 +5,71 @@ $color-contact: #3cc26c;
 #contact {
   text-align: center;
   height: calc(100vh - #{$nav-height});
+  background-color: white;
+
+  & .subsection {
+    height: 100%;
+  }
+
+  p {
+    margin-top: 0;
+  }
+}
+
+$super-ease-out: cubic-bezier(0.26, 0.73, 0.62, 1);
+$super-ease-in: cubic-bezier(0.66, 0, 0.95, 0.94);
+
+.contact__border-anim {
+  position: relative;
+  height: 100%;
+  padding: 30px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: white;
 
-  // airmail border - adapted from https://codepen.io/seyedi/pen/jWKEqb
-  // padding: 30px;
-  // border: 13px solid transparent;
-  // background: linear-gradient(white, white) padding-box,
-  //   repeating-linear-gradient(-45deg, $orange 0, $orange 12.5%, white 0, white 25%, $blue 0, $blue 37.5%, white 0, white 50%) 0 / 140px 140px;
+  &::before {
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border: 1px solid $blue;
+    border-right: none;
+    border-bottom: none;
+    transition: height 1s $super-ease-in, width 1s $super-ease-out 1s;
+  }
+
+  &.enter-anim_hidden::before {
+    height: 0;
+    width: 0;
+  }
+
+  &::after {
+    pointer-events: none;
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    border: 1px solid $blue;
+    border-left: none;
+    border-top: none;
+    transition: height 1s $super-ease-in, width 1s $super-ease-out 1s;
+  }
+
+  &.enter-anim_hidden::after {
+    height: 0;
+    width: 0;
+  }
 }
 
 .contact__heading {
@@ -67,15 +121,14 @@ $color-contact: #3cc26c;
 }
 
 .contact-links {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .contact-link {
-  margin: 14px 36px;
-  $link: &;
+  margin: 34px 36px 20px 36px;
 
   a {
     text-decoration: unset;
@@ -83,25 +136,30 @@ $color-contact: #3cc26c;
     width: 100%;
     height: 100%;
   }
+}
 
-  svg {
-    opacity: 0.8;
-    transition: all 1s;
+.contact-link__image {
+  opacity: 0.8;
+  transition: all 0.6s;
 
-    circle,
-    path,
-    polygon {
-      // stroke: $blue;
-      // fill: white;
-      transition: all 0.3s;
-      //stroke-width: 1px;
-      stroke: $blue;
-    }
+  .contact-links.enter-anim_hidden & {
+    opacity: 0;
+    transform: translateY(12px);
   }
 
-  &:hover svg circle,
-  &:hover svg path,
-  &:hover svg polygon {
+  circle,
+  path,
+  polygon {
+    // stroke: $blue;
+    // fill: white;
+    transition: all 0.3s;
+    //stroke-width: 1px;
+    stroke: $blue;
+  }
+
+  .contact-link:hover & circle,
+  .contact-link:hover & path,
+  .contact-link:hover & polygon {
     stroke: white;
     fill: $blue;
   }
@@ -113,67 +171,92 @@ $color-contact: #3cc26c;
   font-size: 1.5rem;
   font-weight: 300;
   margin-top: 16px;
-}
+  transition: all 0.6s;
 
-.contact-link__text {
-  color: $black;
-  margin-top: 16px;
-  font-size: 1.2rem;
-  border-bottom: 1px solid $blue;
-}
-
-svg#email-image:hover {
-  // circle {
-  //   stroke: white;
-  //   fill: $blue;
-  // }
-  // path
-}
-
-$blue: rgb(47, 152, 194);
-$light-blue-1: rgb(97, 203, 245);
-$light-blue-2: rgb(140, 219, 250);
-$dark-blue-1: rgb(54, 107, 128);
-$dark-blue-2: rgb(23, 102, 133);
-
-.triangle-container {
-  position: absolute;
-}
-
-.triangle {
-  // width: 0;
-  // height: 0;
-  // border-style: solid;
-  // border-width: 0 243px 228px 0; //0 117px 164px 0;
-  // border-color: transparent $blue transparent transparent;
-  // position: absolute;
-  width: 120px;
-  height: 120px;
-}
-
-@for $i from 1 through 14 {
-  .triangle-container:nth-of-type(#{$i}) {
-    @if $i < 8 {
-      left: random() * -100px;
-      top: ($i - 1) * 180px;
-    } @else {
-      right: random() * -100px;
-      top: ($i - 8) * 180px;
-    }
-    .triangle {
-      @if $i % 2 == 0 {
-        background-color: darken($blue, random() * 20%);
-        transform: rotate(45deg) scale(0.7);
-      } @else {
-        background-color: lighten($blue, random() * 20%);
-        transform: rotate(45deg) scale(1.2);
-      }
-    }
+  .contact-links.enter-anim_hidden & {
+    opacity: 0;
+    transform: translateY(12px);
   }
 }
 
-@media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
-  .section__content_contact {
+.contact-link__text {
+  position: relative;
+  color: $black;
+  margin-top: 8px;
+  font-size: 1.2rem;
+  // border-bottom: 1px solid $blue;
+  transition: all 0.6s;
+
+  .contact-links.enter-anim_hidden & {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: $blue;
+    visibility: hidden;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: all 0.2s ease-in-out 0s;
+  }
+
+  .contact-link:hover &::before,
+  .touchscreen &::before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+}
+
+.contact-link:nth-of-type(1) {
+  .contact-link__image {
+    transition-delay: 0.1s;
+  }
+
+  .contact-link__title {
+    transition-delay: 0.2s;
+  }
+
+  .contact-link__text {
+    transition-delay: 0.3s;
+  }
+}
+
+.contact-link:nth-of-type(2) {
+  .contact-link__image {
+    transition-delay: 0.4s;
+  }
+
+  .contact-link__title {
+    transition-delay: 0.5s;
+  }
+
+  .contact-link__text {
+    transition-delay: 0.6s;
+  }
+}
+
+.contact-link:nth-of-type(3) {
+  .contact-link__image {
+    transition-delay: 0.7s;
+  }
+
+  .contact-link__title {
+    transition-delay: 0.8s;
+  }
+
+  .contact-link__text {
+    transition-delay: 0.9s;
+  }
+}
+
+@media (max-width: $stacked-sections-max-width), (max-height: 782px) {
+  #contact {
     height: auto;
     min-height: calc(100vh - #{$nav-height});
   }
