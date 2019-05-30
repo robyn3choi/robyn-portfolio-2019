@@ -1,4 +1,4 @@
-import {isStackedSections, isTouchscreen} from './utils';
+import {isStackedSections} from './utils';
 import {isElementInViewport} from './utils';
 import lottie from 'lottie-web';
 import {smoothScrollTo} from './navigation';
@@ -42,7 +42,16 @@ export const toggleWorkInfo = (index) => {
 };
 
 const toggleWorkBackBtn = (index, isViewingWorkInfo) => {
+  if (
+    document.body.classList.contains('ie') ||
+    document.body.classList.contains('edge') ||
+    document.body.classList.contains('touchscreen')
+  ) {
+    return;
+  }
   if (isViewingWorkInfo) {
+    if (workBackBtnAnims.length > 0) {
+    }
     workBackBtnAnims[index].playSegments([0, 30], true);
   }
   else {
@@ -62,7 +71,6 @@ function pollForCupSpill(work, cupRightEdgeX) {
 
 export const initWorkAnim = () => {
   worksArtContainer = document.getElementById('works-art-container');
-  // playWorksIntroIfNeeded();
 
   const workImages = document.getElementsByClassName('work__image');
 
@@ -100,12 +108,6 @@ export const initWorkAnim = () => {
         infoBtnAnim.playSegments([31, 38], true);
       });
     }
-  }
-};
-
-export const playWorkInfoBtnAnimIfNeeded = () => {
-  if (isTouchscreen && isElementInViewport(workImages[i])) {
-    infoBtnAnim.playSegments([0, 30], true);
   }
 };
 

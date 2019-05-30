@@ -12,8 +12,6 @@ export const isElementInViewport = function(element, isWork = false) {
   return rect.top <= window.innerHeight * (5 / 6) && rect.right <= window.innerWidth;
 };
 
-export const isTouchscreen = false;
-
 export const playTypingAnimation = (el, text, delay) => {
   return new Promise((resolve, reject) => {
     let i = 0;

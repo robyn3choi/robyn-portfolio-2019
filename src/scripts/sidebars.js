@@ -1,7 +1,7 @@
+// this file is only used if using ie (position: sticky doesn't work in ie)
 import {isStackedSections} from './utils';
 
 let isStacked;
-
 let aboutSidebar;
 let aboutSection;
 let worksSidebar;
@@ -14,9 +14,9 @@ export const initFixedSidebars = () => {
   worksSidebar = sidebars[1];
 
   const sections = document.getElementsByClassName('section');
-  aboutSection = sections[0];
-  worksSection = sections[1];
-  contactSection = sections[2];
+  aboutSection = sections[1];
+  worksSection = sections[2];
+  contactSection = sections[3];
 
   const setIsStacked = () => {
     const wasStacked = isStacked;
@@ -33,15 +33,11 @@ export const initFixedSidebars = () => {
   // window.addEventListener('scroll', fixSidebarIfNeeded);
   window.addEventListener('resize', () => {
     setIsStacked();
-    if (document.body.contains('ie')) {
-      fixSidebarIfNeeded();
-    }
+    fixSidebarIfNeeded();
   });
 
   setIsStacked();
-  if (document.body.contains('ie')) {
-    fixSidebarIfNeeded();
-  }
+  fixSidebarIfNeeded();
 };
 
 export const fixSidebarIfNeeded = () => {

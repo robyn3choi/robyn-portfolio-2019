@@ -3,10 +3,6 @@ import {isStackedSections, isElementInViewport} from './utils';
 
 const navHeight = 60;
 
-export const getNavHeight = () => {
-  return navHeight;
-};
-
 const smoothScroll = new SmoothScroll('[data-scroll]', {
   speed: 700,
   speedAsDuration: true,
@@ -76,9 +72,9 @@ nextBtn.onclick = () => {
   }
 };
 
-export const smoothScrollTo = (el) => {
-  smoothScroll.animateScroll(el);
-};
+export const getNavHeight = () => navHeight;
+
+export const smoothScrollTo = (el) => smoothScroll.animateScroll(el);
 
 const aboutSection = document.getElementById('about');
 const sections = document.getElementsByClassName('section');
@@ -98,7 +94,6 @@ export const modifyNavAndNextSectionBtnIfNeeded = () => {
       nextBtn.classList.remove('orange');
     }
   }
-
   // underline the current section's nav link
   const nav = document.getElementById('nav');
   for (let i = 0; i < navLinks.length; i++) {

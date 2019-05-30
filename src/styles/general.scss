@@ -250,7 +250,11 @@ h3 {
 
 @media (max-width: $mobile-max-width) {
   html {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+  }
+
+  #next-section-btn {
+    bottom: 16px;
   }
 
   .subsection {

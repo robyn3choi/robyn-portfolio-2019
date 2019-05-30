@@ -24,15 +24,10 @@ export const initFooterAnim = () => {
     autoplay: false,
     path: '/animationData/footer-mobile.json',
   });
-
-  // playFooterAnimIfNeeded();
 };
 
 export const playFooterAnimIfNeeded = () => {
-  if (
-    !hasPlayedFooterAnim &&
-    window.innerHeight + window.pageYOffset >= document.body.offsetHeight
-  ) {
+  if (!hasPlayedFooterAnim && isElementInViewport(footerEl)) {
     footerAnim.play();
     mobileFooterAnim.play();
     hasPlayedFooterAnim = true;

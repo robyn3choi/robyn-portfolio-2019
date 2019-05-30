@@ -4,21 +4,14 @@ import '../styles/main.scss';
 import {detect} from 'detect-browser';
 import {initContactAnim, playContactAnimIfNeeded} from './contact';
 import {fixSidebarIfNeeded, initFixedSidebars} from './sidebars';
-
-import {isTouchscreen} from './utils';
 import {playAboutAnimIfNeeded, initAboutAnim} from './about';
-import {
-  toggleWorkInfo,
-  playWorksIntroIfNeeded,
-  playWorkInfoBtnAnimIfNeeded,
-  initWorkAnim,
-} from './works';
+import {toggleWorkInfo, playWorksIntroIfNeeded, initWorkAnim} from './works';
 import {playHeaderAnim} from './header';
 import {playFooterAnimIfNeeded, initFooterAnim} from './footer';
 import {initEnterAnims, playEnterAnimsIfNeeded} from './enterAnimations';
 import './navigation';
 import './graphicHeadings';
-import {hideNextSectionBtnIfNeeded, modifyNavAndNextSectionBtnIfNeeded} from './navigation';
+import {modifyNavAndNextSectionBtnIfNeeded} from './navigation';
 import {resizeGraphicHeadings} from './graphicHeadings';
 
 let isScrolling = false;
@@ -56,7 +49,6 @@ window.addEventListener(
     'touchstart',
     function onFirstTouch() {
       document.body.classList.add('touchscreen');
-      isTouchscreen = true;
       window.removeEventListener('touchstart', onFirstTouch, false);
     },
     false
@@ -78,11 +70,14 @@ initWorkAnim();
 initContactAnim();
 initFooterAnim();
 initEnterAnims();
-// initFixedSidebars();
+modifyNavAndNextSectionBtnIfNeeded();
 
-// window.addEventListener('scroll', () => {
-//   fixSidebarIfNeeded();
-// });
+if (document.body.classList.contains('ie')) {
+  initFixedSidebars();
+  window.addEventListener('scroll', () => {
+    fixSidebarIfNeeded();
+  });
+}
 
 window.addEventListener('scroll', () => {
   isScrolling = true;
@@ -93,7 +88,6 @@ const playScrollDependentAnims = () => {
   playWorksIntroIfNeeded();
   playContactAnimIfNeeded();
   playEnterAnimsIfNeeded();
-  playWorkInfoBtnAnimIfNeeded();
   playFooterAnimIfNeeded();
   modifyNavAndNextSectionBtnIfNeeded();
 };
