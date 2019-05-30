@@ -173,7 +173,7 @@ $color-work: #34444a; //#2e5c77; // #2e5c77 //#6694af // 5ba7d2
     transform: scale(0, 0);
   }
 
-  &:nth-of-type(2) {
+  &:last-of-type {
     transition-delay: 150ms;
     margin-bottom: 100px;
   }
@@ -339,5 +339,9 @@ $animation-frames: 4;
 
   .work__exit-button {
     display: block;
+  }
+
+  .work__link-button:nth-last-of-type {
+    margin-bottom: 60px;
   }
 }

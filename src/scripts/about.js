@@ -31,12 +31,10 @@ export const playAboutAnimIfNeeded = () => {
     // if sidebar is offsreen
     const aboutSidebarBottom = aboutSidebar.getBoundingClientRect().bottom;
     if (isSidebarAnimPlaying && aboutSidebarBottom <= 0) {
-      console.log('pause');
       aboutAnim.pause();
       isSidebarAnimPlaying = false;
     }
     else if (!isSidebarAnimPlaying && aboutSidebarBottom > 0) {
-      console.log('resume');
       aboutAnim.playSegments([[28, 101]], true);
       isSidebarAnimPlaying = true;
     }
@@ -53,18 +51,8 @@ export const playAboutAnimIfNeeded = () => {
         hasStartedSidebarAnim = true;
       }
       setTimeout(() => {
-        playTypingAnimation(
-            document.getElementById('about__typed_1'),
-            `Hey there, I'm Robyn Choi.`,
-            35
-        )
-            .then(() =>
-              playTypingAnimation(
-                  document.getElementById('about__typed_2'),
-                  `I'm a full-stack web developer based in Vancouver, Canada.`,
-                  15
-              )
-            )
+        playTypingAnimation(document.getElementById('about__typed_1'), 40)
+            .then(() => playTypingAnimation(document.getElementById('about__typed_2'), 30))
             .then(() => {
               hasFinishedTypingAnim = true;
               playEnterAnimsIfNeeded();

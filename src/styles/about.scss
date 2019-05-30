@@ -126,22 +126,9 @@ p.medium {
   }
 }
 
-.about__typed-container {
-  position: relative;
-}
-
 .about__typed {
-  position: absolute;
-  top: 0;
-
-  &_placeholder {
-    opacity: 0;
-  }
+  visibility: hidden;
 }
-
-// .section__content_about .graphic-heading_front {
-//   background: $color-about-graphic-heading;
-// }
 
 @media (min-width: 1921px) {
   #about__anim {
