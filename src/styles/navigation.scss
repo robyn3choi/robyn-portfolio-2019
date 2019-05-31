@@ -2,20 +2,17 @@
 
 $nav-width: 280px;
 $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
+$purple: #2f3b79;
 
 #nav {
   height: $nav-height;
-  background: $orange;
+  background: $purple;
   position: fixed;
   top: 0;
   z-index: 99;
   width: 100%;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
-}
-
-.nav_hidden {
-  transform: translateY(-$nav-height);
+  transition: all 0.5s;
 }
 
 .nav__links {
@@ -23,12 +20,12 @@ $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
   padding: 0;
   list-style: none;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   height: 60px;
 
   li {
-    margin: 0 3%;
+    margin: 0 33px;
   }
 }
 
@@ -66,9 +63,9 @@ $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
   }
 }
 
-.mobile-nav-container {
+#mobile-nav-container {
   display: none;
-  background-color: $orange;
+  background-color: $purple;
   width: $nav-width;
   height: 100vh;
   position: fixed;
@@ -76,7 +73,7 @@ $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
   top: 0;
   overflow: hidden;
   transform: translateX(-$nav-width);
-  transition: $nav-transition;
+  transition: $nav-transition, background-color 0.5s;
   z-index: 3;
   box-shadow: 6px 0 12px rgba(0, 0, 0, 0.3);
 
@@ -104,10 +101,11 @@ $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
 
 #mobile-nav__btn {
   display: none;
-  background: $orange;
+  background: $purple;
   position: fixed;
   z-index: 4;
   height: 60px;
+  transition: background-color 0.5s;
 }
 
 #next-section-btn {
@@ -115,7 +113,7 @@ $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
   height: 54px;
   border-radius: 100%;
   border: none;
-  background-color: $blue;
+  background-color: $purple;
   background-image: url(../../public/images/arrow-down.svg);
   background-size: 60%;
   background-position: center;
@@ -126,7 +124,7 @@ $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
   box-shadow: -2px 4px 12px rgba(0, 0, 0, 0.4);
   transform: translateX(-50%); // perspective(1px) translateZ(0);
   opacity: 1;
-  transition: all 0.2s;
+  transition: all 0.2s, background-color 0.5s;
 
   &:hover {
     transform: translateX(-50%) scale(1.1);
@@ -147,7 +145,7 @@ $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
   &.next-section-btn_ripple::before {
     content: '';
     position: absolute;
-    border: $blue solid 10px;
+    border: $purple solid 10px;
     border-radius: 100%;
     top: 0;
     right: 0;
@@ -166,6 +164,14 @@ $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
 
 .orange {
   background-color: $orange !important;
+}
+
+.black.next-section-btn_ripple::before {
+  border-color: #030b17 !important;
+}
+
+.black {
+  background-color: #030b17 !important;
 }
 
 @keyframes ripple-out {
@@ -194,7 +200,7 @@ $nav-transition: transform 0.6s cubic-bezier(0.55, 0.01, 0.33, 1);
     display: none;
   }
 
-  .mobile-nav-container,
+  #mobile-nav-container,
   #mobile-nav__btn {
     display: block;
   }

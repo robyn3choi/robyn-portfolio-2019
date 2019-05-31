@@ -1,7 +1,5 @@
 @import 'variables.scss';
 
-$color-contact: #3cc26c;
-
 #contact {
   text-align: center;
   height: calc(100vh - #{$nav-height});
@@ -101,6 +99,11 @@ $super-ease-in: cubic-bezier(0.66, 0, 0.95, 0.94);
 
   &.enter-anim_hidden {
     transform: skew(0) scale(0, 1);
+  }
+
+  .ie & {
+    margin-left: 50%;
+    transform: skew(22deg) scale(1, 1) translateX(-50%);
   }
 }
 

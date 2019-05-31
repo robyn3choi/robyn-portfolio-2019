@@ -77,8 +77,14 @@ export const getNavHeight = () => navHeight;
 export const smoothScrollTo = (el) => smoothScroll.animateScroll(el);
 
 const aboutSection = document.getElementById('about');
+const footer = document.getElementById('footer');
 const sections = document.getElementsByClassName('section');
 const navLinks = document.getElementsByClassName('nav__link');
+const navBar = document.getElementById('nav');
+const mobileNavContainer = document.getElementById('mobile-nav-container');
+const colorEls = [];
+colorEls.push(nextBtn, navBar, mobileNavBtn, mobileNavContainer);
+console.log(colorEls);
 
 export const modifyNavAndNextSectionBtnIfNeeded = () => {
   // change or hide nav section btn
@@ -87,15 +93,33 @@ export const modifyNavAndNextSectionBtnIfNeeded = () => {
   }
   else {
     nextBtn.classList.remove('next-section-btn_hidden');
-    if (isElementInViewport(aboutSection)) {
-      nextBtn.classList.add('orange');
-    }
-    else {
-      nextBtn.classList.remove('orange');
-    }
   }
-  // underline the current section's nav link
-  const nav = document.getElementById('nav');
+
+  if (aboutSection.getBoundingClientRect().top <= navHeight) {
+    nextBtn.classList.add('orange');
+    navBar.classList.add('orange');
+    mobileNavBtn.classList.add('orange');
+    mobileNavContainer.classList.add('orange');
+  }
+  else {
+    nextBtn.classList.remove('orange');
+    navBar.classList.remove('orange');
+    mobileNavBtn.classList.remove('orange');
+    mobileNavContainer.classList.remove('orange');
+  }
+  if (footer.getBoundingClientRect().top <= navHeight + 1) {
+    nextBtn.classList.add('black');
+    navBar.classList.add('black');
+    mobileNavBtn.classList.add('black');
+    mobileNavContainer.classList.add('black');
+  }
+  else {
+    nextBtn.classList.remove('black');
+    navBar.classList.remove('black');
+    mobileNavBtn.classList.remove('black');
+    mobileNavContainer.classList.remove('black');
+  }
+
   for (let i = 0; i < navLinks.length; i++) {
     navLinks[i].classList.remove('nav__link_current');
   }
@@ -104,13 +128,6 @@ export const modifyNavAndNextSectionBtnIfNeeded = () => {
       navLinks[i].classList.add('nav__link_current');
       // also mobile nav link
       navLinks[i + 5].classList.add('nav__link_current');
-      // if the current section is the header or footer
-      if (i === 0 || i === sections.length - 1) {
-        nav.classList.add('nav_hidden');
-      }
-      else {
-        nav.classList.remove('nav_hidden');
-      }
       break;
     }
   }

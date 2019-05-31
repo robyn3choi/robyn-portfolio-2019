@@ -10,10 +10,6 @@ export const initParallax = () => {
     wrapper: '#footer',
     relativeToWrapper: true,
   });
-  // const triangleParallax = new Rellax('.rellax_triangle', {
-  //   wrapper: '#contact',
-  //   relativeToWrapper: true,
-  // });
 
   toggleParallax();
   window.addEventListener('resize', toggleParallax);

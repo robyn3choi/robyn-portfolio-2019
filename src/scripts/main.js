@@ -6,9 +6,9 @@ import {initContactAnim, playContactAnimIfNeeded} from './contact';
 import {fixSidebarIfNeeded, initFixedSidebars} from './sidebars';
 import {playAboutAnimIfNeeded, initAboutAnim} from './about';
 import {toggleWorkInfo, playWorksIntroIfNeeded, initWorkAnim} from './works';
-import {playHeaderAnim} from './header';
 import {playFooterAnimIfNeeded, initFooterAnim} from './footer';
 import {initEnterAnims, playEnterAnimsIfNeeded} from './enterAnimations';
+import {playHeaderAnimIfNeeded} from './header';
 import './navigation';
 import './graphicHeadings';
 import {modifyNavAndNextSectionBtnIfNeeded} from './navigation';
@@ -84,6 +84,7 @@ window.addEventListener('scroll', () => {
 });
 
 const playScrollDependentAnims = () => {
+  playHeaderAnimIfNeeded();
   playAboutAnimIfNeeded();
   playWorksIntroIfNeeded();
   playContactAnimIfNeeded();
@@ -97,7 +98,6 @@ window.onload = () => {
   preloaders[0].classList.add('preloader_finished');
   preloaders[1].classList.add('preloader_finished');
   setTimeout(() => {
-    playHeaderAnim();
     playScrollDependentAnims();
     setInterval(() => {
       if (isScrolling) {

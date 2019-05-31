@@ -1,10 +1,11 @@
-import {isElementInViewport} from './utils';
+import {isElementInViewport, isMobile} from './utils';
 import lottie from 'lottie-web';
 
 let footerEl;
 let footerAnim;
-let mobileFooterAnim;
-let hasPlayedFooterAnim = false;
+let footerAnimMobile;
+let hasAnimPlayed = false;
+let hasAnimMobilePlayed = false;
 
 export const initFooterAnim = () => {
   footerEl = document.getElementById('footer');
@@ -17,7 +18,7 @@ export const initFooterAnim = () => {
     path: '/animationData/footer.json',
   });
 
-  mobileFooterAnim = lottie.loadAnimation({
+  footerAnimMobile = lottie.loadAnimation({
     container: footerAnimEls[1],
     renderer: 'svg',
     loop: false,
@@ -27,9 +28,18 @@ export const initFooterAnim = () => {
 };
 
 export const playFooterAnimIfNeeded = () => {
-  if (!hasPlayedFooterAnim && isElementInViewport(footerEl)) {
-    footerAnim.play();
-    mobileFooterAnim.play();
-    hasPlayedFooterAnim = true;
+  if (isElementInViewport(footerEl)) {
+    if (!hasAnimMobilePlayed && isMobile()) {
+      footerAnimMobile.play();
+      hasAnimMobilePlayed = true;
+    }
+    else if (!hasAnimPlayed && !isMobile()) {
+      footerAnim.play();
+      hasAnimPlayed = true;
+    }
   }
 };
+
+window.addEventListener('resize', () => {
+  playFooterAnimIfNeeded();
+});
