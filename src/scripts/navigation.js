@@ -84,7 +84,6 @@ const navBar = document.getElementById('nav');
 const mobileNavContainer = document.getElementById('mobile-nav-container');
 const colorEls = [];
 colorEls.push(nextBtn, navBar, mobileNavBtn, mobileNavContainer);
-console.log(colorEls);
 
 export const modifyNavAndNextSectionBtnIfNeeded = () => {
   // change or hide nav section btn
