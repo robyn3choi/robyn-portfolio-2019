@@ -2,7 +2,6 @@ import {initParallax} from './parallax';
 import injectWorks from './workTemplate';
 import '../styles/main.scss';
 import {detect} from 'detect-browser';
-import {initContactAnim, playContactAnimIfNeeded} from './contact';
 import {fixSidebarIfNeeded, initFixedSidebars} from './sidebars';
 import {playAboutAnimIfNeeded, initAboutAnim} from './about';
 import {toggleWorkInfo, playWorksIntroIfNeeded, initWorkAnim} from './works';
@@ -67,7 +66,6 @@ for (let i = 0; i < workImages.length; i++) {
 resizeGraphicHeadings();
 initAboutAnim();
 initWorkAnim();
-initContactAnim();
 initFooterAnim();
 initEnterAnims();
 modifyNavAndNextSectionBtnIfNeeded();
@@ -87,7 +85,6 @@ const playScrollDependentAnims = () => {
   playHeaderAnimIfNeeded();
   playAboutAnimIfNeeded();
   playWorksIntroIfNeeded();
-  playContactAnimIfNeeded();
   playEnterAnimsIfNeeded();
   playFooterAnimIfNeeded();
   modifyNavAndNextSectionBtnIfNeeded();
