@@ -1,5 +1,5 @@
 import lottie from 'lottie-web';
-import {isElementInViewport, playTypingAnimation, isStackedSections} from './utils';
+import {isElementInViewport, playTypingAnimation, isStackedSections, isMobile} from './utils';
 import {playEnterAnimsIfNeeded} from './enterAnimations';
 
 let aboutTyped;
@@ -50,14 +50,26 @@ export const playAboutAnimIfNeeded = () => {
         aboutAnim.playSegments([[10, 27], [28, 101]], true);
         hasStartedSidebarAnim = true;
       }
-      setTimeout(() => {
-        playTypingAnimation(document.getElementById('about__typed_1'), 40)
-            .then(() => playTypingAnimation(document.getElementById('about__typed_2'), 30))
-            .then(() => {
-              hasFinishedTypingAnim = true;
-              playEnterAnimsIfNeeded();
-            });
-      }, 1000);
+
+      const aboutTyped1 = document.getElementById('about__typed_1');
+      // on mobile, the about__typed elements are already visible so we can skip the typing anim
+      if (isMobile()) {
+        hasFinishedTypingAnim = true;
+        playEnterAnimsIfNeeded();
+      }
+      else {
+        setTimeout(
+            () => {
+              playTypingAnimation(aboutTyped1, 40)
+                  .then(() => playTypingAnimation(document.getElementById('about__typed_2'), 30))
+                  .then(() => {
+                    hasFinishedTypingAnim = true;
+                    playEnterAnimsIfNeeded();
+                  });
+            },
+          isStackedSections() ? 100 : 1000
+        );
+      }
     }
   }
 };
