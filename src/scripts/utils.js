@@ -31,7 +31,9 @@ export const isElementInViewport = function(element, isWork = false) {
 // };
 
 export const playTypingAnimation = (el, delay) => {
+  console.log('play type');
   return new Promise((resolve, reject) => {
+    console.log('promise');
     let txt = el.innerHTML.trim();
     const txtLength = txt.length;
 
