@@ -1,5 +1,5 @@
 import SmoothScroll from 'smooth-scroll';
-import {isStackedSections, isElementInViewport} from './utils';
+import {isStackedSections} from './utils';
 
 const navHeight = 60;
 
@@ -123,7 +123,7 @@ export const modifyNavAndNextSectionBtnIfNeeded = () => {
     navLinks[i].classList.remove('nav__link_current');
   }
   for (let i = sections.length - 1; i >= 0; i--) {
-    if (isElementInViewport(sections[i])) {
+    if (sections[i].getBoundingClientRect().top <= navHeight + 1) {
       navLinks[i].classList.add('nav__link_current');
       // also mobile nav link
       navLinks[i + 5].classList.add('nav__link_current');

@@ -136,6 +136,12 @@ p.medium {
   }
 }
 
+@media (max-width: $stacked-sections-max-width) and (max-height: $stacked-sections-max-height) {
+  .about__typed {
+    visibility: visible;
+  }
+}
+
 @media (max-width: $mobile-max-width) {
   #about {
     margin-top: -30px;
