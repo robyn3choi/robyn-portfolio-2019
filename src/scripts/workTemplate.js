@@ -6,7 +6,7 @@ const data = {
       summaryParagraphs: [
         `A web app that assists with trading in online game <a href='https://www.pathofexile.com/game'>Path of Exile</a> by 
         compring current item prices in a table and providing profit margins.`,
-        `The front end is built with React and deployed with Netlify, and the back end is built with
+        `The front end is built with React and Redux, and deployed with Netlify, and the back end is built with
       Node/Express and hosted on a DigitalOcean droplet with Dokku.`,
       ],
       features: [
