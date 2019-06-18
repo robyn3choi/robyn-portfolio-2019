@@ -1,7 +1,7 @@
 const data = {
   works: [
     {
-      // weather app
+      // path of trade
       image: 'pathoftrade.png',
       summaryParagraphs: [
         `A web app that assists with trading in online game <a href='https://www.pathofexile.com/game'>Path of Exile</a> by 
@@ -79,7 +79,7 @@ const data = {
         `The was built using jQuery and is hosted on GitHub Pages.`,
       ],
       features: [`original art and animations`, `responsive design`],
-      website: 'https://robynchoi.me',
+      website: 'https://old.robynchoi.me',
       github: 'https://github.com/robyn3choi/eportfolio',
     },
   ],
