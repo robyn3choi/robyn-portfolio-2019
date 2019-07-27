@@ -79,7 +79,7 @@ const data = {
         `The was built using jQuery and is hosted on GitHub Pages.`,
       ],
       features: [`original art and animations`, `responsive design`],
-      website: 'https://google.com',
+      website: 'https://old.robynchoi.me',
       github: 'https://github.com/robyn3choi/eportfolio',
     },
   ],
