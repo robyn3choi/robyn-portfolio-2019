@@ -1,24 +1,6 @@
 const data = {
   works: [
     {
-      // path of trade
-      image: 'pathoftrade.png',
-      summaryParagraphs: [
-        `A web app that assists with trading in online game <a href='https://www.pathofexile.com/game'>Path of Exile</a> by 
-        compring current item prices in a table and providing profit margins.`,
-        `The front end is built with React and Redux, and deployed with Netlify, and the back end is built with
-      Node/Express and hosted on a DigitalOcean droplet with Dokku.`,
-      ],
-      features: [
-        `requests stored in a cache which is refreshed every 5 minutes to maximize speed while displaying the latest stats`,
-        `displays items in a sortable table`,
-        `able to view data from different leagues`,
-        `stores the user's last selected league in browser's local storage`,
-      ],
-      website: 'https://pathoftrade.com',
-      github: 'https://github.com/robyn3choi/poe-trade-helper',
-    },
-    {
       // weather app
       image: 'howsthesky.png',
       summaryParagraphs: [
@@ -55,6 +37,25 @@ const data = {
       ],
       website: 'https://stuartbrookes.com',
       github: 'https://github.com/robyn3choi/stu-website',
+    },
+
+    {
+      // path of trade
+      image: 'pathoftrade.png',
+      summaryParagraphs: [
+        `A web app that assists with trading in online game <a href='https://www.pathofexile.com/game'>Path of Exile</a> by 
+        compring current item prices in a table and providing profit margins.`,
+        `The front end is built with React and Redux, and deployed with Netlify, and the back end is built with
+      Node/Express and hosted on a DigitalOcean droplet with Dokku.`,
+      ],
+      features: [
+        `requests stored in a cache which is refreshed every 5 minutes to maximize speed while displaying the latest stats`,
+        `displays items in a sortable table`,
+        `able to view data from different leagues`,
+        `stores the user's last selected league in browser's local storage`,
+      ],
+      website: 'https://pathoftrade.com',
+      github: 'https://github.com/robyn3choi/poe-trade-helper',
     },
 
     {
