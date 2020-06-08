@@ -159,6 +159,7 @@ h3 {
 
 .graphic-heading-container {
   position: relative;
+  width: 100%;
 }
 
 .graphic-heading {
@@ -218,14 +219,16 @@ h3 {
   color: white;
   margin: 0;
   padding: 8px 16px;
-  width: auto;
+  //width: max-content;
+  white-space: nowrap;
 }
 
 .graphic-heading-color-container {
   position: relative;
 }
 
-@media (max-width: $stacked-sections-max-width), (max-height: $stacked-sections-max-height) {
+@media (max-width: $stacked-sections-max-width),
+  (max-height: $stacked-sections-max-height) {
   // because overflow on body doesn't work on mobile
   body {
     overflow-x: unset;
