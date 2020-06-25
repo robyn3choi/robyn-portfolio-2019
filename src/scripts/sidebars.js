@@ -1,5 +1,5 @@
 // this file is only used if using ie (position: sticky doesn't work in ie)
-import {isStackedSections} from './utils';
+import { isStackedSections } from './utils';
 
 let isStacked;
 let aboutSidebar;
@@ -48,7 +48,10 @@ export const fixSidebarIfNeeded = () => {
   const worksSectionTop = worksSection.getBoundingClientRect().top;
   const contactSectionTop = contactSection.getBoundingClientRect().top;
   // if we are before the about section, make sure the about sidebar is not fixed
-  if (aboutSectionTop > 0 && aboutSidebar.classList.contains('section__sidebar_fixed')) {
+  if (
+    aboutSectionTop > 0 &&
+    aboutSidebar.classList.contains('section__sidebar_fixed')
+  ) {
     aboutSidebar.classList.remove('section__sidebar_fixed');
   }
   // if we have entered the about section
@@ -65,7 +68,8 @@ export const fixSidebarIfNeeded = () => {
   else if (worksSectionTop - window.innerHeight < 0 && worksSectionTop > 0) {
     aboutSidebar.classList.remove('section__sidebar_fixed');
     worksSidebar.classList.remove('section__sidebar_fixed');
-    aboutSidebar.style.top = aboutSection.offsetHeight - window.innerHeight + 'px';
+    aboutSidebar.style.top =
+      aboutSection.offsetHeight - window.innerHeight + 'px';
   }
   // if we have entered the works section
   else if (
@@ -78,9 +82,13 @@ export const fixSidebarIfNeeded = () => {
     worksSidebar.style.top = 0;
   }
   // if we are in between work and contact sections
-  else if (contactSectionTop - window.innerHeight < 0 && contactSectionTop > 0) {
+  else if (
+    contactSectionTop - window.innerHeight < 0 &&
+    contactSectionTop > 0
+  ) {
     // work sidebar should not be fixed, and work sidebar should have a top: something
     worksSidebar.classList.remove('section__sidebar_fixed');
-    worksSidebar.style.top = worksSection.offsetHeight - window.innerHeight + 'px';
+    worksSidebar.style.top =
+      worksSection.offsetHeight - window.innerHeight + 'px';
   }
 };

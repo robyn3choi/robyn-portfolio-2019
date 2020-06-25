@@ -5,7 +5,6 @@ export const resizeGraphicHeadings = () => {
     const text = graphicHeadings[i].parentElement.getElementsByClassName(
       'graphic-heading__text'
     )[0];
-    console.log(text.clientWidth);
     graphicHeadings[i].parentElement.style.width =
       (text.clientWidth + 24).toString() + 'px';
   }

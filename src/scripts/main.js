@@ -1,17 +1,17 @@
-import {initParallax} from './parallax';
+import { initParallax } from './parallax';
 import injectWorks from './workTemplate';
 import '../styles/main.scss';
-import {detect} from 'detect-browser';
-import {fixSidebarIfNeeded, initFixedSidebars} from './sidebars';
-import {playAboutAnimIfNeeded, initAboutAnim} from './about';
-import {toggleWorkInfo, playWorksIntroIfNeeded, initWorkAnim} from './works';
-import {playFooterAnimIfNeeded, initFooterAnim} from './footer';
-import {initEnterAnims, playEnterAnimsIfNeeded} from './enterAnimations';
-import {playHeaderAnimIfNeeded} from './header';
+import { detect } from 'detect-browser';
+import { fixSidebarIfNeeded, initFixedSidebars } from './sidebars';
+import { playAboutAnimIfNeeded, initAboutAnim } from './about';
+import { toggleWorkInfo, playWorksIntroIfNeeded, initWorkAnim } from './works';
+import { playFooterAnimIfNeeded, initFooterAnim } from './footer';
+import { initEnterAnims, playEnterAnimsIfNeeded } from './enterAnimations';
+import { playHeaderAnimIfNeeded } from './header';
 import './navigation';
 import './graphicHeadings';
-import {modifyNavAndNextSectionBtnIfNeeded} from './navigation';
-import {resizeGraphicHeadings} from './graphicHeadings';
+import { modifyNavAndNextSectionBtnIfNeeded } from './navigation';
+import { resizeGraphicHeadings } from './graphicHeadings';
 
 let isScrolling = false;
 
@@ -27,8 +27,12 @@ window.addEventListener('keydown', handleFirstTab);
 
 // fix for jerky scrolling on position:fixed elements on IE and edge
 const browser = detect();
-if (browser && browser.name && (browser.name === 'edge' || browser.name === 'ie')) {
-  window.addEventListener('mousewheel', function() {
+if (
+  browser &&
+  browser.name &&
+  (browser.name === 'edge' || browser.name === 'ie')
+) {
+  window.addEventListener('mousewheel', function () {
     if (window.pageYOffset > 1080) {
       event.preventDefault();
       const wd = event.wheelDelta;
@@ -38,19 +42,18 @@ if (browser && browser.name && (browser.name === 'edge' || browser.name === 'ie'
   });
   if (browser.name === 'edge') {
     document.body.classList.add('edge');
-  }
-  else {
+  } else {
     document.body.classList.add('ie');
   }
 }
 // determine if user is on touchscreen device
 window.addEventListener(
-    'touchstart',
-    function onFirstTouch() {
-      document.body.classList.add('touchscreen');
-      window.removeEventListener('touchstart', onFirstTouch, false);
-    },
-    false
+  'touchstart',
+  function onFirstTouch() {
+    document.body.classList.add('touchscreen');
+    window.removeEventListener('touchstart', onFirstTouch, false);
+  },
+  false
 );
 
 injectWorks();
@@ -91,9 +94,8 @@ const playScrollDependentAnims = () => {
 };
 
 window.onload = () => {
-  const preloaders = document.getElementsByClassName('preloader');
-  preloaders[0].classList.add('preloader_finished');
-  preloaders[1].classList.add('preloader_finished');
+  const preloader = document.getElementsByClassName('preloader')[0];
+  preloader.classList.add('preloader--finished');
   setTimeout(() => {
     playScrollDependentAnims();
     setInterval(() => {

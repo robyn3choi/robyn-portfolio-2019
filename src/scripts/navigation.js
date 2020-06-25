@@ -1,5 +1,5 @@
 import SmoothScroll from 'smooth-scroll';
-import {isStackedSections} from './utils';
+import { isStackedSections } from './utils';
 
 const navHeight = 60;
 
@@ -22,8 +22,7 @@ mobileNavBtn.onclick = () => {
   if (mobileNavBtn.classList.contains('is-active')) {
     mobileNavBtn.classList.remove('is-active');
     document.body.classList.remove('nav-open');
-  }
-  else {
+  } else {
     mobileNavBtn.classList.add('is-active');
     document.body.classList.add('nav-open');
   }
@@ -36,7 +35,9 @@ window.addEventListener('scrollStart', () => {
 
 // scroll sections
 const scrollSections = document.getElementsByClassName('scroll-section');
-const scrollSectionsStacked = document.getElementsByClassName('scroll-section_stacked');
+const scrollSectionsStacked = document.getElementsByClassName(
+  'scroll-section--stacked'
+);
 const nextBtn = document.getElementById('next-section-btn');
 
 nextBtn.onclick = () => {
@@ -49,25 +50,27 @@ nextBtn.onclick = () => {
     if (sections[i].getBoundingClientRect().top > navHeight + 1) {
       nextScrollSection = sections[i];
       currentScrollSection = sections[i - 1];
-    }
-    else {
+    } else {
       break;
     }
   }
 
-  const currentSectionBottom = currentScrollSection.getBoundingClientRect().bottom;
+  const currentSectionBottom = currentScrollSection.getBoundingClientRect()
+    .bottom;
   // if the current section is longer than this and the next full screen
   if (currentSectionBottom > 2 * window.innerHeight + navHeight + 1) {
     // scroll down 100vh
-    smoothScroll.animateScroll(window.innerHeight + window.pageYOffset - navHeight);
+    smoothScroll.animateScroll(
+      window.innerHeight + window.pageYOffset - navHeight
+    );
   }
   // if the current section is longer than 100vh but doesn't take up the whole next screen
   else if (currentSectionBottom > window.innerHeight + navHeight + 1) {
     // scroll to bottom of section
-    const targetY = currentSectionBottom - window.innerHeight + window.pageYOffset;
+    const targetY =
+      currentSectionBottom - window.innerHeight + window.pageYOffset;
     smoothScroll.animateScroll(targetY);
-  }
-  else {
+  } else {
     smoothScroll.animateScroll(nextScrollSection);
   }
 };
@@ -88,10 +91,9 @@ colorEls.push(nextBtn, navBar, mobileNavBtn, mobileNavContainer);
 export const modifyNavAndNextSectionBtnIfNeeded = () => {
   // change or hide nav section btn
   if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-    nextBtn.classList.add('next-section-btn_hidden');
-  }
-  else {
-    nextBtn.classList.remove('next-section-btn_hidden');
+    nextBtn.classList.add('next-section-btn--hidden');
+  } else {
+    nextBtn.classList.remove('next-section-btn--hidden');
   }
 
   if (aboutSection.getBoundingClientRect().top <= navHeight) {
@@ -99,8 +101,7 @@ export const modifyNavAndNextSectionBtnIfNeeded = () => {
     navBar.classList.add('orange');
     mobileNavBtn.classList.add('orange');
     mobileNavContainer.classList.add('orange');
-  }
-  else {
+  } else {
     nextBtn.classList.remove('orange');
     navBar.classList.remove('orange');
     mobileNavBtn.classList.remove('orange');
@@ -111,8 +112,7 @@ export const modifyNavAndNextSectionBtnIfNeeded = () => {
     navBar.classList.add('black');
     mobileNavBtn.classList.add('black');
     mobileNavContainer.classList.add('black');
-  }
-  else {
+  } else {
     nextBtn.classList.remove('black');
     navBar.classList.remove('black');
     mobileNavBtn.classList.remove('black');

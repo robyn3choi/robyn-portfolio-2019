@@ -31,9 +31,11 @@
 
   <body>
     <div class="site-container">
-      <div class="preloader preloader_left"></div>
-      <div class="preloader preloader_right"></div>
-      <div class="preloader__ring"></div>
+      <div class="preloader">
+        <div class="preloader__wall preloader__wall--left"></div>
+        <div class="preloader__wall preloader__wall--right"></div>
+        <div class="preloader__ring"></div>
+      </div>
       <div id="nav">
         <ul class="nav__links">
           <li><a class="nav__link" data-scroll href="#header">Home</a></li>
@@ -72,7 +74,7 @@
         </button>
         <section
           id="header"
-          class="section scroll-section scroll-section_stacked"
+          class="section scroll-section scroll-section--stacked"
         >
           <img class="header-mobile-image" src="images/header-mobile.png" />
           <div class="header__overlay"></div>
@@ -109,35 +111,32 @@
             data-rellax-speed="5"
           ></div>
           <div
-            class="rellax_header header__robynchoi-anim header__robynchoi-anim_desktop"
+            class="rellax_header header__robynchoi-anim header__robynchoi-anim--desktop"
             data-rellax-speed="-5"
           ></div>
           <div
-            class="rellax_header header__robynchoi-anim header__robynchoi-anim_mobile"
+            class="rellax_header header__robynchoi-anim header__robynchoi-anim--mobile"
             data-rellax-speed="-5"
           ></div>
         </section>
 
         <section id="about" class="section scroll-section">
           <div
-            class="section__sidebar section__sidebar_about scroll-section_stacked"
+            class="section__sidebar section__sidebar--about scroll-section--stacked"
           >
             <div id="about__anim"></div>
           </div>
           <div
-            class="section__content section__content_about subsection scroll-section_stacked"
+            class="section__content section__content--about subsection scroll-section--stacked"
           >
             <section class="heading-with-text">
-              <p id="about__typed_1" class="large enter-anim enter-anim_hidden">
+              <p class="large enter-anim enter-anim--hidden">
                 Hey there, I'm Robyn Choi.
               </p>
-              <p
-                id="about__typed_2"
-                class="medium enter-anim enter-anim_hidden"
-              >
+              <p class="medium enter-anim enter-anim--hidden">
                 I'm a full-stack web developer based in Vancouver, Canada.
               </p>
-              <p id="about__p-anim_1" class="enter-anim enter-anim_hidden">
+              <p class="enter-anim enter-anim--hidden">
                 I have 3+ years of industry experience in web and game
                 development, and plenty of
                 <a href="https://github.com/robyn3choi/">side projects</a>
@@ -153,13 +152,13 @@
             </section>
             <section class="heading-with-text">
               <div
-                class="graphic-heading-container enter-anim enter-anim_hidden"
+                class="graphic-heading-container enter-anim enter-anim--hidden"
               >
-                <div class="graphic-heading graphic-heading_back"></div>
-                <div class="graphic-heading graphic-heading_front"></div>
+                <div class="graphic-heading graphic-heading--back"></div>
+                <div class="graphic-heading graphic-heading--front"></div>
                 <h3 class="graphic-heading__text">My Tech Stack</h3>
               </div>
-              <div class="about__skills enter-anim enter-anim_hidden">
+              <div class="about__skills enter-anim enter-anim--hidden">
                 <div class="about__skill">
                   <img src="images/html.png" />
                   <div class="skill-text">HTML5</div>
@@ -231,13 +230,13 @@
 
             <section class="heading-with-text">
               <div
-                class="graphic-heading-container enter-anim enter-anim_hidden"
+                class="graphic-heading-container enter-anim enter-anim--hidden"
               >
-                <div class="graphic-heading graphic-heading_back"></div>
-                <div class="graphic-heading graphic-heading_front"></div>
+                <div class="graphic-heading graphic-heading--back"></div>
+                <div class="graphic-heading graphic-heading--front"></div>
                 <h3 class="graphic-heading__text">What else?</h3>
               </div>
-              <p id="about__p-anim_2" class="enter-anim enter-anim_hidden">
+              <p class="enter-anim enter-anim--hidden">
                 When I'm not coding, you can usually find me drawing pixel art,
                 curled up with a book, playing video games, or bouldering at the
                 Hive.
@@ -248,7 +247,7 @@
 
         <section id="works" class="section">
           <div
-            class="section__sidebar section__sidebar_works scroll-section_stacked"
+            class="section__sidebar section__sidebar_works scroll-section--stacked"
           >
             <!-- <h1 class="section__heading">Works</h1> -->
             <div id="works-art-container">
@@ -265,24 +264,24 @@
               <img class="works-art" id="pencil" src="images/pencil.svg" />
             </div>
           </div>
-          <div class="section__content section__content_works">
+          <div class="section__content section__content--works">
             <!-- dynamic content here -->
           </div>
         </section>
 
         <section
           id="contact"
-          class="section scroll-section scroll-section_stacked"
+          class="section scroll-section scroll-section--stacked"
         >
           <div class="subsection">
-            <div class="contact__border-anim enter-anim_hidden">
-              <h1 class="contact__heading enter-anim_hidden">Contact</h1>
-              <hr class="contact__hr enter-anim_hidden" />
-              <p class="enter-anim_hidden">
+            <div class="contact__border-anim enter-anim--hidden">
+              <h1 class="contact__heading enter-anim--hidden">Contact</h1>
+              <hr class="contact__hr enter-anim--hidden" />
+              <p class="enter-anim--hidden">
                 Feel free to contact me if you have any questions or just want
                 to say hi!
               </p>
-              <div class="contact-links enter-anim_hidden">
+              <div class="contact-links enter-anim--hidden">
                 <div class="contact-link">
                   <a href="mailto:robyn3choi@gmail.com">
                     <svg
@@ -397,7 +396,7 @@
 
         <section
           id="footer"
-          class="section scroll-section scroll-section_stacked"
+          class="section scroll-section scroll-section--stacked"
         >
           <img class="footer-mobile-image" src="images/footer-mobile.png" />
           <div
@@ -429,11 +428,11 @@
             data-rellax-speed="10"
           ></div>
           <div
-            class="rellax_footer footer__anim footer__anim_desktop"
+            class="rellax_footer footer__anim footer__anim--desktop"
             data-rellax-speed="0"
           ></div>
           <div
-            class="rellax_footer footer__anim footer__anim_mobile"
+            class="rellax_footer footer__anim footer__anim--mobile"
             data-rellax-speed="0"
           ></div>
         </section>

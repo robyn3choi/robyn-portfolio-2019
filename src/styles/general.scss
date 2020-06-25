@@ -7,7 +7,7 @@ body {
   overflow-x: hidden;
 }
 
-.preloader {
+.preloader__wall {
   height: 100%;
   position: fixed;
   z-index: 100;
@@ -16,19 +16,14 @@ body {
   transition: transform 0.7s 0.3s;
   outline: solid 1px $blue;
 
-  &_left {
+  &--left {
     left: -50%;
     transform: translateX(100%);
   }
 
-  &_right {
+  &--right {
     right: -50%;
     transform: translateX(-100%);
-  }
-
-  &_finished {
-    transform: none;
-    outline: none;
   }
 }
 
@@ -45,8 +40,15 @@ body {
   right: 0;
   margin: auto;
   top: 50%;
+}
 
-  .preloader_finished ~ & {
+.preloader--finished {
+  .preloader__wall {
+    transform: none;
+    outline: none;
+  }
+
+  .preloader__ring {
     display: none;
   }
 }
@@ -81,7 +83,7 @@ li {
 }
 
 // before enter anim
-li.enter-anim_hidden {
+li.enter-anim--hidden {
   opacity: 0;
   transform: translateX(-12px);
 }
@@ -94,7 +96,7 @@ li.enter-anim_hidden {
 }
 
 // before enter anim
-p.enter-anim_hidden {
+p.enter-anim--hidden {
   opacity: 0;
   transform: translateY(12px);
 }
@@ -173,42 +175,42 @@ h3 {
   outline: 1px solid transparent; //hack to prevent aliasing in firefox
 }
 
-.graphic-heading_back {
+.graphic-heading--back {
   background: $grey-light;
 }
 
-.graphic-heading_front {
+.graphic-heading--front {
   top: 0;
   left: 0;
   background-color: $blue;
 }
 // before enter anim
-.graphic-heading-container.enter-anim_hidden {
-  .graphic-heading_back {
+.graphic-heading-container.enter-anim--hidden {
+  .graphic-heading--back {
     transform: skew(6deg) rotate(-1deg) translate(4px, 0) scale(0, 1);
   }
 
-  .graphic-heading_front {
+  .graphic-heading--front {
     transform: skew(6deg) rotate(1deg) translate(-4px, 0) scale(0, 1);
   }
 }
 //after enter anim
 .graphic-heading-container {
-  .graphic-heading_back {
+  .graphic-heading--back {
     transform: skew(6deg) rotate(-1deg) translate(4px, 0) scale(1, 1);
   }
 
-  .graphic-heading_front {
+  .graphic-heading--front {
     transform: skew(6deg) rotate(1deg) translate(-4px, 0) scale(1, 1);
   }
 }
 
-// .graphic-heading_scrolling.graphic-heading_back {
+// .graphic-heading_scrolling.graphic-heading--back {
 //   transform: skew(6deg) rotate(-1deg) translate(8px, 4px);
 //   transition: transform 0.3s;
 // }
 
-// .graphic-heading_scrolling.graphic-heading_front {
+// .graphic-heading_scrolling.graphic-heading--front {
 //   transform: skew(6deg) rotate(1deg) translate(-8px, -4px);
 //   transition: transform 0.3s;
 // }

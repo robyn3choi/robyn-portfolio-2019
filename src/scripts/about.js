@@ -1,12 +1,12 @@
 import lottie from 'lottie-web';
-import {isElementInViewport} from './utils';
+import { isElementInViewport } from './utils';
 
 let aboutSidebar;
 let aboutAnim;
 let hasStartedSidebarAnim = false;
 
 export const initAboutAnim = () => {
-  aboutSidebar = document.getElementsByClassName('section__sidebar_about')[0];
+  aboutSidebar = document.getElementsByClassName('section__sidebar--about')[0];
   aboutAnim = lottie.loadAnimation({
     container: document.getElementById('about__anim'),
     renderer: 'svg',
@@ -28,14 +28,18 @@ export const playAboutAnimIfNeeded = () => {
     if (isSidebarAnimPlaying && aboutSidebarBottom <= 0) {
       aboutAnim.pause();
       isSidebarAnimPlaying = false;
-    }
-    else if (!isSidebarAnimPlaying && aboutSidebarBottom > 0) {
+    } else if (!isSidebarAnimPlaying && aboutSidebarBottom > 0) {
       aboutAnim.playSegments([[28, 101]], true);
       isSidebarAnimPlaying = true;
     }
-  }
-  else if (isElementInViewport(aboutSidebar)) {
-    aboutAnim.playSegments([[10, 27], [28, 101]], true);
+  } else if (isElementInViewport(aboutSidebar)) {
+    aboutAnim.playSegments(
+      [
+        [10, 27],
+        [28, 101],
+      ],
+      true
+    );
     hasStartedSidebarAnim = true;
   }
 };

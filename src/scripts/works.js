@@ -1,8 +1,8 @@
-import {isStackedSections} from './utils';
-import {isElementInViewport} from './utils';
+import { isStackedSections } from './utils';
+import { isElementInViewport } from './utils';
 import lottie from 'lottie-web';
-import {smoothScrollTo} from './navigation';
-import {playEnterAnimsIfNeeded} from './enterAnimations';
+import { smoothScrollTo } from './navigation';
+import { playEnterAnimsIfNeeded } from './enterAnimations';
 
 let hasCupSpilled = false;
 const workInfoBtnAnims = [];
@@ -16,14 +16,14 @@ export const toggleWorkInfo = (index) => {
   if (work.classList.contains('work_viewing-info')) {
     work.classList.remove('work_viewing-info');
     toggleWorkBackBtn(index, false);
-  }
-  else {
+  } else {
     const viewWorkInfo = () => {
       work.classList.add('work_viewing-info');
 
       if (!hasCupSpilled) {
-        const cupRightEdgeX = document.getElementById('cup-anim__wrapper').getBoundingClientRect()
-            .right;
+        const cupRightEdgeX = document
+          .getElementById('cup-anim__wrapper')
+          .getBoundingClientRect().right;
 
         if (!isStackedSections()) {
           pollForCupSpill(work, cupRightEdgeX);
@@ -53,18 +53,17 @@ const toggleWorkBackBtn = (index, isViewingWorkInfo) => {
     if (workBackBtnAnims.length > 0) {
     }
     workBackBtnAnims[index].playSegments([0, 30], true);
-  }
-  else {
+  } else {
     workBackBtnAnims[index].playSegments([31, 38], true);
   }
 };
 
 function pollForCupSpill(work, cupRightEdgeX) {
   if (work.getBoundingClientRect().left <= cupRightEdgeX) {
-    document.getElementById('cup-anim').style.animation = 'cup-spill 0.1s steps(3) forwards';
+    document.getElementById('cup-anim').style.animation =
+      'cup-spill 0.1s steps(3) forwards';
     hasCupSpilled = true;
-  }
-  else {
+  } else {
     setTimeout(() => pollForCupSpill(work, cupRightEdgeX), 50);
   }
 }
@@ -75,11 +74,16 @@ export const initWorkAnim = () => {
   const workImages = document.getElementsByClassName('work__image');
 
   if (
-    !(document.body.classList.contains('edge') || document.body.classList.contains('edge')) &&
+    !(
+      document.body.classList.contains('edge') ||
+      document.body.classList.contains('edge')
+    ) &&
     !document.body.classList.contains('touchscreen')
   ) {
     for (let i = 0; i < workImages.length; i++) {
-      const infoBtn = workImages[i].getElementsByClassName('work__arrow-button_info')[0];
+      const infoBtn = workImages[i].getElementsByClassName(
+        'work__arrow-button_info'
+      )[0];
       const infoBtnAnim = lottie.loadAnimation({
         container: infoBtn,
         renderer: 'svg',
@@ -90,7 +94,9 @@ export const initWorkAnim = () => {
 
       workInfoBtnAnims.push(infoBtnAnim);
 
-      const backBtn = workImages[i].getElementsByClassName('work__arrow-button_back')[0];
+      const backBtn = workImages[i].getElementsByClassName(
+        'work__arrow-button--back'
+      )[0];
       const backBtnAnim = lottie.loadAnimation({
         container: backBtn,
         renderer: 'svg',
