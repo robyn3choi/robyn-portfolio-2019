@@ -8,13 +8,13 @@ body {
 }
 
 .preloader__wall {
-  height: 100%;
-  position: fixed;
-  z-index: 100;
   background: $blue;
-  width: 50%;
-  transition: transform 0.7s 0.3s;
+  height: 100%;
   outline: solid 1px $blue;
+  position: fixed;
+  transition: transform 0.7s 0.3s;
+  width: 50%;
+  z-index: 100;
 
   &--left {
     left: -50%;
@@ -28,18 +28,18 @@ body {
 }
 
 .preloader__ring {
-  z-index: 100;
+  animation: spin 1.2s linear infinite;
   border: 6px solid white;
-  border-top: 6px solid $orange;
   border-radius: 50%;
+  border-top: 6px solid $orange;
+  position: fixed;
   width: 60px;
   height: 60px;
-  animation: spin 1.2s linear infinite;
-  position: fixed;
   left: 0;
   right: 0;
-  margin: auto;
   top: 50%;
+  margin: auto;
+  z-index: 100;
 }
 
 .preloader--finished {
