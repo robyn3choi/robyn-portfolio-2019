@@ -9,11 +9,11 @@ body {
 
 .preloader__wall {
   background: $blue;
-  height: 100%;
   outline: solid 1px $blue;
   position: fixed;
-  transition: transform 0.7s 0.3s;
   width: 50%;
+  height: 100%;
+  transition: transform 0.7s 0.2s;
   z-index: 100;
 
   &--left {
@@ -27,7 +27,7 @@ body {
   }
 }
 
-.preloader__ring {
+.preloader__spinner {
   animation: spin 1.2s linear infinite;
   border: 6px solid white;
   border-radius: 50%;
@@ -48,7 +48,7 @@ body {
     outline: none;
   }
 
-  .preloader__ring {
+  .preloader__spinner {
     display: none;
   }
 }
