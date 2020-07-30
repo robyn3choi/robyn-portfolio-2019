@@ -1,6 +1,5 @@
-import { isStackedSections } from './utils';
-import { isElementInViewport } from './utils';
 import lottie from 'lottie-web';
+import { isStackedSections, isElementInViewport } from './utils';
 import { smoothScrollTo } from './navigation';
 import { playEnterAnimsIfNeeded } from './enterAnimations';
 
@@ -82,7 +81,7 @@ export const initWorkAnim = () => {
   ) {
     for (let i = 0; i < workImages.length; i++) {
       const infoBtn = workImages[i].getElementsByClassName(
-        'work__arrow-button_info'
+        'work__arrow-button_info',
       )[0];
       const infoBtnAnim = lottie.loadAnimation({
         container: infoBtn,
@@ -95,7 +94,7 @@ export const initWorkAnim = () => {
       workInfoBtnAnims.push(infoBtnAnim);
 
       const backBtn = workImages[i].getElementsByClassName(
-        'work__arrow-button--back'
+        'work__arrow-button--back',
       )[0];
       const backBtnAnim = lottie.loadAnimation({
         container: backBtn,

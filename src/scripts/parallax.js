@@ -20,8 +20,7 @@ const toggleParallax = () => {
     headerParallax.destroy();
     footerParallax.destroy();
     isMobile = true;
-  }
-  else if (isMobile && window.innerWidth > 740) {
+  } else if (isMobile && window.innerWidth > 740) {
     headerParallax.refresh();
     footerParallax.refresh();
     isMobile = false;

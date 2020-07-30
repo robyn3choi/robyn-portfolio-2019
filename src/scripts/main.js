@@ -1,17 +1,15 @@
+import { detect } from 'detect-browser';
 import { initParallax } from './parallax';
 import injectWorks from './workTemplate';
-import '../styles/main.scss';
-import { detect } from 'detect-browser';
 import { fixSidebarIfNeeded, initFixedSidebars } from './sidebars';
 import { playAboutAnimIfNeeded, initAboutAnim } from './about';
 import { toggleWorkInfo, playWorksIntroIfNeeded, initWorkAnim } from './works';
 import { playFooterAnimIfNeeded, initFooterAnim } from './footer';
 import { initEnterAnims, playEnterAnimsIfNeeded } from './enterAnimations';
 import { playHeaderAnimIfNeeded } from './header';
-import './navigation';
-import './graphicHeadings';
 import { modifyNavAndNextSectionBtnIfNeeded } from './navigation';
 import { resizeGraphicHeadings } from './graphicHeadings';
+import '../styles/main.scss';
 
 let isScrolling = false;
 
@@ -32,7 +30,7 @@ if (
   browser.name &&
   (browser.name === 'edge' || browser.name === 'ie')
 ) {
-  window.addEventListener('mousewheel', function () {
+  window.addEventListener('mousewheel', (event) => {
     if (window.pageYOffset > 1080) {
       event.preventDefault();
       const wd = event.wheelDelta;
@@ -53,7 +51,7 @@ window.addEventListener(
     document.body.classList.add('touchscreen');
     window.removeEventListener('touchstart', onFirstTouch, false);
   },
-  false
+  false,
 );
 
 injectWorks();

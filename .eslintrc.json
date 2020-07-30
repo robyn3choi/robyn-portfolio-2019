@@ -1,11 +1,20 @@
 {
-    "extends": "google",
-    "parser": "babel-eslint",
-
-    "rules": {
-        "linebreak-style": 0,
-        "require-jsdoc":"off",
-        "brace-style": ["error", "stroustrup", {"allowSingleLine": true}],
-         "max-len": ["error", { "code": 100 }]
-      }
+  "extends": "airbnb-base",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "linebreak-style": "off",
+    "import/no-extraneous-dependencies": "off",
+    "global-require": "off",
+    "prefer-destructuring": "off",
+    "no-plusplus": "off",
+    "import/prefer-default-export": "off",
+    "prefer-template": "off",
+    "operator-linebreak": "off",
+    "brace-style": "off",
+    "no-use-before-define": "off",
+    "implicit-arrow-linebreak": "off"
+  }
 }

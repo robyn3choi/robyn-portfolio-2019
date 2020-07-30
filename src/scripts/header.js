@@ -1,5 +1,5 @@
 import lottie from 'lottie-web';
-import {isMobile} from './utils';
+import { isMobile } from './utils';
 
 const headerAnimEls = document.getElementsByClassName('header__robynchoi-anim');
 
@@ -27,8 +27,7 @@ export const playHeaderAnimIfNeeded = () => {
     if (!hasAnimMobilePlayed && isMobile()) {
       headerAnimMobile.play();
       hasAnimMobilePlayed = true;
-    }
-    else if (!hasAnimPlayed && !isMobile()) {
+    } else if (!hasAnimPlayed && !isMobile()) {
       headerAnim.play();
       hasAnimPlayed = true;
     }

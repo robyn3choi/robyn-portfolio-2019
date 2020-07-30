@@ -4,13 +4,10 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = {
     plugins: [
       postcssPresetEnv({
-        browsers: ['> 1%']
+        browsers: ['> 1%'],
       }),
       require('cssnano'),
-      require('autoprefixer')
-    ]
+      require('autoprefixer'),
+    ],
   };
-
-  return;
 }
-

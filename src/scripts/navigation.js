@@ -8,7 +8,7 @@ const smoothScroll = new SmoothScroll('[data-scroll]', {
   speedAsDuration: true,
   easing: 'easeInOutCubic',
   emitEvents: true,
-  offset: (anchor, toggle) => {
+  offset: (anchor) => {
     if (anchor.id === 'header' || anchor.id === 'footer') {
       return 0;
     }
@@ -36,7 +36,7 @@ window.addEventListener('scrollStart', () => {
 // scroll sections
 const scrollSections = document.getElementsByClassName('scroll-section');
 const scrollSectionsStacked = document.getElementsByClassName(
-  'scroll-section--stacked'
+  'scroll-section--stacked',
 );
 const nextBtn = document.getElementById('next-section-btn');
 
@@ -61,7 +61,7 @@ nextBtn.onclick = () => {
   if (currentSectionBottom > 2 * window.innerHeight + navHeight + 1) {
     // scroll down 100vh
     smoothScroll.animateScroll(
-      window.innerHeight + window.pageYOffset - navHeight
+      window.innerHeight + window.pageYOffset - navHeight,
     );
   }
   // if the current section is longer than 100vh but doesn't take up the whole next screen

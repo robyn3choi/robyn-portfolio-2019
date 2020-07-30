@@ -10,11 +10,11 @@ const data = {
       Node/Express and hosted on a DigitalOcean droplet with Dokku.`,
       ],
       features: [
-        `location detection`,
-        `Google Maps Places Search Box`,
-        `stores user’s location in browser's local storage`,
-        `CSS animations`,
-        `responsive design`,
+        'location detection',
+        'Google Maps Places Search Box',
+        "stores user’s location in browser's local storage",
+        'CSS animations',
+        'responsive design',
       ],
       website: 'https://howsthesky.com',
       github: 'https://github.com/robyn3choi/simple-weather',
@@ -24,16 +24,16 @@ const data = {
       // stu website
       image: 'stu.png',
       summaryParagraphs: [
-        `A unique yet simple portfolio website for music producer Stuart Brookes.`,
+        'A unique yet simple portfolio website for music producer Stuart Brookes.',
         `The site is built with React and deployed with Netlify. 
       It also uses headless CMS Prismic.io to allow the client to easily edit information on the website without needing to look at code.
       `,
       ],
       features: [
-        `original art and animations`,
-        `music section displays songs in a filterable grid`,
-        `easily editable by the client using Prismic.io`,
-        `responsive design`,
+        'original art and animations',
+        'music section displays songs in a filterable grid',
+        'easily editable by the client using Prismic.io',
+        'responsive design',
       ],
       website: 'https://stuartbrookes.com',
       github: 'https://github.com/robyn3choi/stu-website',
@@ -49,10 +49,10 @@ const data = {
       Node/Express and hosted on a DigitalOcean droplet with Dokku.`,
       ],
       features: [
-        `requests stored in a cache which is refreshed every 5 minutes to maximize speed while displaying the latest stats`,
-        `displays items in a sortable table`,
-        `able to view data from different leagues`,
-        `stores the user's last selected league in browser's local storage`,
+        'requests stored in a cache which is refreshed every 5 minutes to maximize speed while displaying the latest stats',
+        'displays items in a sortable table',
+        'able to view data from different leagues',
+        "stores the user's last selected league in browser's local storage",
       ],
       website: 'https://pathoftrade.com',
       github: 'https://github.com/robyn3choi/poe-trade-helper',
@@ -62,13 +62,13 @@ const data = {
       // fury website
       image: 'fury.png',
       summaryParagraphs: [
-        `A website for music duo WE ARE FURY that displays their top tracks, tour dates, and merchandise for sale.`,
-        `The was built using jQuery and is hosted on HostGator (planning to migrate to GitHub Pages).`,
+        'A website for music duo WE ARE FURY that displays their top tracks, tour dates, and merchandise for sale.',
+        'The was built using jQuery and is hosted on HostGator (planning to migrate to GitHub Pages).',
       ],
       features: [
-        `Shopify integration`,
-        `image parallax effect`,
-        `responsive design`,
+        'Shopify integration',
+        'image parallax effect',
+        'responsive design',
       ],
       website: 'https://wearefurymusic.com',
       github: 'https://github.com/robyn3choi/fury-website',
@@ -81,9 +81,9 @@ const data = {
         `My previous portfolio website, geared towards game development. As you scroll down the page, a pixel art avatar of myself walks down
       and gives you a tour of Vancouver. The site won 1st place in the Judges' Choice category and runner-up in the People's Choice category at 
       the University of British Columbia's e-Portfolio Competition 2017.`,
-        `The was built using jQuery and is hosted on GitHub Pages.`,
+        'The was built using jQuery and is hosted on GitHub Pages.',
       ],
-      features: [`original art and animations`, `responsive design`],
+      features: ['original art and animations', 'responsive design'],
       website: 'https://old.robynchoi.me',
       github: 'https://github.com/robyn3choi/eportfolio',
     },
@@ -95,13 +95,13 @@ const injectWorks = () => {
   for (let i = 0; i < data.works.length; i++) {
     const work = data.works[i];
     let summaryParagraphsHtml = '';
-    for (let i = 0; i < work.summaryParagraphs.length; i++) {
+    for (let j = 0; j < work.summaryParagraphs.length; j++) {
       summaryParagraphsHtml +=
         '<p class="enter-anim--hidden">' + work.summaryParagraphs[i] + '</p>';
     }
 
     let featuresHtml = '';
-    for (let i = 0; i < work.features.length; i++) {
+    for (let j = 0; j < work.features.length; j++) {
       featuresHtml +=
         '<li class="enter-anim--hidden">' + work.features[i] + '</li>';
     }
@@ -147,7 +147,7 @@ const injectWorks = () => {
   }
 
   document.getElementsByClassName(
-    'section__content--works'
+    'section__content--works',
   )[0].innerHTML += html;
 };
 

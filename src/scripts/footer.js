@@ -1,5 +1,5 @@
-import {isElementInViewport, isMobile} from './utils';
 import lottie from 'lottie-web';
+import { isElementInViewport, isMobile } from './utils';
 
 let footerEl;
 let footerAnim;
@@ -32,8 +32,7 @@ export const playFooterAnimIfNeeded = () => {
     if (!hasAnimMobilePlayed && isMobile()) {
       footerAnimMobile.play();
       hasAnimMobilePlayed = true;
-    }
-    else if (!hasAnimPlayed && !isMobile()) {
+    } else if (!hasAnimPlayed && !isMobile()) {
       footerAnim.play();
       hasAnimPlayed = true;
     }

@@ -38,7 +38,7 @@ export const playAboutAnimIfNeeded = () => {
         [10, 27],
         [28, 101],
       ],
-      true
+      true,
     );
     hasStartedSidebarAnim = true;
   }
