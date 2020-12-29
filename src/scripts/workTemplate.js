@@ -103,7 +103,7 @@ const injectWorks = () => {
     let featuresHtml = '';
     for (let j = 0; j < work.features.length; j++) {
       featuresHtml +=
-        '<li class="enter-anim--hidden">' + work.features[i] + '</li>';
+        '<li class="enter-anim--hidden">' + work.features[j] + '</li>';
     }
 
     html += `
