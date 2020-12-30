@@ -44,7 +44,7 @@ const data = {
       image: 'pathoftrade.png',
       summaryParagraphs: [
         `A web app that assists with trading in online game <a href='https://www.pathofexile.com/game'>Path of Exile</a> by 
-        compring current item prices in a table and providing profit margins.`,
+        comparing current item prices in a table and providing profit margins.`,
         `The front end is built with React and Redux, and deployed with Netlify, and the back end is built with
       Node/Express and hosted on a DigitalOcean droplet with Dokku.`,
       ],
@@ -97,7 +97,7 @@ const injectWorks = () => {
     let summaryParagraphsHtml = '';
     for (let j = 0; j < work.summaryParagraphs.length; j++) {
       summaryParagraphsHtml +=
-        '<p class="enter-anim--hidden">' + work.summaryParagraphs[i] + '</p>';
+        '<p class="enter-anim--hidden">' + work.summaryParagraphs[j] + '</p>';
     }
 
     let featuresHtml = '';
