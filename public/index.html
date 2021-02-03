@@ -1,443 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="theme-color" content="#229fd0" />
-    <meta
-      name="description"
-      content="Vancouver-based web developer and designer."
-    />
-    <meta property="og:url" content="https://robynchoi.me/" />
-    <meta property="og:title" content="Robyn Choi" />
-    <meta
-      property="og:image"
-      content="http://stuartbrookes.com/images/og-image.png"
-    />
-    <meta
-      property="og:description"
-      content="Vancouver-based web developer and designer."
-    />
-    <title>Robyn Choi</title>
-    <style>
-      body {
-        display: none;
-      }
-    </style>
-    <link rel="stylesheet" href="main.css" />
-  </head>
 
-  <body>
-    <div class="site-container">
-      <div class="preloader">
-        <div class="preloader__wall preloader__wall--left"></div>
-        <div class="preloader__wall preloader__wall--right"></div>
-        <div class="preloader__spinner"></div>
-      </div>
-      <div id="nav">
-        <ul class="nav__links">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="theme-color" content="#229fd0" />
+  <meta name="description" content="Vancouver-based web developer and designer." />
+  <meta property="og:url" content="https://robynchoi.me/" />
+  <meta property="og:title" content="Robyn Choi" />
+  <meta property="og:image" content="https://robynchoi.me/images/header-mobile.png" />
+  <meta property="og:description" content="Vancouver-based web developer and designer." />
+  <title>Robyn Choi</title>
+  <style>
+    body {
+      display: none;
+    }
+  </style>
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+  <div class="site-container">
+    <div class="preloader">
+      <div class="preloader__wall preloader__wall--left"></div>
+      <div class="preloader__wall preloader__wall--right"></div>
+      <div class="preloader__spinner"></div>
+    </div>
+    <div id="nav">
+      <ul class="nav__links">
+        <li><a class="nav__link" data-scroll href="#header">Home</a></li>
+        <li><a class="nav__link" data-scroll href="#about">About</a></li>
+        <li><a class="nav__link" data-scroll href="#works">Works</a></li>
+        <li><a class="nav__link" data-scroll href="#contact">Contact</a></li>
+        <li><a class="nav__link" data-scroll href="#footer">End</a></li>
+        <li><a class="nav__link" data-scroll href="https://bitbirdy.dev">Blog</a></li>
+      </ul>
+      <button id="mobile-nav__btn" class="hamburger hamburger--arrow" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
+
+    <div id="mobile-nav-container">
+      <nav id="mobile-nav">
+        <ul class="mobile-nav__links">
           <li><a class="nav__link" data-scroll href="#header">Home</a></li>
           <li><a class="nav__link" data-scroll href="#about">About</a></li>
           <li><a class="nav__link" data-scroll href="#works">Works</a></li>
-          <li><a class="nav__link" data-scroll href="#contact">Contact</a></li>
+          <li>
+            <a class="nav__link" data-scroll href="#contact">Contact</a>
+          </li>
           <li><a class="nav__link" data-scroll href="#footer">End</a></li>
         </ul>
-        <button
-          id="mobile-nav__btn"
-          class="hamburger hamburger--arrow"
-          type="button"
-        >
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-          </span>
-        </button>
-      </div>
-
-      <div id="mobile-nav-container">
-        <nav id="mobile-nav">
-          <ul class="mobile-nav__links">
-            <li><a class="nav__link" data-scroll href="#header">Home</a></li>
-            <li><a class="nav__link" data-scroll href="#about">About</a></li>
-            <li><a class="nav__link" data-scroll href="#works">Works</a></li>
-            <li>
-              <a class="nav__link" data-scroll href="#contact">Contact</a>
-            </li>
-            <li><a class="nav__link" data-scroll href="#footer">End</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="page">
-        <button id="next-section-btn" class="next-section-btn_ripple">
-          <!-- <div class="arrow"></div> -->
-        </button>
-        <section
-          id="header"
-          class="section scroll-section scroll-section--stacked"
-        >
-          <img class="header-mobile-image" src="images/header-mobile.png" />
-          <div class="header__overlay"></div>
-          <div
-            class="rellax_header header__parallax parallax0"
-            data-rellax-speed="-12"
-          ></div>
-          <div
-            class="rellax_header header__parallax parallax1"
-            data-rellax-speed="-10"
-          ></div>
-          <div
-            class="rellax_header header__parallax parallax2"
-            data-rellax-speed="-8"
-          ></div>
-          <div
-            class="rellax_header header__parallax parallax3"
-            data-rellax-speed="-6"
-          ></div>
-          <div
-            class="rellax_header header__parallax parallax4"
-            data-rellax-speed="-4"
-          ></div>
-          <div
-            class="rellax_header header__parallax parallax5"
-            data-rellax-speed="-2"
-          ></div>
-          <div
-            class="rellax_header header__parallax parallax6"
-            data-rellax-speed="4"
-          ></div>
-          <div
-            class="rellax_header header__parallax parallax7"
-            data-rellax-speed="5"
-          ></div>
-          <div
-            class="rellax_header header__robynchoi-anim header__robynchoi-anim--desktop"
-            data-rellax-speed="-5"
-          ></div>
-          <div
-            class="rellax_header header__robynchoi-anim header__robynchoi-anim--mobile"
-            data-rellax-speed="-5"
-          ></div>
-        </section>
-
-        <section id="about" class="section scroll-section">
-          <div
-            class="section__sidebar section__sidebar--about scroll-section--stacked"
-          >
-            <div id="about__anim"></div>
-          </div>
-          <div
-            class="section__content section__content--about subsection scroll-section--stacked"
-          >
-            <section class="heading-with-text">
-              <p class="large enter-anim enter-anim--hidden">
-                Hey there, I'm Robyn Choi.
-              </p>
-              <p class="medium enter-anim enter-anim--hidden">
-                I'm a full-stack web developer based in Vancouver, Canada.
-              </p>
-              <p class="enter-anim enter-anim--hidden">
-                I have 3+ years of industry experience in web and game
-                development, and plenty of
-                <a href="https://github.com/robyn3choi/">side projects</a>
-                . After graduating from the University of British Columbia with
-                a computer science degree, I worked at
-                <a href="https://skyboxlabs.com/">Skybox Labs</a>, where I
-                became a gameplay engineer on Halo Infinite. After trying out
-                the freelance life and completing a few Unity projects for
-                <a href="https://ngxinteractive.com">NGX Interactive</a>, I
-                decided to shift my focus to web programming and am currently
-                working at <a href="https://www.wegalvanize.com/">Galvanize</a>.
-              </p>
-            </section>
-            <section class="heading-with-text">
-              <div
-                class="graphic-heading-container enter-anim enter-anim--hidden"
-              >
-                <div class="graphic-heading graphic-heading--back"></div>
-                <div class="graphic-heading graphic-heading--front"></div>
-                <h3 class="graphic-heading__text">My Tech Stack</h3>
-              </div>
-              <div class="about__skills enter-anim enter-anim--hidden">
-                <div class="about__skill">
-                  <img src="images/html.png" />
-                  <div class="skill-text">HTML5</div>
-                </div>
-                <div class="about__skill">
-                  <img src="images/css.png" />
-                  <div class="skill-text">CSS3</div>
-                </div>
-                <div class="about__skill">
-                  <img src="images/javascript.png" />
-                  <div class="skill-text">JavaScript</div>
-                </div>
-                <div class="about__skill">
-                  <img src="images/cpp.png" />
-                  <div class="skill-text">C++</div>
-                </div>
-                <div class="about__skill">
-                  <img src="images/c-sharp.png" />
-                  <div class="skill-text">C#</div>
-                </div>
-                <div class="about__skill">
-                  <img src="images/react.png" />
-                  <div class="skill-text">React</div>
-                </div>
-                <div class="about__skill">
-                  <img src="images/node.png" />
-                  <div class="skill-text">Node</div>
-                </div>
-                <div class="about__skill">
-                  <img class="about__language" src="images/express.png" />
-                  <div class="skill-text">Express</div>
-                </div>
-                <div class="about__skill">
-                  <img src="images/netlify.png" />
-                  <div class="skill-text">Netlify</div>
-                </div>
-                <div class="about__skill">
-                  <img src="images/digitalocean.png" />
-                  <div class="skill-text">DigitalOcean</div>
-                </div>
-                <div class="about__skill">
-                  <img src="images/figma.png" />
-                  <div class="skill-text">Figma</div>
-                </div>
-                <div class="about__skill">
-                  <img src="images/illustrator.png" />
-                  <div class="skill-text">Illustrator</div>
-                </div>
-                <div class="about__skill">
-                  <img src="images/after-effects.png" />
-                  <div class="skill-text">After Effects</div>
-                </div>
-                <div class="about__skill">
-                  <img src="images/unity.png" />
-                  <div class="skill-text">Unity</div>
-                </div>
-                <!-- these are here to keep the last row aligned to grid -->
-                <div class="about__skill"></div>
-                <div class="about__skill"></div>
-                <div class="about__skill"></div>
-                <div class="about__skill"></div>
-                <div class="about__skill"></div>
-                <div class="about__skill"></div>
-                <div class="about__skill"></div>
-                <div class="about__skill"></div>
-                <div class="about__skill"></div>
-              </div>
-            </section>
-
-            <section class="heading-with-text">
-              <div
-                class="graphic-heading-container enter-anim enter-anim--hidden"
-              >
-                <div class="graphic-heading graphic-heading--back"></div>
-                <div class="graphic-heading graphic-heading--front"></div>
-                <h3 class="graphic-heading__text">What else?</h3>
-              </div>
-              <p class="enter-anim enter-anim--hidden">
-                When I'm not coding, you can usually find me drawing pixel art,
-                curled up with a book, playing video games, or bouldering at the
-                Hive.
-              </p>
-            </section>
-          </div>
-        </section>
-
-        <section id="works" class="section">
-          <div
-            class="section__sidebar section__sidebar_works scroll-section--stacked"
-          >
-            <!-- <h1 class="section__heading">Works</h1> -->
-            <div id="works-art-container">
-              <div id="cup-anim__wrapper" class="works-art">
-                <div id="cup-anim"></div>
-              </div>
-              <img
-                class="works-art"
-                id="headphones"
-                src="images/headphones.svg"
-              />
-              <img class="works-art" id="notebook" src="images/notebook.svg" />
-              <img class="works-art" id="laptop" src="images/laptop.svg" />
-              <img class="works-art" id="pencil" src="images/pencil.svg" />
-            </div>
-          </div>
-          <div class="section__content section__content--works">
-            <!-- dynamic content here -->
-          </div>
-        </section>
-
-        <section
-          id="contact"
-          class="section scroll-section scroll-section--stacked"
-        >
-          <div class="subsection">
-            <div class="contact__border-anim enter-anim--hidden">
-              <h1 class="contact__heading enter-anim--hidden">Contact</h1>
-              <hr class="contact__hr enter-anim--hidden" />
-              <p class="enter-anim--hidden">
-                Feel free to contact me if you have any questions or just want
-                to say hi!
-              </p>
-              <div class="contact-links enter-anim--hidden">
-                <div class="contact-link">
-                  <a href="mailto:robyn3choi@gmail.com">
-                    <svg
-                      class="contact-link__image"
-                      id="Layer_1"
-                      data-name="Layer 1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="120"
-                      height="120"
-                      viewBox="0 0 54 54"
-                    >
-                      <title>email</title>
-                      <circle
-                        cx="27"
-                        cy="27"
-                        r="26.5"
-                        fill="#fff"
-                        stroke="#2d97c2"
-                        stroke-miterlimit="10"
-                        stroke-width="0.75"
-                      />
-                      <path
-                        d="M37.6,16.4H16.4a2.65,2.65,0,0,0-2.64,2.65V35A2.66,2.66,0,0,0,16.4,37.6H37.6A2.66,2.66,0,0,0,40.25,35V19.05A2.66,2.66,0,0,0,37.6,16.4Z"
-                        fill="#fff"
-                        stroke="#2d97c2"
-                        stroke-miterlimit="10"
-                        stroke-width="0.75"
-                      />
-                      <polygon
-                        points="37.6 21.7 27 28.32 16.4 21.7 16.4 19.05 27 25.68 37.6 19.05 37.6 21.7"
-                        fill="#fff"
-                        stroke="#2d97c2"
-                        stroke-miterlimit="10"
-                        stroke-width="0.75"
-                      />
-                    </svg>
-                    <div class="contact-link__title">Email</div>
-                    <div class="contact-link__text">robyn3choi@gmail.com</div>
-                  </a>
-                </div>
-                <div class="contact-link">
-                  <a href="https://www.linkedin.com/in/robyn-choi-2767829b">
-                    <svg
-                      class="contact-link__image"
-                      id="Layer_1"
-                      data-name="Layer 1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="120"
-                      height="120"
-                      viewBox="0 0 54 54"
-                    >
-                      <title>LinkedIn</title>
-                      <circle
-                        cx="27"
-                        cy="27"
-                        r="26.5"
-                        fill="#fff"
-                        stroke="#2d97c2"
-                        stroke-miterlimit="10"
-                        stroke-width="0.75"
-                      />
-                      <path
-                        d="M37.22,15H16.77A1.75,1.75,0,0,0,15,16.73V37.27A1.75,1.75,0,0,0,16.77,39H37.22A1.76,1.76,0,0,0,39,37.27V16.73A1.76,1.76,0,0,0,37.22,15ZM22.12,35.45H18.56V24h3.56Zm-1.78-13a2.06,2.06,0,1,1,2.06-2.06A2.06,2.06,0,0,1,20.34,22.43Zm15.11,13H31.89V29.88c0-1.33,0-3-1.85-3s-2.14,1.45-2.14,2.94v5.67H24.35V24h3.41v1.56h0a3.74,3.74,0,0,1,3.37-1.85c3.6,0,4.27,2.37,4.27,5.46Z"
-                        fill="#fff"
-                        stroke="#2d97c2"
-                        stroke-miterlimit="10"
-                        stroke-width="0.75"
-                      />
-                    </svg>
-                    <div class="contact-link__title">LinkedIn</div>
-                    <div class="contact-link__text">See work experience</div>
-                  </a>
-                </div>
-                <div class="contact-link">
-                  <a href="https://github.com/robyn3choi">
-                    <svg
-                      class="contact-link__image"
-                      id="Layer_1"
-                      data-name="Layer 1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="120"
-                      height="120"
-                      viewBox="0 0 54 54"
-                    >
-                      <title>GitHub</title>
-                      <circle
-                        cx="27"
-                        cy="27"
-                        r="26.5"
-                        fill="#fff"
-                        stroke="#2d97c2"
-                        stroke-miterlimit="10"
-                        stroke-width="0.75"
-                      />
-                      <path
-                        d="M27,10.61a16.29,16.29,0,0,0-5.15,31.75c.81.15,1.11-.35,1.11-.79s0-1.41,0-2.77c-4.53,1-5.49-2.18-5.49-2.18a4.31,4.31,0,0,0-1.81-2.38c-1.48-1,.11-1,.11-1a3.42,3.42,0,0,1,2.5,1.68A3.47,3.47,0,0,0,23,36.28a3.48,3.48,0,0,1,1-2.18c-3.62-.41-7.42-1.81-7.42-8.05a6.3,6.3,0,0,1,1.68-4.37,5.86,5.86,0,0,1,.16-4.31s1.37-.44,4.48,1.67a15.44,15.44,0,0,1,8.16,0c3.11-2.11,4.48-1.67,4.48-1.67a5.85,5.85,0,0,1,.16,4.31,6.29,6.29,0,0,1,1.67,4.37c0,6.26-3.81,7.63-7.44,8a3.89,3.89,0,0,1,1.11,3c0,2.18,0,3.93,0,4.47s.29.94,1.12.78A16.29,16.29,0,0,0,27,10.61Z"
-                        fill="#fff"
-                        stroke="#2d97c2"
-                        stroke-miterlimit="10"
-                        stroke-width="0.75"
-                        fill-rule="evenodd"
-                      />
-                    </svg>
-                    <div class="contact-link__title">GitHub</div>
-                    <div class="contact-link__text">See more projects</div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="footer"
-          class="section scroll-section scroll-section--stacked"
-        >
-          <img class="footer-mobile-image" src="images/footer-mobile.png" />
-          <div
-            class="rellax_footer footer__parallax parallax0"
-            data-rellax-speed="-3"
-          ></div>
-          <div
-            class="rellax_footer footer__parallax parallax1"
-            data-rellax-speed="-1"
-          ></div>
-          <div
-            class="rellax_footer footer__parallax parallax2"
-            data-rellax-speed="0"
-          ></div>
-          <div
-            class="rellax_footer footer__parallax parallax3"
-            data-rellax-speed="1"
-          ></div>
-          <div
-            class="rellax_footer footer__parallax parallax4"
-            data-rellax-speed="3"
-          ></div>
-          <div
-            class="rellax_footer footer__parallax parallax5"
-            data-rellax-speed="8"
-          ></div>
-          <div
-            class="rellax_footer footer__parallax parallax6"
-            data-rellax-speed="10"
-          ></div>
-          <div
-            class="rellax_footer footer__anim footer__anim--desktop"
-            data-rellax-speed="0"
-          ></div>
-          <div
-            class="rellax_footer footer__anim footer__anim--mobile"
-            data-rellax-speed="0"
-          ></div>
-        </section>
-      </div>
+      </nav>
     </div>
-    <script src="bundle.js"></script>
-  </body>
+    <div class="page">
+      <button id="next-section-btn" class="next-section-btn_ripple">
+        <!-- <div class="arrow"></div> -->
+      </button>
+      <section id="header" class="section scroll-section scroll-section--stacked">
+        <img class="header-mobile-image" src="images/header-mobile.png" />
+        <div class="header__overlay"></div>
+        <div class="rellax_header header__parallax parallax0" data-rellax-speed="-12"></div>
+        <div class="rellax_header header__parallax parallax1" data-rellax-speed="-10"></div>
+        <div class="rellax_header header__parallax parallax2" data-rellax-speed="-8"></div>
+        <div class="rellax_header header__parallax parallax3" data-rellax-speed="-6"></div>
+        <div class="rellax_header header__parallax parallax4" data-rellax-speed="-4"></div>
+        <div class="rellax_header header__parallax parallax5" data-rellax-speed="-2"></div>
+        <div class="rellax_header header__parallax parallax6" data-rellax-speed="4"></div>
+        <div class="rellax_header header__parallax parallax7" data-rellax-speed="5"></div>
+        <div class="rellax_header header__robynchoi-anim header__robynchoi-anim--desktop" data-rellax-speed="-5"></div>
+        <div class="rellax_header header__robynchoi-anim header__robynchoi-anim--mobile" data-rellax-speed="-5"></div>
+      </section>
+
+      <section id="about" class="section scroll-section">
+        <div class="section__sidebar section__sidebar--about scroll-section--stacked">
+          <div id="about__anim"></div>
+        </div>
+        <div class="section__content section__content--about subsection scroll-section--stacked">
+          <section class="heading-with-text">
+            <p class="large enter-anim enter-anim--hidden">
+              Hey there, I'm Robyn Choi.
+            </p>
+            <p class="medium enter-anim enter-anim--hidden">
+              I'm a full-stack web developer based in Vancouver, Canada.
+            </p>
+            <p class="enter-anim enter-anim--hidden">
+              I have 3+ years of industry experience in web and game
+              development, and plenty of
+              <a href="https://github.com/robyn3choi/">side projects</a>
+              . After graduating from the University of British Columbia with
+              a computer science degree, I worked at
+              <a href="https://skyboxlabs.com/">Skybox Labs</a>, where I
+              became a gameplay engineer on Halo Infinite. After trying out
+              the freelance life and completing a few Unity projects for
+              <a href="https://ngxinteractive.com">NGX Interactive</a>, I
+              decided to shift my focus to web programming and am currently
+              working at <a href="https://www.wegalvanize.com/">Galvanize</a>.
+            </p>
+          </section>
+          <section class="heading-with-text">
+            <div class="graphic-heading-container enter-anim enter-anim--hidden">
+              <div class="graphic-heading graphic-heading--back"></div>
+              <div class="graphic-heading graphic-heading--front"></div>
+              <h3 class="graphic-heading__text">My Tech Stack</h3>
+            </div>
+            <div class="about__skills enter-anim enter-anim--hidden">
+              <div class="about__skill">
+                <img src="images/html.png" />
+                <div class="skill-text">HTML5</div>
+              </div>
+              <div class="about__skill">
+                <img src="images/css.png" />
+                <div class="skill-text">CSS3</div>
+              </div>
+              <div class="about__skill">
+                <img src="images/javascript.png" />
+                <div class="skill-text">JavaScript</div>
+              </div>
+              <div class="about__skill">
+                <img src="images/cpp.png" />
+                <div class="skill-text">C++</div>
+              </div>
+              <div class="about__skill">
+                <img src="images/c-sharp.png" />
+                <div class="skill-text">C#</div>
+              </div>
+              <div class="about__skill">
+                <img src="images/react.png" />
+                <div class="skill-text">React</div>
+              </div>
+              <div class="about__skill">
+                <img src="images/node.png" />
+                <div class="skill-text">Node</div>
+              </div>
+              <div class="about__skill">
+                <img class="about__language" src="images/express.png" />
+                <div class="skill-text">Express</div>
+              </div>
+              <div class="about__skill">
+                <img src="images/netlify.png" />
+                <div class="skill-text">Netlify</div>
+              </div>
+              <div class="about__skill">
+                <img src="images/digitalocean.png" />
+                <div class="skill-text">DigitalOcean</div>
+              </div>
+              <div class="about__skill">
+                <img src="images/figma.png" />
+                <div class="skill-text">Figma</div>
+              </div>
+              <div class="about__skill">
+                <img src="images/illustrator.png" />
+                <div class="skill-text">Illustrator</div>
+              </div>
+              <div class="about__skill">
+                <img src="images/after-effects.png" />
+                <div class="skill-text">After Effects</div>
+              </div>
+              <div class="about__skill">
+                <img src="images/unity.png" />
+                <div class="skill-text">Unity</div>
+              </div>
+              <!-- these are here to keep the last row aligned to grid -->
+              <div class="about__skill"></div>
+              <div class="about__skill"></div>
+              <div class="about__skill"></div>
+              <div class="about__skill"></div>
+              <div class="about__skill"></div>
+              <div class="about__skill"></div>
+              <div class="about__skill"></div>
+              <div class="about__skill"></div>
+              <div class="about__skill"></div>
+            </div>
+          </section>
+
+          <section class="heading-with-text">
+            <div class="graphic-heading-container enter-anim enter-anim--hidden">
+              <div class="graphic-heading graphic-heading--back"></div>
+              <div class="graphic-heading graphic-heading--front"></div>
+              <h3 class="graphic-heading__text">What else?</h3>
+            </div>
+            <p class="enter-anim enter-anim--hidden">
+              In my spare time, you'll usually find me working on my game project, writing
+              <a href='https://bitbirdy.dev'>devlogs/tutorials for my blog</a>, drawing pixel art,
+              playing
+              video games, or bouldering at the
+              Hive.
+            </p>
+          </section>
+        </div>
+      </section>
+
+      <section id="works" class="section">
+        <div class="section__sidebar section__sidebar_works scroll-section--stacked">
+          <!-- <h1 class="section__heading">Works</h1> -->
+          <div id="works-art-container">
+            <div id="cup-anim__wrapper" class="works-art">
+              <div id="cup-anim"></div>
+            </div>
+            <img class="works-art" id="headphones" src="images/headphones.svg" />
+            <img class="works-art" id="notebook" src="images/notebook.svg" />
+            <img class="works-art" id="laptop" src="images/laptop.svg" />
+            <img class="works-art" id="pencil" src="images/pencil.svg" />
+          </div>
+        </div>
+        <div class="section__content section__content--works">
+          <!-- dynamic content here -->
+        </div>
+      </section>
+
+      <section id="contact" class="section scroll-section scroll-section--stacked">
+        <div class="subsection">
+          <div class="contact__border-anim enter-anim--hidden">
+            <h1 class="contact__heading enter-anim--hidden">Contact</h1>
+            <hr class="contact__hr enter-anim--hidden" />
+            <p class="enter-anim--hidden">
+              Feel free to contact me if you have any questions or just want
+              to say hi!
+            </p>
+            <div class="contact-links enter-anim--hidden">
+              <div class="contact-link">
+                <a href="mailto:robyn3choi@gmail.com">
+                  <svg class="contact-link__image" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                    width="120" height="120" viewBox="0 0 54 54">
+                    <title>email</title>
+                    <circle cx="27" cy="27" r="26.5" fill="#fff" stroke="#2d97c2" stroke-miterlimit="10"
+                      stroke-width="0.75" />
+                    <path
+                      d="M37.6,16.4H16.4a2.65,2.65,0,0,0-2.64,2.65V35A2.66,2.66,0,0,0,16.4,37.6H37.6A2.66,2.66,0,0,0,40.25,35V19.05A2.66,2.66,0,0,0,37.6,16.4Z"
+                      fill="#fff" stroke="#2d97c2" stroke-miterlimit="10" stroke-width="0.75" />
+                    <polygon points="37.6 21.7 27 28.32 16.4 21.7 16.4 19.05 27 25.68 37.6 19.05 37.6 21.7" fill="#fff"
+                      stroke="#2d97c2" stroke-miterlimit="10" stroke-width="0.75" />
+                  </svg>
+                  <div class="contact-link__title">Email</div>
+                  <div class="contact-link__text">robyn3choi@gmail.com</div>
+                </a>
+              </div>
+              <div class="contact-link">
+                <a href="https://www.linkedin.com/in/robyn-choi-2767829b">
+                  <svg class="contact-link__image" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                    width="120" height="120" viewBox="0 0 54 54">
+                    <title>LinkedIn</title>
+                    <circle cx="27" cy="27" r="26.5" fill="#fff" stroke="#2d97c2" stroke-miterlimit="10"
+                      stroke-width="0.75" />
+                    <path
+                      d="M37.22,15H16.77A1.75,1.75,0,0,0,15,16.73V37.27A1.75,1.75,0,0,0,16.77,39H37.22A1.76,1.76,0,0,0,39,37.27V16.73A1.76,1.76,0,0,0,37.22,15ZM22.12,35.45H18.56V24h3.56Zm-1.78-13a2.06,2.06,0,1,1,2.06-2.06A2.06,2.06,0,0,1,20.34,22.43Zm15.11,13H31.89V29.88c0-1.33,0-3-1.85-3s-2.14,1.45-2.14,2.94v5.67H24.35V24h3.41v1.56h0a3.74,3.74,0,0,1,3.37-1.85c3.6,0,4.27,2.37,4.27,5.46Z"
+                      fill="#fff" stroke="#2d97c2" stroke-miterlimit="10" stroke-width="0.75" />
+                  </svg>
+                  <div class="contact-link__title">LinkedIn</div>
+                  <div class="contact-link__text">See work experience</div>
+                </a>
+              </div>
+              <div class="contact-link">
+                <a href="https://github.com/robyn3choi">
+                  <svg class="contact-link__image" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                    width="120" height="120" viewBox="0 0 54 54">
+                    <title>GitHub</title>
+                    <circle cx="27" cy="27" r="26.5" fill="#fff" stroke="#2d97c2" stroke-miterlimit="10"
+                      stroke-width="0.75" />
+                    <path
+                      d="M27,10.61a16.29,16.29,0,0,0-5.15,31.75c.81.15,1.11-.35,1.11-.79s0-1.41,0-2.77c-4.53,1-5.49-2.18-5.49-2.18a4.31,4.31,0,0,0-1.81-2.38c-1.48-1,.11-1,.11-1a3.42,3.42,0,0,1,2.5,1.68A3.47,3.47,0,0,0,23,36.28a3.48,3.48,0,0,1,1-2.18c-3.62-.41-7.42-1.81-7.42-8.05a6.3,6.3,0,0,1,1.68-4.37,5.86,5.86,0,0,1,.16-4.31s1.37-.44,4.48,1.67a15.44,15.44,0,0,1,8.16,0c3.11-2.11,4.48-1.67,4.48-1.67a5.85,5.85,0,0,1,.16,4.31,6.29,6.29,0,0,1,1.67,4.37c0,6.26-3.81,7.63-7.44,8a3.89,3.89,0,0,1,1.11,3c0,2.18,0,3.93,0,4.47s.29.94,1.12.78A16.29,16.29,0,0,0,27,10.61Z"
+                      fill="#fff" stroke="#2d97c2" stroke-miterlimit="10" stroke-width="0.75" fill-rule="evenodd" />
+                  </svg>
+                  <div class="contact-link__title">GitHub</div>
+                  <div class="contact-link__text">See more projects</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="footer" class="section scroll-section scroll-section--stacked">
+        <img class="footer-mobile-image" src="images/footer-mobile.png" />
+        <div class="rellax_footer footer__parallax parallax0" data-rellax-speed="-3"></div>
+        <div class="rellax_footer footer__parallax parallax1" data-rellax-speed="-1"></div>
+        <div class="rellax_footer footer__parallax parallax2" data-rellax-speed="0"></div>
+        <div class="rellax_footer footer__parallax parallax3" data-rellax-speed="1"></div>
+        <div class="rellax_footer footer__parallax parallax4" data-rellax-speed="3"></div>
+        <div class="rellax_footer footer__parallax parallax5" data-rellax-speed="8"></div>
+        <div class="rellax_footer footer__parallax parallax6" data-rellax-speed="10"></div>
+        <div class="rellax_footer footer__anim footer__anim--desktop" data-rellax-speed="0"></div>
+        <div class="rellax_footer footer__anim footer__anim--mobile" data-rellax-speed="0"></div>
+      </section>
+    </div>
+  </div>
+  <script src="bundle.js"></script>
+</body>
+
 </html>

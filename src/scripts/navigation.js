@@ -126,7 +126,7 @@ export const modifyNavAndNextSectionBtnIfNeeded = () => {
     if (sections[i].getBoundingClientRect().top <= navHeight + 1) {
       navLinks[i].classList.add('nav__link_current');
       // also mobile nav link
-      navLinks[i + 5].classList.add('nav__link_current');
+      navLinks[i + 6].classList.add('nav__link_current');
       break;
     }
   }
