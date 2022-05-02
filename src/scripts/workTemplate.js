@@ -27,6 +27,7 @@ const data = {
         'built with React and Next.js',
         'search bar that fetches matching results as you type',
         'desktop notification when your desired price is reached',
+        "your token pairs are saved in your browser's local storage"
       ],
       website: 'https://showcase.ethglobal.com/lfgrow/write-together-urtpp',
       github: 'https://github.com/robyn3choi/write-together',
