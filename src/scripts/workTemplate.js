@@ -29,8 +29,8 @@ const data = {
         'desktop notification when your desired price is reached',
         "your token pairs are saved in your browser's local storage"
       ],
-      website: 'https://showcase.ethglobal.com/lfgrow/write-together-urtpp',
-      github: 'https://github.com/robyn3choi/write-together',
+      website: 'https://terra-alerts.vercel.app/',
+      github: 'https://github.com/robyn3choi/terra-alerts',
     },
     
     {
