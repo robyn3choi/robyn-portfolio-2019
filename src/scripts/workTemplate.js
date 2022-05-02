@@ -1,7 +1,7 @@
 const data = {
   works: [
      {
-      // lfgrow hackathon
+      // write together
       image: 'write-together.png',
       summaryParagraphs: [
         `This was my LFGrow Hackathon 2022 submission which one in multiple prize categories. It's a dapp that allows users to collaborate on written stories and make branches of existing stories. Kind of like GitHub but for stories`,
@@ -12,6 +12,21 @@ const data = {
         'wallet connect via Metamask',
         'frontend built with React and Next.js',
         'my own Solidity smart contract to fill in the gaps by Lens Protocol',
+      ],
+      website: 'https://showcase.ethglobal.com/lfgrow/write-together-urtpp',
+      github: 'https://github.com/robyn3choi/write-together',
+    },
+    
+    {
+      // terralerts
+      image: 'terralerts.png',
+      summaryParagraphs: [
+        `A price alerts app for the Terra blockchain that uses Coinhall to fetch token pairs and prices.`,
+      ],
+      features: [
+        'built with React and Next.js',
+        'search bar that fetches matching results as you type'
+        'desktop notification when your desired price is reached',
       ],
       website: 'https://showcase.ethglobal.com/lfgrow/write-together-urtpp',
       github: 'https://github.com/robyn3choi/write-together',
@@ -54,41 +69,6 @@ const data = {
       ],
       website: 'https://stuartbrookes.com',
       github: 'https://github.com/robyn3choi/stu-website',
-    },
-
-    {
-      // path of trade
-      image: 'pathoftrade.png',
-      summaryParagraphs: [
-        `A web app that assists with trading in online game <a href='https://www.pathofexile.com/game'>Path of Exile</a> by 
-        comparing current item prices in a table and providing profit margins.`,
-        `The front end is built with React and Redux, and deployed with Netlify, and the back end is built with
-      Node/Express and hosted on a DigitalOcean droplet with Dokku.`,
-      ],
-      features: [
-        'requests stored in a cache which is refreshed every 5 minutes to maximize speed while displaying the latest stats',
-        'displays items in a sortable table',
-        'able to view data from different leagues',
-        "stores the user's last selected league in browser's local storage",
-      ],
-      website: 'https://pathoftrade.com',
-      github: 'https://github.com/robyn3choi/poe-trade-helper',
-    },
-
-    {
-      // fury website
-      image: 'fury.png',
-      summaryParagraphs: [
-        'A website for music duo WE ARE FURY that displays their top tracks, tour dates, and merchandise for sale.',
-        'The was built using jQuery and is hosted on HostGator (planning to migrate to GitHub Pages).',
-      ],
-      features: [
-        'Shopify integration',
-        'image parallax effect',
-        'responsive design',
-      ],
-      website: 'https://wearefurymusic.com',
-      github: 'https://github.com/robyn3choi/fury-website',
     },
 
     {
