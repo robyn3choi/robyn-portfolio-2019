@@ -25,7 +25,7 @@ const data = {
       ],
       features: [
         'built with React and Next.js',
-        'search bar that fetches matching results as you type'
+        'search bar that fetches matching results as you type',
         'desktop notification when your desired price is reached',
       ],
       website: 'https://showcase.ethglobal.com/lfgrow/write-together-urtpp',
