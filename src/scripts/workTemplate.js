@@ -1,5 +1,22 @@
 const data = {
   works: [
+     {
+      // lfgrow hackathon
+      image: 'write-together.png',
+      summaryParagraphs: [
+        `This was my submission for the LFGrow Hackathon 2022. It's a dapp that allows users to collaborate on written stories and make branches of existing stories. Kind of like GitHub but for stories`,
+        `This project is currently not deployed because Lens Protocol has drastically changed its API since the hackathon, but feel free to click the link below to see a summary and demo video.`,
+      ],
+      features: [
+        'powered by Lens Protocol (a social graph protocol) and Polygon',
+        'wallet connect via Metamask',
+        'frontend built with React and Next.js',
+        'my own Solidity smart contract to fill in the gaps by Lens Protocol',
+      ],
+      website: 'https://howsthesky.com',
+      github: 'https://github.com/robyn3choi/simple-weather',
+    },
+    
     {
       // weather app
       image: 'howsthesky.png',
