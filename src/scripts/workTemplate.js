@@ -147,8 +147,8 @@ const injectWorks = () => {
           <hr class='work__hr enter-anim--hidden' />
           <a class='work__link-button enter-anim--hidden' href=${work.website} 
             target='_blank' rel='noopener noreferrer'>Visit Website</a>
-          ${work.github ? <a class='work__link-button enter-anim--hidden' href=${work.github}
-            target='_blank' rel='noopener noreferrer'>View On GitHub</a> : null}
+          ${work.github ? "<a class='work__link-button enter-anim--hidden' href=${work.github}
+            target='_blank' rel='noopener noreferrer'>View On GitHub</a>" : null}
           <button class='work__exit-button'>
             <img src='images/x-white.svg' />
           </button>
