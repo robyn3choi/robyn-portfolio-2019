@@ -117,9 +117,6 @@ const injectWorks = () => {
       featuresHtml +=
         '<li class="enter-anim--hidden">' + work.features[j] + '</li>';
     }
-    
-    const github = work.github ? `<a class='work__link-button enter-anim--hidden' href=${work.github}
-            target='_blank' rel='noopener noreferrer'>View On GitHub</a>` : null
 
     html += `
     <div class='work-container scroll-section scroll-section--stacked'>
@@ -150,7 +147,8 @@ const injectWorks = () => {
           <hr class='work__hr enter-anim--hidden' />
           <a class='work__link-button enter-anim--hidden' href=${work.website} 
             target='_blank' rel='noopener noreferrer'>Visit Website</a>
-          ${github}
+          ${work.github ? `<a class='work__link-button enter-anim--hidden' href=${work.github}
+            target='_blank' rel='noopener noreferrer'>View On GitHub</a>` : null}
           <button class='work__exit-button'>
             <img src='images/x-white.svg' />
           </button>
