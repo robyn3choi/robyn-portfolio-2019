@@ -1,6 +1,20 @@
 const data = {
   works: [
      {
+      // nft calculator
+      image: 'nftcalc.png',
+      summaryParagraphs: [
+        `A Next.js app created with the Boys Club (https://boysclub.vip/) that calculates the prices you should sell your NFTs at to break even.`,
+      ],
+      features: [
+        'Filtering, searching, gallery and table views',
+        'Caches unchanging data like NFT collection slugs in browser storage to save API calls in the future',
+        'Uses Alchemy API to fetch user NFTs, Infura API for transaction data, Opensea API for NFT collection data, and Coingecko for ETH price data',
+      ],
+      website: 'https://nftinfo.vip',
+    },
+    
+     {
       // write together
       image: 'write-together.png',
       summaryParagraphs: [
