@@ -25,7 +25,7 @@ const data = {
         'Caches unchanging data like NFT collection slugs in browser storage to save API calls in the future',
         'Uses Alchemy API to fetch user NFTs, Infura API for transaction data, Opensea API for NFT collection data, and Coingecko for ETH price data',
       ],
-      website: 'https://nftinfo.vip',
+      website: 'https://bettie.vip',
     },
     
      {
