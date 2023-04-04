@@ -1,10 +1,23 @@
 const data = {
   works: [
+      {
+      // neon city overdrive dice roller
+      image: 'nco.png',
+      summaryParagraphs: [
+        `A Next.js dice roller app for tabletop roleplaying game, Neon City Overdrive (https://www.perilplanet.com/neon-city-overdrive/). I built this to help me run the game for my group remotely.`,
+      ],
+      features: [
+        'Choose the number of action dice and damage dice and calculate the roll result.',
+        `Uses Socket.IO to update all players' views in real time whenever a player joins, rolls, or leaves.`,
+      ],
+      website: 'https://nco-diceroller.vercel.app',
+    },
+    
      {
       // nft calculator
       image: 'nftcalc.png',
       summaryParagraphs: [
-        `A Next.js app created with the Boys Club (https://boysclub.vip/) that calculates the prices you should sell your NFTs at to break even.`,
+        `A Next.js app created with the Boys Club (https://boysclub.vip/) and designed by Samantha Lane that calculates the prices you should sell your NFTs at to break even.`,
       ],
       features: [
         'Filtering, searching, gallery and table views',
@@ -29,42 +42,6 @@ const data = {
       ],
       website: 'https://showcase.ethglobal.com/lfgrow/write-together-urtpp',
       github: 'https://github.com/robyn3choi/write-together',
-    },
-    
-    {
-      // terralerts
-      image: 'terralerts.png',
-      summaryParagraphs: [
-        `A price alerts app for the Terra blockchain that uses Coinhall to fetch token pairs and prices.`,
-      ],
-      features: [
-        'built with React and Next.js',
-        'search bar that fetches matching results as you type',
-        'desktop notification when your desired price is reached',
-        "your token pairs are saved in your browser's local storage"
-      ],
-      website: 'https://terra-alerts.vercel.app/',
-      github: 'https://github.com/robyn3choi/terra-alerts',
-    },
-    
-    {
-      // weather app
-      image: 'howsthesky.png',
-      summaryParagraphs: [
-        `A sleek, minimal weather web app for when you just want the weather and nothing else. 
-      It uses the Dark Sky API for weather data and the OpenCage API for geocoding.`,
-        `The front end is built with React and deployed with Netlify, and the back end is built with
-      Node/Express and hosted on a DigitalOcean droplet with Dokku.`,
-      ],
-      features: [
-        'location detection',
-        'Google Maps Places Search Box',
-        "stores user’s location in browser's local storage",
-        'CSS animations',
-        'responsive design',
-      ],
-      website: 'https://howsthesky.com',
-      github: 'https://github.com/robyn3choi/simple-weather',
     },
 
     {
