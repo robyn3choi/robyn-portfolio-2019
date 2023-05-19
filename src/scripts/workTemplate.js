@@ -1,19 +1,5 @@
 const data = {
   works: [
-      {
-      // neon city overdrive dice roller
-      image: 'nco.png',
-      summaryParagraphs: [
-        `A Next.js dice roller app for tabletop roleplaying game, Neon City Overdrive (https://www.perilplanet.com/neon-city-overdrive/). I built this to help me run the game for my friends remotely.`,
-      ],
-      features: [
-        'Choose the number of action dice and damage dice and calculate the roll result.',
-        `Uses Socket.IO to update all players' views in real time whenever a player joins, rolls, or leaves.`,
-      ],
-      website: 'https://nco-diceroller.vercel.app',
-      github: 'https://github.com/robyn3choi/nco-diceroller',
-    },
-
     {
       // stu website
       image: 'stu.png',
@@ -31,6 +17,20 @@ const data = {
       ],
       website: 'https://stuartbrookes.com',
       github: 'https://github.com/robyn3choi/stu-website',
+    },
+    
+    {
+      // neon city overdrive dice roller
+      image: 'nco.png',
+      summaryParagraphs: [
+        `A Next.js dice roller app for tabletop roleplaying game, Neon City Overdrive (https://www.perilplanet.com/neon-city-overdrive/). I built this to help me run the game for my friends remotely.`,
+      ],
+      features: [
+        'Choose the number of action dice and damage dice and calculate the roll result.',
+        `Uses Socket.IO to update all players' views in real time whenever a player joins, rolls, or leaves.`,
+      ],
+      website: 'https://nco-diceroller.vercel.app',
+      github: 'https://github.com/robyn3choi/nco-diceroller',
     },
     
     {
