@@ -13,37 +13,6 @@ const data = {
       website: 'https://nco-diceroller.vercel.app',
       github: 'https://github.com/robyn3choi/nco-diceroller',
     },
-    
-     {
-      // nft calculator
-      image: 'nftcalc.png',
-      summaryParagraphs: [
-        `A Next.js app created with the Boys Club (https://boysclub.vip/) and designed by Samantha Lane that calculates the prices you should sell your NFTs at to break even.`,
-      ],
-      features: [
-        'Filtering, searching, gallery and table views',
-        'Caches unchanging data like NFT collection slugs in browser storage to save API calls in the future',
-        'Uses Alchemy API to fetch user NFTs, Infura API for transaction data, Opensea API for NFT collection data, and Coingecko for ETH price data',
-      ],
-      website: 'https://bettie.vip',
-    },
-    
-     {
-      // write together
-      image: 'write-together.png',
-      summaryParagraphs: [
-        `This was my LFGrow Hackathon 2022 submission which won in multiple prize categories. It's a dapp that allows users to collaborate on written stories and make branches of existing stories. Kind of like GitHub but for stories`,
-        `This project is currently not deployed because Lens Protocol has drastically changed its API since the hackathon, but feel free to click the "website" button below see a video demo and read a more in-depth summary.`,
-      ],
-      features: [
-        'powered by Lens Protocol (a social graph protocol) and Polygon',
-        'wallet connect via Metamask',
-        'frontend built with React and Next.js',
-        'my own Solidity smart contract to fill in the gaps by Lens Protocol',
-      ],
-      website: 'https://showcase.ethglobal.com/lfgrow/write-together-urtpp',
-      github: 'https://github.com/robyn3choi/write-together',
-    },
 
     {
       // stu website
@@ -62,6 +31,23 @@ const data = {
       ],
       website: 'https://stuartbrookes.com',
       github: 'https://github.com/robyn3choi/stu-website',
+    },
+    
+    {
+      // write together
+      image: 'write-together.png',
+      summaryParagraphs: [
+        `This was my LFGrow Hackathon 2022 submission which won in multiple prize categories. It's a dapp that allows users to collaborate on written stories and make branches of existing stories. Kind of like GitHub but for stories`,
+        `This project is currently not deployed because Lens Protocol has drastically changed its API since the hackathon, but feel free to click the "website" button below see a video demo and read a more in-depth summary.`,
+      ],
+      features: [
+        'powered by Lens Protocol (a social graph protocol) and Polygon',
+        'wallet connect via Metamask',
+        'frontend built with React and Next.js',
+        'my own Solidity smart contract to fill in the gaps by Lens Protocol',
+      ],
+      website: 'https://showcase.ethglobal.com/lfgrow/write-together-urtpp',
+      github: 'https://github.com/robyn3choi/write-together',
     },
 
     {
