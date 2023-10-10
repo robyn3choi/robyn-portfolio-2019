@@ -8,7 +8,7 @@ const data = {
       ],
       features: [
         'Choose the number of action dice and damage dice and calculate the roll result.',
-        `Uses Socket.IO to update all players' views in real time whenever a player joins, rolls, or leaves.`,
+        `Uses Socket.IO to update all players' views in real time whenever a player joins, rolls, or leaves the room.`,
       ],
       website: 'https://nco-diceroller.vercel.app',
       github: 'https://github.com/robyn3choi/nco-diceroller',
