@@ -1,27 +1,8 @@
 const data = {
-  works: [
-    {
-      // stu website
-      image: 'stu.png',
-      summaryParagraphs: [
-        'A unique yet simple portfolio website for music producer Stuart Brookes.',
-        `The site is built with React and deployed with Netlify. 
-      It also uses headless CMS Prismic.io to allow the client to easily edit information on the website without needing to look at code.
-      `,
-      ],
-      features: [
-        'original art and animations',
-        'music section displays songs in a filterable grid',
-        'easily editable by the client using Prismic.io',
-        'responsive design',
-      ],
-      website: 'https://stuartbrookes.com',
-      github: 'https://github.com/robyn3choi/stu-website',
-    },
-    
+  works: [    
     {
       // neon city overdrive dice roller
-      image: 'nco.png',
+      image: 'nco-diceroller.png',
       summaryParagraphs: [
         `A Next.js dice roller app for tabletop roleplaying game, Neon City Overdrive (https://www.perilplanet.com/neon-city-overdrive/). I built this to help me run the game for my friends remotely.`,
       ],
@@ -48,6 +29,25 @@ const data = {
       ],
       website: 'https://showcase.ethglobal.com/lfgrow/write-together-urtpp',
       github: 'https://github.com/robyn3choi/write-together',
+    },
+
+    {
+      // stu website
+      image: 'stu.png',
+      summaryParagraphs: [
+        'A unique yet simple portfolio website for music producer Stuart Brookes.',
+        `The site is built with React and deployed with Netlify. 
+      It also uses headless CMS Prismic.io to allow the client to easily edit information on the website without needing to look at code.
+      `,
+      ],
+      features: [
+        'original art and animations',
+        'music section displays songs in a filterable grid',
+        'easily editable by the client using Prismic.io',
+        'responsive design',
+      ],
+      website: 'https://stuartbrookes.com',
+      github: 'https://github.com/robyn3choi/stu-website',
     },
 
     {
