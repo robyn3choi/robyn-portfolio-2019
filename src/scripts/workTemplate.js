@@ -13,23 +13,6 @@ const data = {
       website: 'https://nco-diceroller.vercel.app',
       github: 'https://github.com/robyn3choi/nco-diceroller',
     },
-    
-    {
-      // write together
-      image: 'write-together.png',
-      summaryParagraphs: [
-        `This was my LFGrow Hackathon 2022 submission which won in multiple prize categories. It's a dapp that allows users to collaborate on written stories and make branches of existing stories. Kind of like GitHub but for stories`,
-        `This project is currently not deployed because Lens Protocol has drastically changed its API since the hackathon, but feel free to click the "website" button below see a video demo and read a more in-depth summary.`,
-      ],
-      features: [
-        'powered by Lens Protocol (a social graph protocol) and Polygon',
-        'wallet connect via Metamask',
-        'frontend built with React and Next.js',
-        'my own Solidity smart contract to fill in the gaps by Lens Protocol',
-      ],
-      website: 'https://showcase.ethglobal.com/lfgrow/write-together-urtpp',
-      github: 'https://github.com/robyn3choi/write-together',
-    },
 
     {
       // stu website
