@@ -4,7 +4,7 @@ const data = {
       // neon city overdrive dice roller
       image: 'nco-diceroller.png',
       summaryParagraphs: [
-        `A Next.js dice roller app for tabletop roleplaying game, Neon City Overdrive (https://www.perilplanet.com/neon-city-overdrive/). I built this to help me run the game for my friends remotely.`,
+        `A dice roller app made with Next.js and Express.js for the tabletop roleplaying game, Neon City Overdrive (https://www.perilplanet.com/neon-city-overdrive/). I built this to help me run the game for my friends remotely.`,
       ],
       features: [
         'Choose the number of action dice and damage dice and calculate the roll result.',
