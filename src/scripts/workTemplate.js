@@ -4,11 +4,13 @@ const data = {
       // neon city overdrive dice roller
       image: 'nco-diceroller.png',
       summaryParagraphs: [
-        `A dice roller app made with Next.js and Express.js for the tabletop roleplaying game, Neon City Overdrive (https://www.perilplanet.com/neon-city-overdrive/). I built this to help me run the game for my friends remotely.`,
+        'A dice roller app for the tabletop roleplaying game, Neon City Overdrive (https://www.perilplanet.com/neon-city-overdrive/). The frontend was built with React/Next.js and Tailwind, and the backend was built with Express.js and Socket.IO.',
+        'I just wanted an easier way to run the game online for my friends.',
       ],
       features: [
         'Choose the number of action dice and damage dice and calculate the roll result.',
-        `Uses Socket.IO to update all players' views in real time whenever a player joins, rolls, or leaves the room.`,
+        `Players' views are updated in real time whenever a player joins, rolls, and leaves the room.`,
+        'Responsive design',
       ],
       website: 'https://nco-diceroller.vercel.app',
       github: 'https://github.com/robyn3choi/nco-diceroller',
@@ -18,16 +20,13 @@ const data = {
       // stu website
       image: 'stu.png',
       summaryParagraphs: [
-        'A unique yet simple portfolio website for music producer Stuart Brookes.',
-        `The site is built with React and deployed with Netlify. 
-      It also uses headless CMS Prismic.io to allow the client to easily edit information on the website without needing to look at code.
-      `,
+        'A unique yet simple portfolio website built with React for music producer Stuart Brookes. It uses headless CMS Prismic.io to allow the client to easily edit information on the website without needing to look at code.',
       ],
       features: [
-        'original art and animations',
-        'music section displays songs in a filterable grid',
-        'easily editable by the client using Prismic.io',
-        'responsive design',
+        'Original art and animations',
+        'Music section displays songs in a filterable grid',
+        'Easily editable by the client using Prismic.io',
+        'Responsive design',
       ],
       website: 'https://stuartbrookes.com',
       github: 'https://github.com/robyn3choi/stu-website',
@@ -41,10 +40,10 @@ const data = {
         `This project is currently not deployed because Lens Protocol has drastically changed its API since the hackathon, but feel free to click the "website" button below see a video demo and read a more in-depth summary.`,
       ],
       features: [
-        'powered by Lens Protocol (a social graph protocol) and Polygon',
-        'wallet connect via Metamask',
-        'frontend built with React and Next.js',
-        'my own Solidity smart contract to fill in the gaps by Lens Protocol',
+        'Powered by Lens Protocol (a social graph protocol) and Polygon',
+        'Wallet connect via Metamask',
+        'Frontend built with React/Next.js',
+        'My own Solidity smart contract to fill in the gaps by Lens Protocol',
       ],
       website: 'https://showcase.ethglobal.com/lfgrow/write-together-urtpp',
       github: 'https://github.com/robyn3choi/write-together',
@@ -59,7 +58,7 @@ const data = {
       the University of British Columbia's e-Portfolio Competition 2017.`,
         'The was built using jQuery and is hosted on GitHub Pages.',
       ],
-      features: ['original art and animations', 'responsive design'],
+      features: ['Original art and animations', 'Responsive design'],
       website: 'https://old.robynchoi.me',
       github: 'https://github.com/robyn3choi/eportfolio',
     },
