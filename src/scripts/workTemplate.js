@@ -1,19 +1,19 @@
 const data = {
   works: [    
     {
-      // neon city overdrive dice roller
-      image: 'nco-diceroller.png',
+      // bump in the dark dice roller
+      image: 'bump.png',
       summaryParagraphs: [
-        'A dice roller app for the tabletop roleplaying game, Neon City Overdrive (https://www.perilplanet.com/neon-city-overdrive/). The frontend was built with React/Next.js and Tailwind, and the backend was built with Express.js and Socket.IO.',
-        'I just wanted an easier way to run the game online for my friends.',
+        'A bespoke dice roller & clock tracker web app for the tabletop roleplaying game, Bump in the Dark (https://jexjthomas.itch.io/bump-in-the-dark). The frontend was built with React/Next.js, TypeScript, and Tailwind, and the backend was built with Express.js. Socket.IO is used for realtime communication between the server and clients.',
       ],
       features: [
-        'Choose the number of action dice and damage dice and calculate the roll result.',
+        'Choose between different types of dice rolls and provide instructions for the keeper depending on the roll result.',
+        'The keeper can add and edit clocks which get saved in their browser storage so they can pick up where they left off last session.',
         `Players' views are updated in real time whenever a player joins, rolls, and leaves the room.`,
         'Responsive design',
       ],
-      website: 'https://nco-diceroller.vercel.app',
-      github: 'https://github.com/robyn3choi/nco-diceroller',
+      website: 'https://bumpinthedark-diceroller.vercel.app',
+      github: 'https://github.com/robyn3choi/bumpinthedark-diceroller',
     },
 
     {
