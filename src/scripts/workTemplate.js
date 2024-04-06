@@ -1,5 +1,20 @@
 const data = {
   works: [    
+      {
+      // ten candles vtt
+      image: 'candles.png',
+      summaryParagraphs: [
+        'A virtual tabletop web app for the tabletop roleplaying game, Ten Candles (https://cavalrygames.com/ten-candles-info). The frontend was built with React, Vite, TypeScript, and Tailwind, and the backend was built with Express.js. Socket.IO is used for realtime communication between the server and clients.',
+      ],
+      features: [
+        'Particle animations for candle flames and wisps of smoke when you extinguish them.',
+        'Roll and drag dice between dice pools',
+        'Create cards for Vices, Virtues, etc. and pass them to other players'
+        `See the above actions happening between all the players in real time`,
+      ],
+      website: 'https://bumpinthedark-diceroller.vercel.app',
+      github: 'https://github.com/robyn3choi/bumpinthedark-diceroller',
+    },
     {
       // bump in the dark dice roller
       image: 'bump.png',
@@ -32,22 +47,22 @@ const data = {
       github: 'https://github.com/robyn3choi/stu-website',
     },
 
-    {
-      // write together
-      image: 'write-together.png',
-      summaryParagraphs: [
-        `This was my LFGrow Hackathon 2022 submission which won in multiple prize categories. It's a dapp that allows users to collaborate on written stories and make branches of existing stories. Kind of like GitHub but for stories`,
-        `This project is currently not deployed because Lens Protocol has drastically changed its API since the hackathon, but feel free to click the "website" button below see a video demo and read a more in-depth summary.`,
-      ],
-      features: [
-        'Powered by Lens Protocol (a social graph protocol) and Polygon',
-        'Wallet connect via Metamask',
-        'Frontend built with React/Next.js',
-        'My own Solidity smart contract to fill in the gaps by Lens Protocol',
-      ],
-      website: 'https://showcase.ethglobal.com/lfgrow/write-together-urtpp',
-      github: 'https://github.com/robyn3choi/write-together',
-    },
+    // {
+    //   // write together
+    //   image: 'write-together.png',
+    //   summaryParagraphs: [
+    //     `This was my LFGrow Hackathon 2022 submission which won in multiple prize categories. It's a dapp that allows users to collaborate on written stories and make branches of existing stories. Kind of like GitHub but for stories`,
+    //     `This project is currently not deployed because Lens Protocol has drastically changed its API since the hackathon, but feel free to click the "website" button below see a video demo and read a more in-depth summary.`,
+    //   ],
+    //   features: [
+    //     'Powered by Lens Protocol (a social graph protocol) and Polygon',
+    //     'Wallet connect via Metamask',
+    //     'Frontend built with React/Next.js',
+    //     'My own Solidity smart contract to fill in the gaps by Lens Protocol',
+    //   ],
+    //   website: 'https://showcase.ethglobal.com/lfgrow/write-together-urtpp',
+    //   github: 'https://github.com/robyn3choi/write-together',
+    // },
 
     {
       // old portfolio
