@@ -9,7 +9,7 @@ const data = {
       features: [
         'Particle animations for candle flames and wisps of smoke when you extinguish them.',
         'Roll and drag dice between dice pools',
-        'Create cards for Vices, Virtues, etc. and pass them to other players'
+        'Create cards for Vices, Virtues, etc. and pass them to other players',
         `See the above actions happening between all the players in real time`,
       ],
       website: 'https://bumpinthedark-diceroller.vercel.app',
