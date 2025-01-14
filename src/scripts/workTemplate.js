@@ -4,7 +4,7 @@ const data = {
       // ten candles vtt
       image: 'candles.png',
       summaryParagraphs: [
-        'A virtual tabletop web app for the tabletop roleplaying game, Ten Candles (https://cavalrygames.com/ten-candles-info). The frontend was built with React, Vite, TypeScript, and Tailwind, and the backend was built with Express.js. Socket.IO is used for realtime communication between the server and clients.',
+        'A multiplayer virtual tabletop web app for the tabletop roleplaying game, Ten Candles (https://cavalrygames.com/ten-candles-info). The frontend was built with React, Vite, TypeScript, and Tailwind, and the backend was built with Express.js. Socket.IO is used for realtime communication between the server and clients.',
       ],
       features: [
         'Particle animations for candle flames and wisps of smoke when you extinguish them.',
@@ -19,7 +19,7 @@ const data = {
       // bump in the dark dice roller
       image: 'bump.png',
       summaryParagraphs: [
-        'A bespoke dice roller & clock tracker web app for the tabletop roleplaying game, Bump in the Dark (https://jexjthomas.itch.io/bump-in-the-dark). The frontend was built with React/Next.js, TypeScript, and Tailwind, and the backend was built with Express.js. Socket.IO is used for realtime communication between the server and clients.',
+        'A multiplayer dice roller & clock tracker web app for the tabletop roleplaying game, Bump in the Dark (https://jexjthomas.itch.io/bump-in-the-dark). The frontend was built with React/Next.js, TypeScript, and Tailwind, and the backend was built with Express.js. Socket.IO is used for realtime communication between the server and clients.',
       ],
       features: [
         'Choose between different types of dice rolls and provide instructions for the keeper depending on the roll result.',
