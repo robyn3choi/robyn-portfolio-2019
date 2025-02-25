@@ -12,8 +12,8 @@ const data = {
         'Create cards for Vices, Virtues, etc. and pass them to other players',
         `See the above actions happening between all the players in real time`,
       ],
-      website: 'https://bumpinthedark-diceroller.vercel.app',
-      github: 'https://github.com/robyn3choi/bumpinthedark-diceroller',
+      website: 'https://tencandles-vtt.vercel.app',
+      github: 'https://github.com/robyn3choi/tencandles-vtt',
     },
     {
       // bump in the dark dice roller
